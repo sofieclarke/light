@@ -30,6 +30,15 @@ dmx:
     - { name: "CLD (single mode)", channels: 38 }
     - { name: "WRM (single mode)", channels: 38 }
 menu_password: null
+firmware:
+  latest_known: "1.6.1"
+  checked: "2026-10-03"
+  check_on_fixture: "INFORMATION menu (⚠️ unverified for Encore)"
+  methods: ["USB stick", "DMX + Uploader and M-DMX (legacy)", "DMX + Martin Companion Cable"]
+  interface: "None for USB stick; Martin M-DMX (legacy) or Martin Companion Cable P/N 91616091"
+  software: "Martin Companion (older: Uploader in Martin DMX Tools)"
+  file_type: ".BANK"
+  download: "martin.com/en-US/firmware or Martin Companion"
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -123,7 +132,22 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Recalibrate: 100 enable calibration, adjust, 101–116 store. **199 restores factory calibration.**
 - Fan / filter cleaning: Not found.
-- Firmware update method: Not found. See [Martin common](./_martin-common.md).
+
+## Firmware
+- Installed version — where to see it on the fixture: INFORMATION menu, as on other current MACs (⚠️ unverified for the Encore).
+- Latest known version (date checked) and where to download it: **1.6.1** latest found (2026-10-03, via search summary of martin.com). martin.com/en-US/firmware or inside Martin Companion.
+- What you need: USB stick, **or** a Windows PC running the **Uploader** from the **Martin DMX Tools** suite with a **Martin M-DMX** compact USB-DMX interface (user guide). The newer route is Martin Companion + Companion Cable (P/N 91616091) ⚠️ not confirmed for this model.
+- Update steps (USB stick — same procedure as the Martin user guides for MAC Quantum/Viper; ⚠️ check the Encore guide for differences):
+  1. Get the **.BANK** file (martin.com product support page, or export it from Martin Companion). Read the release notes.
+  2. Copy it to the **root directory** of a USB stick (format not stated in the manual; FAT32 is the safe guess ⚠️ unverified).
+  3. **Disconnect the data link** (console) from the fixture.
+  4. Insert the stick in the fixture's USB socket. If nothing happens, go to **SERVICE → USB**.
+  5. **AVAILABLE FIRMWARE** appears — scroll to the version, press Enter, confirm with Enter (Menu exits without installing).
+  6. Let it install and reboot. Don't power off and don't pull the stick while it is updating.
+  7. Remove the stick, check the version in the **INFORMATION** menu, reconnect the data link.
+- Updating a whole rig: USB = one at a time. Over DMX: limit not found.
+- If it fails or bricks mid-update: **bootloader switch** inside the base on the main display PCB — hold it while powering on, then reinstall by USB or DMX (HARMAN help center).
+- Release notes worth knowing: Not captured. Firmware can add or renumber DMX modes — re-check your console patch/profile after updating.
 
 ## Road notes (community)
 - None found in searches (search budget ran out before this model).
@@ -132,3 +156,6 @@ last_updated: "2026-10-03"
 - [Open Fixture Library: mac-encore-performance.json](https://github.com/OpenLightingProject/open-fixture-library/blob/master/fixtures/martin/mac-encore-performance.json) (Felix Edelmann, Ryan Goodwin, 2023): 38-ch layout for CLD/WRM, control-channel values, TRUE1 input only, weight, dims, 585 W, color and gobo wheels. Cites [UM_MACEncorePerformance_EN_A](https://adn.harmanpro.com/site_elements/executables/7477_1526701894/UM_MACEncorePerformance_EN_A_original.pdf), [CLD product page](https://www.martin.com/en/products/mac-encore-performance-cld), [WRM product page](https://www.martin.com/en/products/mac-encore-performance-wrm).
 - [QLC+ Martin-MAC-Encore-Performance.qxf](https://github.com/mcallegari/qlcplus/tree/master/resources/fixtures/Martin): lumens, CCT, pan/tilt range.
 - [MAC Encore Wash user guide](https://www.martin.com/en-US/site_elements/mac-encore-wash-user-guide): confirms the separate Encore Wash CLD/WRM product (title only).
+- [Martin firmware page](https://www.martin.com/en-US/firmware) — latest firmware versions and update methods (via web-search summary, checked 2026-10-03)
+- [MAC Encore Performance user guide](https://www.martin.com/en/site_elements/mac-encore-performance-user-guide) — USB stick or Uploader (Martin DMX Tools) + M-DMX, .BANK file
+- [HARMAN help: Bootloader button on MAC Quantum and MAC Encore series](https://help.harmanpro.com/en_US/general-mac-encore-inquiries/bootloader-button-on-mac-quantum-and-mac-encore-series) — bootloader switch location and use

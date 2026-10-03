@@ -30,6 +30,15 @@ dmx:
     - { name: "Standard", channels: 30 }
     - { name: "Extended", channels: 32 }
 menu_password: null
+firmware:
+  latest_known: "2.0.0"
+  checked: "2026-10-03"
+  check_on_fixture: "INFORMATION → SW VERSION"
+  methods: ["USB stick", "DMX + Martin Companion Cable", "Network (Martin Companion)"]
+  interface: "None for USB stick; Martin Companion Cable P/N 91616091"
+  software: "Martin Companion"
+  file_type: null
+  download: "Martin Companion or martin.com/en-US/firmware"
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -102,7 +111,16 @@ last_updated: "2026-10-03"
 | Framing blades act swapped (angle ↔ position) | Library blade order differs (see Data note) | Check the profile against the fixture |
 
 ## Maintenance
-- Not found. See [Martin common](./_martin-common.md) for firmware tools.
+- Recalibrate / fan / filter cleaning: Not found.
+
+## Firmware
+- Installed version — where to see it on the fixture: **INFORMATION → SW VERSION** (ERA 400 user manual, via search summary).
+- Latest known version (date checked) and where to download it: **2.0.0** latest found (2026-10-03, via search summary of martin.com). Martin Companion syncs firmware from the cloud.
+- What you need: USB stick, **or** PC + Martin Companion + Companion Cable (P/N 91616091) on DMX, **or** Martin Companion over the network.
+- Update steps: USB — export the firmware from Martin Companion to a stick and install from the fixture menu (⚠️ menu path not captured). DMX — see [Martin common](./_martin-common.md#firmware-updates). Disconnect the console first; don't power off mid-update.
+- Updating a whole rig: Companion over network or DMX; limit not found.
+- If it fails or bricks mid-update: Not found.
+- Release notes worth knowing: Not captured. Firmware can add or renumber DMX modes — re-check your console patch/profile after updating.
 
 ## Road notes (community)
 - None found.
@@ -110,3 +128,6 @@ last_updated: "2026-10-03"
 ## Sources
 - [QLC+ Martin-ERA-400-Performance.qxf](https://github.com/mcallegari/qlcplus/tree/master/resources/fixtures/Martin) (author "Yestalgia"): modes, channel list, shutter and special-function values, weight, dims, W, lumens, zoom. Community only. Not checked against a Martin manual.
 - No web-search results captured for ERA fixtures (search budget ran out).
+- [Martin firmware page](https://www.martin.com/en-US/firmware) — latest firmware versions and update methods (via web-search summary, checked 2026-10-03)
+- [ERA 400 Performance user manual](https://martin.com/en-US/site_elements/era-400-performance-user-manual-b4ebae40-25b4-4fbd-bc42-055dff3809b6) — INFORMATION → SW VERSION (via search summary)
+- [ERA 400 Performance WRM product page](https://www.martin.com/en-US/products/era-400-performance-wrm) — update via DMX, network, USB

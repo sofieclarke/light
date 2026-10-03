@@ -38,6 +38,15 @@ dmx:
     - { name: "Mode 9", channels: 104 }
     - { name: "Mode 10", channels: 123 }
 menu_password: "7623"
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: "Information → Software Versions"
+  methods: ["DMX + Robe Universal Interface", "ROBE Uploader (Ethernet / RDM)"]
+  interface: "Robe Universal Interface (RUNIT); none for ROBE Uploader over Ethernet"
+  software: "ROBE Uploader; DSU uploader (in the DSU package)"
+  file_type: "DSU package (.zip)"
+  download: "robe.cz product page"
 tools: []
 verification: "web-search"
 last_updated: 2026-10-03
@@ -117,7 +126,22 @@ last_updated: 2026-10-03
 
 ## Maintenance
 - Air filters: cleaning reminder icon (manual). Interval and procedure: Not found.
-- Firmware: see [_robe-common.md](_robe-common.md).
+
+## Firmware
+- Installed version — where to see it on the fixture: **Information → Software Versions**. It lists each processor module separately (e.g. Display System, Module M = pan/tilt, Module DR = LED driver). Menu confirmed in the Spiider and MegaPointe manuals; for other touchscreen Robins it is the same convention (⚠️ check on the fixture).
+- Latest known version (date checked) and where to download it: **Not found** (2026-10-03) — no version number captured for this model. Download the DSU package from this fixture's page on robe.cz.
+- What you need: PC (Robe lists Windows; Linux/macOS also supported) · DSU package (.zip with the uploader) · **either** a **Robe Universal Interface / RUNIT** (USB-to-DMX box, also the WTX wireless version) and a DMX cable, **or** an Ethernet connection for **ROBE Uploader**. No USB-stick update method found for Robe. Details: [_robe-common.md](_robe-common.md#firmware-updates).
+- Update steps — DMX with the Robe Universal Interface (RUI manual):
+  1. Download and unzip the DSU package. Close other PC programs.
+  2. **Unplug the console** from the line — the fixture's DMX in must come only from the RUI.
+  3. RUI to PC by USB; DMX cable from RUI DMX out to the fixture's DMX in.
+  4. Fixture: **Service → Update Software** (touchscreen Robins; older displays: Special Functions → Updating Software).
+  5. Run the uploader on the PC, choose **Robe Universal Interface**, Connect, start the update.
+  6. Don't touch power or cables until it finishes. Check Information → Software Versions afterwards.
+- Update steps — ROBE Uploader (TB54): set the PC to a **2.x.x.x** address (e.g. 2.0.0.1, mask 255.0.0.0) if going over Ethernet. Discover the fixtures (RDM automatic or manual discovery, or build the setup by hand), select them and update. The Uploader puts fixtures into update mode itself. The Spiider's data connectors are DMX/RDM XLR only (no Ethernet listed), so the Uploader reaches it over RDM through the RUNIT. Exact button names: see TB54.
+- Updating a whole rig: **ROBE Uploader updates several units in parallel over Ethernet** with no RUNIT needed. Over DMX with the RUI: how many per line is not found. Keep only one model on the line (⚠️ unverified, general practice).
+- If it fails or bricks mid-update (TB54): a unit left in update mode **is not re-discovered automatically** — update it by hand with **DSU Mode / "Fix broken device with RUNIT"** in ROBE Uploader (one-to-one, needs the RUNIT). If it restarted mid-update (power cut), fixtures with **Display System 3.0** wait in the **bootloader** for an update on a **10.x.x.x** IP address.
+- Release notes worth knowing: Not found for this model. Read the notes in the DSU package before a show — a software change can change DMX modes and break your console patch.
 
 ## Road notes (community)
 - None found (search budget ran out).
@@ -130,3 +154,6 @@ last_updated: 2026-10-03
 - [4Wall Spiider rental](https://www.4wall.com/rentals/9758371/robe-spiider) — 4–50° zoom
 - [Spiider TW manual](https://www.robe.cz/res/downloads/user_manuals/User_manual_Robin_Spiider_TW.pdf) — TW variant exists
 - [Solotech iSpiider](https://shop.solotech.com/products/robe-ispiider-1x-60w-rgbw-and-18x-40w-rgbw-led-ip65-washbeam) — iSpiider IP65, 18x 40 W
+- [TB54 ROBE Uploader manual v1.0.9](https://www.robelighting.de/res/downloads/tech_bulletins/TB54_ROBE_Uploader_manual_EN.pdf) — Ethernet/RDM parallel update, 2.x.x.x PC address, DSU Mode / Fix broken device with RUNIT, bootloader recovery (via search summary)
+- [Robe Universal Interface manual v1.7](https://www.robe.cz/res/downloads/user_manuals/User_manual_Robe_Universal_Interface.pdf) — DMX update via RUI, Special Functions → Updating Software
+- [Robin Spiider manual v3.3](https://www.robelighting.com/res/downloads/user_manuals/User_manual_Robin_Spiider.pdf) — Information → Software Versions, Service → Update software (Robe touchscreen convention)

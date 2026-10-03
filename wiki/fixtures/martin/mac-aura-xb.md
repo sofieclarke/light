@@ -30,6 +30,15 @@ dmx:
     - { name: "Standard (STD)", channels: 14 }
     - { name: "Extended (EXT)", channels: 25 }
 menu_password: null
+firmware:
+  latest_known: "1.3.0"
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["DMX + Martin Companion Cable", "Ethernet (Martin Companion)"]
+  interface: "Martin Companion Cable P/N 91616091"
+  software: "Martin Companion"
+  file_type: null
+  download: "martin.com/en-US/firmware or Martin Companion"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -135,7 +144,15 @@ Errors flash on the display, 1 s on and 1 s off. If there is more than one, each
 ## Maintenance
 - Recalibrate: SERVICE → CALIBRATION (for example PAN OFFSET).
 - Fan / filter cleaning: Not found.
-- Firmware: update over DMX with **Martin Companion** software and the **Martin Companion Cable, P/N 91616091**. The software is a free download from martin.com/firmware. (The original MAC Aura used Martin Uploader and a USB Duo box instead.)
+
+## Firmware
+- Installed version — where to see it on the fixture: Not found — check the INFORMATION menu (⚠️ unverified).
+- Latest known version (date checked) and where to download it: **1.3.0** latest found (2026-10-03, via search summary of martin.com). Free from martin.com/en-US/firmware or inside Martin Companion.
+- What you need: Windows PC with **Martin Companion** (free) and the **Martin Companion Cable, P/N 91616091**, on the DMX line — or Martin Companion over Ethernet (martin.com lists both). No USB socket method found for the XB. The original MAC Aura used **Martin Uploader + USB Duo** instead.
+- Update steps: connect the Companion Cable (USB on the PC, DMX into the fixture's DMX in, console unplugged), open Martin Companion, find the fixture, choose the firmware, update. Exact screens: ⚠️ unverified — see [Martin common](./_martin-common.md#firmware-updates).
+- Updating a whole rig: Companion can work on many selected fixtures; per-line firmware limit not found.
+- If it fails or bricks mid-update: Not found for the XB.
+- Release notes worth knowing: **1.3.0 is needed for units built with an alternative component on the Beam LED board** (end-of-life part), and fixes **no blue on the Aura (back-light) in Extended mode at DMX address 2**. Don't load older firmware on newer-built units (⚠️ inference from that note). Firmware can add or renumber DMX modes — re-check your console patch/profile after updating.
 
 ## Road notes (community)
 - No XB-specific road notes found in searches.
@@ -149,3 +166,5 @@ Errors flash on the display, 1 s on and 1 s off. If there is more than one, each
 - [HARMAN help: Martin MAC fixture display error messages explained](https://help.harmanpro.com/en_US/general-mac-inquiries/martin-mac-fixture-display-error-messages-explained): how errors flash.
 - [Martin firmware page](https://www.martin.com/en-US/firmware): Martin Companion and cable P/N 91616091.
 - [Open Fixture Library: martin/mac-aura.json](https://github.com/OpenLightingProject/open-fixture-library/blob/master/fixtures/martin/mac-aura.json) and [QLC+ Martin-MAC-Aura.qxf](https://github.com/mcallegari/qlcplus/tree/master/resources/fixtures/Martin): original-Aura control channel and weight (community, original Aura only).
+- [Martin Companion Cable user guide](https://www.martin.com/en-US/site_elements/martin-manuals-martin-companion-cable-user-manual) — PC + Companion Desktop to fixtures over DMX/RDM, firmware upgrades
+- [MAC Aura XB product page](https://www.martin.com/en-US/products/mac-aura-xb/1000) — firmware 1.3.0 notes (via search summary)

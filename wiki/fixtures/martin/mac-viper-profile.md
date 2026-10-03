@@ -28,6 +28,15 @@ dmx:
   protocols: ["DMX"]
   modes: []
 menu_password: null
+firmware:
+  latest_known: "2.3.0B"
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["USB stick", "DMX + Martin Uploader"]
+  interface: "None for USB stick; Martin USB Duo or DABS1 USB-DMX interface"
+  software: "Martin Uploader"
+  file_type: ".BANK"
+  download: "martin.com/en-US/firmware"
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -120,7 +129,19 @@ last_updated: "2026-10-03"
 
 ## Maintenance
 - Recalibrate: enable calibration (55–59), adjust, then store (165–244). Factory calibration reset is 245–249 (Performance library).
-- Firmware update: Not found for this model. See [Martin common](./_martin-common.md).
+
+## Firmware
+- Installed version — where to see it on the fixture: Not found — check the INFORMATION menu (⚠️ unverified).
+- Latest known version (date checked) and where to download it: **2.3.0B** latest found (2026-10-03, via search summary of martin.com). martin.com also lists "MAC Viper Profile firmware v2.3.0 02-03-2016".
+- What you need: USB stick, **or** a Windows PC running **Martin Uploader** with a **Martin Universal USB Duo** or **Martin DABS1** USB-DMX interface (Viper user manuals).
+- Update steps (USB stick, Viper manuals):
+  1. Download the **.BANK** file from the Viper product support page on martin.com and read the release notes.
+  2. Copy it to the **root directory** of a USB stick.
+  3. Disconnect the data link, insert the stick. The display shows **UPDATING FILES** while the fixture checks and updates its memory from the stick. Then pick and confirm the version as on other MACs (⚠️ exact screens unverified for Viper).
+  4. **Don't switch it off during the update** — the firmware will be corrupted.
+- Updating a whole rig: USB = one at a time. Uploader over DMX: limit not found.
+- If it fails or bricks mid-update: Not found for the Viper. See the boot-mode notes on [Martin common](./_martin-common.md#firmware-updates).
+- Release notes worth knowing: **Viper Series firmware 2.0.0** was a major release with its own upload instructions (martin.com "MAC Viper Series Firmware v.2.0.0 Upload Instructions"; the procedure is in the "2.0.U Update Procedure rev B" PDF) — read it before updating units on 1.x. Firmware can add or renumber DMX modes — re-check your console patch/profile after updating.
 
 ## Road notes (community)
 - Open Fixture Library maintainers note that on the Viper Wash, **focus and zoom are 8-bit, and the manual is wrong** about that.
@@ -131,3 +152,7 @@ last_updated: "2026-10-03"
 - [Open Fixture Library: mac-viper-wash.json](https://github.com/OpenLightingProject/open-fixture-library/blob/master/fixtures/martin/mac-viper-wash.json): Wash / DX differences, 8-bit focus/zoom note. Cites [UM_MACViperWash_EN_B](https://www.martin.com/files/files/productdocuments/11_MANUALS/999/UM_MACViperWash_EN_B.pdf).
 - [QLC+ Martin fixtures](https://github.com/mcallegari/qlcplus/tree/master/resources/fixtures/Martin) (Martin-MAC-Viper-Performance.qxf, Martin-Viper-AirFX.qxf, Martin-MAC-Viper-Wash-DX.qxf): modes, wattage (1200 W), weights, lamp type.
 - Web searches for this model returned no usable manual content. The session's search budget ran out before the Viper Profile could be researched.
+- [Martin firmware page](https://www.martin.com/en-US/firmware) — latest firmware versions and update methods (via web-search summary, checked 2026-10-03)
+- [MAC Viper Profile user manual, firmware installation (manualslib p.20)](https://www.manualslib.com/manual/895954/Martin-Mac-Viper-Profile.html?page=20) and [MAC Viper Performance p.19](https://www.manualslib.com/manual/851867/Martin-Mac-Viper-Performance.html?page=19) — USB .BANK, Uploader + USB Duo / DABS1, UPDATING FILES
+- [MAC Viper Series Firmware v2.0.0 upload instructions](https://www.martin.com/en-US/software_attachments/196/download) and [2.0.U update procedure rev B](https://adn.harmanpro.com/software_attachments/software_attachments/183_1506455483/MAC_Viper_Series_2.0.U_Update_Procedure_rev_B_original.pdf) — 2.0 special procedure exists (contents not captured)
+- [MAC Viper Profile firmware v2.3.0 page](https://www.martin.com/en/softwares/mac-viper-profile-software-v2-3-0-02-03-2016) — v2.3.0 dated 02-03-2016

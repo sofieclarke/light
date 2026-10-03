@@ -15,7 +15,7 @@ last_updated: 2026-10-03
 > - **Screen went dark/locked by itself?** "Touchscreen Lock" auto-locks after the last touch — press [ENTER/Display On] to unlock.
 > - **Address with no power:** press [ENTER/Display On] — the touchscreen runs off its backup battery. Green battery icon = charged, red = flat.
 > - **See the error:** touch the warning icon or press [ESCAPE]. History: Service → Fixture Errors.
-> - **Firmware:** DSU file from robe.cz + Robe Universal Interface (DMX) or ROBE Uploader (Ethernet, several units at once). Fixture: Special → SW Upd → On. Do not interrupt.
+> - **Firmware:** DSU package from robe.cz + Robe Universal Interface (DMX) or ROBE Uploader (Ethernet/RDM, several units at once). Version: Information → Software Versions. Update mode: Service → Update Software (older: Special → SW Upd → On). Console off the line, do not interrupt. Stuck in update mode? ROBE Uploader → DSU Mode / Fix broken device with RUNIT.
 
 ## Control panel & menu navigation
 - Buttons (Robin manuals: Forte, Esprite, 600E Spot, Pointe, MegaPointe, Spiider TW, others):
@@ -61,18 +61,52 @@ Robe numbers a sensor error "1" or "2" for the two failed sensor states and puts
 
 The older-model rows come from Wash 575XT, Scan 1200 XT, Robin 300E Wash and 250 XT manuals on manualslib. Wording on current fixtures may differ. ⚠️ Check the model page.
 
-## Firmware update
-- **Files:** DSU files from robe.cz. The .zip packages are for Windows (tested XP through W10, 32/64-bit). Robe also lists Linux/macOS PCs as supported for updates.
-- **Method A – Robe Universal Interface (RUI), over DMX** (Robin Spikie manual example):
-  1. Download the DSU file and unzip it.
-  2. Disconnect the fixture from the console.
-  3. Run a DMX cable from the RUI output to the fixture's DMX input.
-  4. On the fixture: **Special → SW Upd → On** (update mode).
-  5. Run the uploader (e.g. `DSU_RobinSpikie_xxxxxxxx.exe`), pick "Robe Universal Interface", click Connect, then update.
-  6. Close other programs first. Do not interrupt the update.
-- **Method B – ROBE Uploader, over Ethernet** (TB54): cross-platform desktop app. Uses RDM, and Ethernet ports where the fixture has them. Updates several units in parallel with no RUI ("RUNIT") needed. Some fixtures (e.g. Robin ProMotion) update only this way. Put the PC on a 2.x.x.x address (e.g. 2.0.0.10).
-- Recovery after an interrupted update: Not found — fill in from the fixture or TB54.
-- Robe Toolkit: a separate Robe PC utility. Manual: User_manual_Robe_Toolkit.pdf.
+## Firmware updates
+Robe calls firmware "software". Files come as a **DSU package** (.zip) per fixture model from robe.cz. Inside is an uploader program, e.g. `DSU_RobinSpikie_xxxxxxxx.exe` (Spikie manual). No USB-stick update method was found for Robe fixtures.
+
+### Tools
+| What | Details |
+|---|---|
+| **Robe Universal Interface** ("RUNIT", RUI) | USB-to-DMX/RDM box. Replaces the old "RS232 to DMX Flashing Cable" (RUI manual). Used for DMX updates and for recovery of broken units. |
+| **RUNIT WTX** | Wireless version: adds CRMX wireless DMX/RDM. 2 DMX ports, 1 USB 2.0 port, locking 5-pin XLR, wired fixture software updates (robe.cz RUNIT WTX page). |
+| Part numbers | Not confirmed. Retailer listings show model numbers 1008 0160 and 1008 0245 for Universal Interface variants — which is which not confirmed ⚠️ unverified. |
+| **ROBE Uploader** | Robe's desktop app for automated updates (TB54). Uses the fixture's Ethernet port and/or RDM. Updates several units in parallel over Ethernet with no RUNIT needed. Switches fixtures to update mode by itself. Some fixtures (e.g. Robin ProMotion) update only this way. |
+| **DSU uploader** | The per-model program inside the DSU package, used with the RUI over DMX. |
+| **Robe Toolkit** | Separate Robe PC utility (manual: software 1.2.0, manual v2.1). Firmware role not confirmed. |
+| PC | Robe lists Windows (XP–W10, 32/64-bit tested); Linux and macOS PCs are also listed as supported. |
+| Cable | DMX cable from RUI DMX out to the fixture DMX in. Robe touchscreen fixtures generally have 5-pin XLR; some (e.g. Spiider) also have 3-pin — use a 3→5 adapter if needed (general knowledge, ⚠️ unverified). |
+
+### Check the installed version
+- Touchscreen Robins: **Information → Software Versions**. Each processor module is listed: Display System (display board in the base), Module M (pan/tilt), plus model-specific modules such as Module G (MegaPointe gobo/effects) or Module DR (Spiider LED driver). Source: Spiider and MegaPointe manuals.
+
+### Method A — Robe Universal Interface over DMX (one line)
+1. Download the DSU package for the exact model from robe.cz and unzip it. Close other programs.
+2. **Disconnect the console** from the line.
+3. RUI to the PC by USB; DMX cable from RUI DMX out to the fixture's DMX in.
+4. Put the fixture in update mode: touchscreen Robins **Service → Update Software** (Spiider manual); older displays **Special Functions → Updating Software** (RUI manual), shown as **Special → SW Upd → On** on e.g. the Spikie.
+5. Run the uploader, select **Robe Universal Interface** in the port list, Connect, start the update.
+6. Don't interrupt it. Check Information → Software Versions afterwards.
+
+### Method B — ROBE Uploader (Ethernet / RDM, many units)
+1. Ethernet: set the PC to **2.x.x.x**, e.g. 2.0.0.1, netmask **255.0.0.0** (TB54, ProMotion manual).
+2. Discover devices: **RDM automatic or manual discovery**, or build the setup on screen by hand.
+3. Select the devices and start the update. The Uploader switches them to update mode.
+4. Fixtures without Ethernet are reached over RDM through a RUNIT (TB54: "Ethernet-based update with no RUNIT required" implies the RDM route needs one).
+
+### Batch limits
+- ROBE Uploader: several units in parallel over Ethernet. Maximum number: Not found.
+- RUI over DMX: how many fixtures per line: Not found. Keep one model per line (general practice, ⚠️ unverified).
+
+### Recovery (failed / interrupted update) — TB54
+- A unit left in update mode **cannot be re-discovered automatically**. Update it by hand with **DSU Mode / "Fix broken device with RUNIT"** in ROBE Uploader: a one-to-one update through the RUNIT.
+- If a fixture restarts mid-update (e.g. power cut), fixtures with **Display System 3.0** wait in the **bootloader** for a software update on an IP address in the **10.x.x.x** range.
+
+### Gotchas
+- Disconnect the console before updating (RUI/Spikie manuals).
+- Don't power-cycle or pull cables mid-update.
+- Don't mix models on one update line (⚠️ unverified, general practice); each DSU package is model-specific.
+- Software updates can add or change DMX modes — check the release notes and your console patch/profile afterwards.
+- Update all units of a model on a rig to the same version so they behave the same (⚠️ unverified, general practice).
 
 ## Sources
 - [Robin Forte manual v3.8](https://www.robe.cz/res/downloads/user_manuals/User_manual_Robin_Forte.pdf) — 7623 password wording, button names, Address screen
@@ -89,3 +123,6 @@ The older-model rows come from Wash 575XT, Scan 1200 XT, Robin 300E Wash and 250
 - [TB54 ROBE Uploader manual v1.0.9](https://www.robelighting.de/res/downloads/tech_bulletins/TB54_ROBE_Uploader_manual_EN.pdf), [Robe Uploader page](https://www.robe.cz/robe-uploader) — Ethernet/RDM parallel update
 - [Robin ProMotion ADM manual p32](https://www.manualslib.com/manual/2067829/Robe-Robin-Promotion-Adm.html?page=32) — Ethernet-only update, 2.x.x.x LAN address
 - [Robe Toolkit manual](https://www.robe.cz/res/downloads/user_manuals/User_manual_Robe_Toolkit.pdf)
+- [RUNIT WTX page](https://www.robe.cz/runit-wtx) and [RUI WTX manual v1.1](https://www.robe.cz/res/downloads/user_manuals/User_manual_Robe_Universal_Interface_WTX.pdf) — wireless RUI, ports
+- [Robin Spiider manual v3.3](https://www.robelighting.com/res/downloads/user_manuals/User_manual_Robin_Spiider.pdf) — Information → Software Versions modules, Service → Update software
+- [Robe news: Software improvements for Robin MegaPointe](https://www.robe.cz/news/software-improvements-for-robin-megapointe-documentation-updates) — update mode via Service tab

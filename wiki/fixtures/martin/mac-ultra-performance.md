@@ -28,6 +28,15 @@ dmx:
   protocols: []
   modes: []
 menu_password: null
+firmware:
+  latest_known: "2.3.0"
+  checked: "2026-10-03"
+  check_on_fixture: "Control panel: SW VERSION / FW VERSION (exact menu path not captured)"
+  methods: ["USB stick (USB → FIRMWARE)", "DMX + Martin Companion Cable", "Ethernet (P3 System Controller)"]
+  interface: "None for USB stick; Martin Companion Cable P/N 91616091; or P3 System Controller"
+  software: "Martin Companion"
+  file_type: null
+  download: "Martin Companion (cloud) or martin.com/en-US/firmware"
 tools: []
 verification: "unverified"
 last_updated: "2026-10-03"
@@ -91,10 +100,22 @@ last_updated: "2026-10-03"
 | — | — | — |
 
 ## Maintenance
-- Firmware: Not found. See [Martin common](./_martin-common.md).
+- Recalibrate / fan / filter cleaning: Not found.
+
+## Firmware
+- Installed version — where to see it on the fixture: control-panel item **SW VERSION / FW VERSION** (user guide); exact menu path not captured.
+- Latest known version (date checked) and where to download it: **2.3.0** latest found (2026-10-03, via search summary of martin.com). Downloads from the cloud in Martin Companion.
+- What you need: USB 2.0 stick, **or** PC + Martin Companion + Companion Cable (P/N 91616091) on DMX, **or** a P3 System Controller over Ethernet (Safety and Installation Manual).
+- Update steps (USB): export the firmware from Martin Companion to a stick, disconnect the console, insert the stick, run **USB → FIRMWARE** in the control panel and confirm. The user guide has the full guide (⚠️ screen-by-screen steps not captured). **Don't switch off or remove the stick/source mid-update — the firmware will be corrupted.**
+- Updating a whole rig: P3 System Controller over Ethernet, or Companion; limit not found.
+- If it fails or bricks mid-update: Not found.
+- Release notes worth knowing: **2.0.0** added continuous gobo-wheel scrolling, an **Extended Gamut color mode** and new calibration options (via search summary). Firmware can add or renumber DMX modes — re-check your console patch/profile after updating.
 
 ## Road notes (community)
 - None found.
 
 ## Sources
 - [manualslib: Harman Martin MAC Ultra Performance User Manual](https://www.manualslib.com/manual/2079889/Harman-Martin-Mac-Ultra-Performance.html) and [p.39 of 41](https://www.manualslib.com/manual/2079889/Harman-Martin-Mac-Ultra-Performance.html?page=39): shows the manual exists and has an error-message page. No contents captured.
+- [Martin firmware page](https://www.martin.com/en-US/firmware) — latest firmware versions and update methods (via web-search summary, checked 2026-10-03)
+- [MAC Ultra Performance Safety and Installation Manual rev B](https://www.christielites.com/file_uploads/SFTY_MACUltraPerformance_EN_B.pdf) — USB / Companion / P3 update methods, don't switch off warning
+- [MAC Ultra Performance user guide](https://www.christielites.com/file_uploads/UM_MACUltraPerformance_EN_A.pdf) — USB → FIRMWARE, SW/FW VERSION

@@ -32,6 +32,15 @@ dmx:
     - { name: "Extended", channels: 89 }
     - { name: "Ludicrous", channels: 512 }
 menu_password: null
+firmware:
+  latest_known: "1.6.0"
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["USB stick", "DMX + Martin Companion Cable", "Ethernet (P3 System Controller)"]
+  interface: "None for USB stick; Martin Companion Cable P/N 91616091; or P3 System Controller"
+  software: "Martin Companion; P3 System Controller software"
+  file_type: ".BANK"
+  download: "Martin Companion (auto download) or martin.com/en-US/firmware"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -116,7 +125,19 @@ Error display behaviour is the same as other Martin MACs: flashing, and a red LE
 
 ## Maintenance
 - Recalibrate: Not found.
-- Firmware update method: Not found for this model. Martin's newer fixtures use Martin Companion (see [Martin common](./_martin-common.md)).
+
+## Firmware
+- Installed version — where to see it on the fixture: Not found — check the INFORMATION menu (⚠️ unverified).
+- Latest known version (date checked) and where to download it: **1.6.0** latest found (2026-10-03, via search summary of martin.com). The .BANK file downloads automatically inside Martin Companion.
+- What you need: USB type-A stick, **or** PC + Martin Companion + Companion Cable (P/N 91616091) on DMX, **or** a **P3 System Controller** over Ethernet. For P3 use the fixture needs **P3 System Controller software 5.1.0 or newer** (2018 P3 compliance). Martin also publishes a "P3 Personality and Firmware Update Package" (6.3.2, dated 2025-12-24 on martin.com).
+- Update steps (USB stick, PXL user guide):
+  1. Get the .BANK file from Martin Companion (or martin.com), put it in the **root directory** of the stick.
+  2. Disconnect the data link from the fixture, insert the stick in the USB port.
+  3. Select the firmware version on the display and confirm.
+  4. Don't power off or pull the stick during the update.
+- Updating a whole rig: over Ethernet from the P3 System Controller (count limit not found), or Companion over DMX.
+- If it fails or bricks mid-update: Not found.
+- Release notes worth knowing: Not captured. Firmware can add or renumber DMX modes — re-check your console patch/profile after updating.
 
 ## Road notes (community)
 - None found.
@@ -126,3 +147,5 @@ Error display behaviour is the same as other Martin MACs: flashing, and a red LE
 - [MAC Aura PXL User Manual (Full Compass)](https://www.fullcompass.com/common/files/86975-MACAuraPXLUserManual.pdf): typical and maximum current, the 32-device DMX limit, the 50-device Ethernet branch advice.
 - [MAC Aura PXL User Guide rev B (Christie Lites)](https://www.christielites.com/file_uploads/UM_MACAuraPXL_EN_B.pdf) / [manualslib](https://www.manualslib.com/manual/1976037/Harman-Martin-Mac-Aura-Pxl.html): the four DMX modes and their channel counts, P3 Mix, 141 Aura pixels, Error Messages section (p.44).
 - [Farralane listing](https://www.farralane.com/martin-professional-mac-aura-pxl-19-x-40-watt-rgbw-aura-led-moving-head-wash.html): 19x 40 W, 6–59° zoom, 2000–10000 K (reseller, unverified).
+- [Martin firmware page](https://www.martin.com/en-US/firmware) — latest firmware versions and update methods (via web-search summary, checked 2026-10-03)
+- [P3 Personality and Firmware Update Package 6.3.2](https://www.martin.com/en-US/softwares/p3-personality-and-firmware-update-package-6-3-2-v2025-12-24) — P3 package exists

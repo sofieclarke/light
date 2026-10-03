@@ -37,6 +37,15 @@ dmx:
     - { name: "Mode 2 + Atomic Colors + fan", channels: 5 }
     - { name: "Mode 3 + Atomic Colors + fan", channels: 6 }
 menu_password: null
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: []
+  interface: null
+  software: null
+  file_type: null
+  download: null
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -115,7 +124,15 @@ last_updated: "2026-10-03"
 | Breaker trips when several fire together | Too many on one circuit | 1 per circuit until amps are confirmed |
 
 ## Maintenance
-- Firmware: Not found.
+- Recalibrate / fan / filter cleaning: Not found.
+
+## Firmware
+- Installed version — where to see it on the fixture: Not found for the xenon Atomic 3000 DMX.
+- Latest known version (date checked) and where to download it: Not found for the xenon Atomic 3000 DMX (2026-10-03).
+- **Atomic 3000 LED** (different fixture): latest found **1.4.0** (2026-10-03, via search summary of martin.com; martin.com also has a v1.1.0 page). Update by **USB type-A memory stick** or over DMX with **Martin Companion + Companion Cable (P/N 91616091)**. Don't switch it off during an update.
+- What you need / steps / rig updates: see [Martin common](./_martin-common.md#firmware-updates).
+- If it fails or bricks mid-update: Not found.
+- Release notes worth knowing: Not captured.
 
 ## Road notes (community)
 - None captured (search budget ran out).
@@ -132,3 +149,5 @@ last_updated: "2026-10-03"
 ## Sources
 - [Open Fixture Library: atomic-3000.json](https://github.com/OpenLightingProject/open-fixture-library/blob/master/fixtures/martin/atomic-3000.json): 1/3/4-ch modes, 3-pin + 5-pin, 7.5 kg, dims. Cites [UM_Atomic3000DMX_EN_G](https://www.martin.com/files/files/productdocuments/11_MANUALS/999/35000094G%20UM_Atomic3000DMX_EN_G.pdf).
 - [QLC+ Martin-Atomic-3000.qxf and Martin-Atomic-3000-LED.qxf](https://github.com/mcallegari/qlcplus/tree/master/resources/fixtures/Martin): nine modes with Colour/Fan, effects, Atomic Colors and fan channel values, Atomic 3000 LED modes, control channel, 740 W.
+- [Martin firmware page](https://www.martin.com/en-US/firmware) — latest firmware versions and update methods (via web-search summary, checked 2026-10-03)
+- [Atomic 3000 LED product page](https://www.martin.com/en-US/products/atomic-3000-led) and [Atomic 3000 LED firmware v1.1.0](https://www.martin.com/en/softwares/atomic-3000-led-firmware-v1-1-0) — LED version update by USB or Companion Cable
