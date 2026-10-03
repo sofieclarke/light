@@ -36,6 +36,20 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "V4.0.7",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Fixture Information → Display Ver (also Drv-Y, LED-A, LED-C and Net Ver)",
+      "methods": [
+        "USB stick",
+        "USB stick + DMX to other fixtures (Multiple Fixture)",
+        "Web server ⚠️"
+      ],
+      "interface": null,
+      "software": null,
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/COLORSTRIKEMV2"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -137,6 +151,20 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V1.260709",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Firmware Version (README says 'Fixture Information'); also shown on the web server page",
+      "methods": [
+        "USB stick (USB-C)",
+        "Web server (Ethernet)",
+        "DMX cable + UPLOAD 08 (recovery)"
+      ],
+      "interface": null,
+      "software": "Web browser (fixture web server, admin/admin)",
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/COLORADOPXLBAR16"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -228,6 +256,20 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V1.250911",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Firmware Version (README says 'Fixture Information')",
+      "methods": [
+        "USB stick (USB-C)",
+        "Web server (Ethernet) ⚠️",
+        "DMX cable + UPLOAD 08 (recovery)"
+      ],
+      "interface": null,
+      "software": null,
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/COLORADOPXLBAR8"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -324,6 +366,20 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V1.251029",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Firmware Version (README says 'Fixture Information')",
+      "methods": [
+        "USB stick (USB-C)",
+        "Web server (Ethernet)",
+        "DMX cable + UPLOAD 08 (recovery)"
+      ],
+      "interface": null,
+      "software": "Web browser (fixture web server)",
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/COLORADOPXLCURVE12"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -367,6 +423,20 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "V1.240826",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Fixture Information → firmware version",
+      "methods": [
+        "USB stick",
+        "USB stick + DMX daisy chain (multi-unit)",
+        "DMX cable + UPLOAD 08 (recovery)"
+      ],
+      "interface": null,
+      "software": null,
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/MAVERICKFORCESSPOT"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -426,6 +496,19 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V2.210608",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Fixture Information (firmware strings; exact field not confirmed)",
+      "methods": [
+        "DMX cable + UPLOAD 08",
+        "Web server (Ethernet)"
+      ],
+      "interface": "Chauvet UPLOAD 08",
+      "software": "UPLOAD 08 PC software (Windows) or web browser (admin/admin)",
+      "file_type": ".cl / .rar-packed (see page)",
+      "download": "https://github.com/Chauvet-Pro/MAVERICKMK3SPOT"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -516,6 +599,19 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "V9.211118",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Fixture Information → Ver",
+      "methods": [
+        "DMX cable + UPLOAD 08",
+        "Web server (Ethernet)"
+      ],
+      "interface": "Chauvet UPLOAD 08",
+      "software": "UPLOAD 08 PC software (Windows) or web browser",
+      "file_type": ".chl (older files .cl)",
+      "download": "https://github.com/Chauvet-Pro/MAVERICKMK3WASH"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -596,6 +692,19 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V1.251216",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Ver",
+      "methods": [
+        "USB stick (USB-C)",
+        "DMX cable + UPLOAD 08 (recovery)"
+      ],
+      "interface": null,
+      "software": null,
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/ROGUEOUTCAST1BEAMWASH"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -683,6 +792,19 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V1.260610",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Ver",
+      "methods": [
+        "USB stick (USB-C)",
+        "DMX cable + UPLOAD 08 (recovery)"
+      ],
+      "interface": null,
+      "software": null,
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/ROGUEOUTCAST2XWASH"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -739,6 +861,19 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V1.241025",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Ver",
+      "methods": [
+        "USB stick (USB-C)",
+        "DMX cable + UPLOAD 08 (recovery)"
+      ],
+      "interface": null,
+      "software": null,
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/ROGUEOUTCAST3SPOT"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -795,6 +930,18 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V4.231211",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Ver",
+      "methods": [
+        "DMX cable + UPLOAD 08"
+      ],
+      "interface": "Chauvet UPLOAD 08",
+      "software": "UPLOAD 08 PC software (Windows)",
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/ROGUER2XSPOT"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -882,6 +1029,18 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V1.250715",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Ver",
+      "methods": [
+        "DMX cable + UPLOAD 08"
+      ],
+      "interface": "Chauvet UPLOAD 08",
+      "software": "UPLOAD 08 PC software (Windows)",
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/ROGUER2XWASH"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -935,6 +1094,18 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V3.230807",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Ver",
+      "methods": [
+        "DMX cable + UPLOAD 08"
+      ],
+      "interface": "Chauvet UPLOAD 08",
+      "software": "UPLOAD 08 PC software (Windows)",
+      "file_type": ".chl (older files .cl)",
+      "download": "https://github.com/Chauvet-Pro/ROGUER3SPOT"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1014,6 +1185,18 @@
       ]
     },
     "menu_password": "2323",
+    "firmware": {
+      "latest_known": "V1.250331",
+      "checked": "2026-10-03",
+      "check_on_fixture": "MENU → Sys Info → Ver",
+      "methods": [
+        "DMX cable + UPLOAD 08"
+      ],
+      "interface": "Chauvet UPLOAD 08",
+      "software": "UPLOAD 08 PC software (Windows)",
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/ROGUER3XWASH"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1057,6 +1240,19 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "V1.3.0",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Fixture Information",
+      "methods": [
+        "USB stick (USB-C)",
+        "USB stick + DMX to other fixtures (Multiple Fixture)"
+      ],
+      "interface": null,
+      "software": null,
+      "file_type": ".chl",
+      "download": "https://github.com/Chauvet-Pro/STRIKEARRAY4"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -1121,6 +1317,20 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found — likely the Information menu ⚠️",
+      "methods": [
+        "Fixture-to-fixture over DMX (Upload Firmware)",
+        "PC + Claypaky Firmware Uploader USB/DMX interface ⚠️",
+        "CloudIO Box + USB stick ⚠️ compatibility unverified"
+      ],
+      "interface": "None for fixture-to-fixture; Claypaky Firmware Uploader USB/DMX interface ⚠️ for PC updates",
+      "software": "Claypaky FUL Uploader ⚠️ (name from a Claypaky video title)",
+      "file_type": ".img (CloudIO USB-stick update); other methods: Not found",
+      "download": "Claypaky Customer Care site (service.claypaky.it, restricted login) — ask your Claypaky distributor / rental house"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -1176,6 +1386,20 @@
       ]
     },
     "menu_password": "1234",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information menu → system version ⚠️ (Sharpy-family menu name)",
+      "methods": [
+        "Fixture-to-fixture over DMX (Advanced → Upload Firmware, code 1234)",
+        "PC + Claypaky Firmware Uploader USB/DMX interface ⚠️",
+        "CloudIO Box + USB stick ⚠️ compatibility unverified"
+      ],
+      "interface": "None for fixture-to-fixture; Claypaky Firmware Uploader USB/DMX interface (C61206) for PC updates ⚠️",
+      "software": "Claypaky FUL Uploader ⚠️ (name from a Claypaky video title)",
+      "file_type": ".img (CloudIO USB-stick update); other methods: Not found",
+      "download": "Claypaky Customer Care site (service.claypaky.it, restricted login) — ask your Claypaky distributor / rental house"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1229,6 +1453,20 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found — likely the Information menu ⚠️",
+      "methods": [
+        "Fixture-to-fixture over DMX (Upload Firmware)",
+        "PC + Claypaky Firmware Uploader USB/DMX interface ⚠️",
+        "CloudIO Box + USB stick ⚠️ compatibility unverified"
+      ],
+      "interface": "None for fixture-to-fixture; Claypaky Firmware Uploader USB/DMX interface ⚠️ for PC updates",
+      "software": "Claypaky FUL Uploader ⚠️ (name from a Claypaky video title)",
+      "file_type": ".img (CloudIO USB-stick update); other methods: Not found",
+      "download": "Claypaky Customer Care site (service.claypaky.it, restricted login) — ask your Claypaky distributor / rental house"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -1282,6 +1520,21 @@
       ]
     },
     "menu_password": "1234",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information menu → system version ⚠️ (Sharpy-family menu name, not confirmed on the Plus)",
+      "methods": [
+        "Fixture-to-fixture over DMX (Advanced → Upload Firmware, code 1234)",
+        "Web Server over Ethernet (RJ45)",
+        "PC + Claypaky Firmware Uploader USB/DMX interface ⚠️",
+        "CloudIO Box + USB stick ⚠️ compatibility unverified"
+      ],
+      "interface": "None for fixture-to-fixture or Web Server; Claypaky Firmware Uploader USB/DMX interface (C61206) for PC-over-DMX ⚠️",
+      "software": "Web browser (built-in web server); Claypaky FUL Uploader ⚠️",
+      "file_type": ".img (CloudIO USB-stick update); other methods: Not found",
+      "download": "Claypaky Customer Care site (service.claypaky.it, restricted login) — ask your Claypaky distributor / rental house"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1332,6 +1585,20 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found — likely the Information menu ⚠️",
+      "methods": [
+        "Web Server over Ethernet (RJ45)",
+        "Fixture-to-fixture over DMX (Advanced → Upload Firmware) ⚠️ family pattern",
+        "CloudIO Box + USB stick ⚠️ compatibility unverified"
+      ],
+      "interface": "None for Web Server; Claypaky Firmware Uploader USB/DMX interface ⚠️ for PC-over-DMX",
+      "software": "Web browser (built-in web server); Claypaky FUL Uploader ⚠️",
+      "file_type": ".img (CloudIO USB-stick update); other methods: Not found",
+      "download": "Claypaky Customer Care site (service.claypaky.it, restricted login) — ask your Claypaky distributor / rental house"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -1387,6 +1654,20 @@
       ]
     },
     "menu_password": "1234",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → System Version",
+      "methods": [
+        "Fixture-to-fixture over DMX (Advanced → Upload Firmware, code 1234)",
+        "PC + Claypaky Firmware Uploader USB/DMX interface ⚠️",
+        "CloudIO Box + USB stick ⚠️ compatibility unverified"
+      ],
+      "interface": "None for fixture-to-fixture; Claypaky Firmware Uploader USB/DMX interface (C61206) for PC updates ⚠️",
+      "software": "Claypaky FUL Uploader ⚠️ (name from a Claypaky video title)",
+      "file_type": ".img (CloudIO USB-stick update); other methods: Not found",
+      "download": "Claypaky Customer Care site (service.claypaky.it, restricted login) — ask your Claypaky distributor / rental house"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1440,6 +1721,20 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found — likely the Information menu ⚠️",
+      "methods": [
+        "Fixture-to-fixture over DMX (Upload Firmware)",
+        "Web Server over Ethernet",
+        "CloudIO Box + USB stick ⚠️ compatibility unverified"
+      ],
+      "interface": "None for fixture-to-fixture or Web Server; Claypaky Firmware Uploader USB/DMX interface ⚠️ for PC-over-DMX",
+      "software": "Web browser (built-in web server); Claypaky FUL Uploader ⚠️",
+      "file_type": ".img (CloudIO USB-stick update); other methods: Not found",
+      "download": "Claypaky Customer Care site (service.claypaky.it, restricted login) — ask your Claypaky distributor / rental house"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1500,6 +1795,18 @@
       ]
     },
     "menu_password": "050",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "E-LOADER III over 3-pin DMX (Elation's general method, not confirmed for this model)"
+      ],
+      "interface": "Elation E-LOADER III (ELO601)",
+      "software": null,
+      "file_type": null,
+      "download": null
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1557,6 +1864,18 @@
       ]
     },
     "menu_password": "050",
+    "firmware": {
+      "latest_known": "V1.8.1",
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "E-LOADER III over 3-pin DMX"
+      ],
+      "interface": "Elation E-LOADER III (ELO601)",
+      "software": null,
+      "file_type": null,
+      "download": "https://forums.elationlighting.com/topic/proteus-maximus-firmware?nc=1"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1608,6 +1927,19 @@
       ]
     },
     "menu_password": "038",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "USB stick in the UPDATE/SERVICE PORT",
+        "E-LOADER III over 3-pin DMX"
+      ],
+      "interface": null,
+      "software": null,
+      "file_type": null,
+      "download": null
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1671,6 +2003,21 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "v4.0.2 (CPU3) / v3.0.0 (CPU2)",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Shown on the display while the fixture boots",
+      "methods": [
+        "UpdaterAtor + ETC USB/DMX Gadget or Gadget II",
+        "UpdaterAtor + ETC USB/DMX Service Cable",
+        "UpdaterAtor + ETC Net3 / DMX-RDM gateway",
+        "Fixture-to-fixture push (same CPU type only)"
+      ],
+      "interface": "ETC USB/DMX Gadget or Gadget II (4267A1001 / 4267A1004)",
+      "software": "ETC UpdaterAtor (Windows only)",
+      "file_type": null,
+      "download": "Inside UpdaterAtor (Setup Versions → Download All Latest Software), or etcconnect.com"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -1751,6 +2098,19 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "v1.8.2",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Shown on the display at power-up",
+      "methods": [
+        "UpdaterAtor + ETC USB/DMX Gadget or Gadget II",
+        "UpdaterAtor + ETC Net3 gateway (One, Two or Four Port)"
+      ],
+      "interface": "ETC USB/DMX Gadget or Gadget II (4267A1001 / 4267A1004), or a Net3 gateway",
+      "software": "ETC UpdaterAtor (Windows only)",
+      "file_type": null,
+      "download": "Inside UpdaterAtor, or the Source Four LED Series 2 documentation page on etcconnect.com"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -1824,6 +2184,19 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "v1.3.0",
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "USB drive (Local Settings > USB > Update Firmware)",
+        "UpdaterAtor + ETC USB/DMX Gadget or Net3 gateway"
+      ],
+      "interface": null,
+      "software": "ETC UpdaterAtor (optional; Windows only)",
+      "file_type": null,
+      "download": "etcconnect.com (Source Four LED Series 3 Fixture Software release notes) or UpdaterAtor"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -1871,6 +2244,16 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": null,
+      "check_on_fixture": null,
+      "methods": [],
+      "interface": null,
+      "software": null,
+      "file_type": null,
+      "download": null
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -1913,6 +2296,18 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "V64 (Rev20230526-1)",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found",
+      "methods": [
+        "DMX link with GLP D3Prog / D-Prog"
+      ],
+      "interface": "GLP D3Prog (USB/Sub-D 9 to PC; 5-pin + 3-pin XLR out)",
+      "software": "D3Prog PC transfer (software name not found)",
+      "file_type": ".hex (Intel hex) or .bin, depending on firmware version ⚠️",
+      "download": "glp.de product page → Downloads, or GLP iQ.Service Portal; also germanlightproducts.com/downloads"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -1954,6 +2349,19 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "V53 (Rev20200203)",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found",
+      "methods": [
+        "DMX link with GLP D3Prog",
+        "GLP iQ.Service"
+      ],
+      "interface": "GLP D3Prog (USB/Sub-D 9 to PC; 5-pin + 3-pin XLR out)",
+      "software": "D3Prog PC transfer (software name not found); GLP iQ.Service",
+      "file_type": ".hex (Intel hex) or .bin, depending on firmware version ⚠️",
+      "download": "glp.de product page → Downloads, or GLP iQ.Service Portal; also germanlightproducts.com/downloads"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -2026,6 +2434,18 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found (manual refers to main software v0.60 and a separate Tilt firmware V.20)",
+      "methods": [
+        "DMX link with GLP D3Prog ⚠️ (GLP's standard tool; not confirmed for this model)"
+      ],
+      "interface": "GLP D3Prog (USB/Sub-D 9 to PC; 5-pin + 3-pin XLR out) ⚠️",
+      "software": "D3Prog PC transfer (software name not found)",
+      "file_type": ".hex (Intel hex) or .bin, depending on firmware version ⚠️",
+      "download": "glp.de product page → Downloads, or GLP iQ.Service Portal; also germanlightproducts.com/downloads"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -2075,6 +2495,19 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found — the manual is labelled 'from software version 1.18/18/12/10/n'",
+      "methods": [
+        "DMX link with GLP D3Prog ⚠️",
+        "GLP iQ.Service Portal (X4 L file source)"
+      ],
+      "interface": "GLP D3Prog (USB/Sub-D 9 to PC; 5-pin + 3-pin XLR out) ⚠️",
+      "software": "D3Prog PC transfer (software name not found)",
+      "file_type": ".hex (Intel hex) or .bin, depending on firmware version ⚠️",
+      "download": "glp.de product page → Downloads, or GLP iQ.Service Portal; also germanlightproducts.com/downloads"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -2116,6 +2549,21 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "1.1.3",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found — check the fixture's information menu ⚠️",
+      "methods": [
+        "DMX link with GLP D3Prog",
+        "GLP iQ.Service (app / onboard iQ.Service module)",
+        "Internal web interface",
+        "Firmware Push (Fixture2Fixture) over DMX"
+      ],
+      "interface": "GLP D3Prog, or none (iQ.Service app / web interface / Firmware Push)",
+      "software": "GLP iQ.Service App; web browser (internal web interface)",
+      "file_type": null,
+      "download": "glp.de product page → Downloads, or GLP iQ.Service Portal; also germanlightproducts.com/downloads"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -2158,6 +2606,18 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "1.0.0",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Not found",
+      "methods": [
+        "DMX link with GLP D3Prog"
+      ],
+      "interface": "GLP D3Prog (USB/Sub-D 9 to PC; 5-pin + 3-pin XLR out)",
+      "software": "D3Prog PC transfer (software name not found)",
+      "file_type": ".hex (Intel hex) or .bin, depending on firmware version ⚠️",
+      "download": "glp.de product page → Downloads, or GLP iQ.Service Portal; also germanlightproducts.com/downloads"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -2233,6 +2693,19 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "1.95",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → SW/HW versions (main and distributed)",
+      "methods": [
+        "DMX link with GLP D3Prog",
+        "GLP iQ.Service Portal (file source) ⚠️"
+      ],
+      "interface": "GLP D3Prog (USB/Sub-D 9 to PC; 5-pin + 3-pin XLR out)",
+      "software": "D3Prog PC transfer (software name not found)",
+      "file_type": ".bin (3 driver files, updated in sequence) ⚠️",
+      "download": "glp.de product page → Downloads, or GLP iQ.Service Portal; also germanlightproducts.com/downloads"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -2318,6 +2791,16 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [],
+      "interface": null,
+      "software": null,
+      "file_type": null,
+      "download": null
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -2372,6 +2855,20 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "2.0.0",
+      "checked": "2026-10-03",
+      "check_on_fixture": "INFORMATION → SW VERSION",
+      "methods": [
+        "USB stick",
+        "DMX + Martin Companion Cable",
+        "Network (Martin Companion)"
+      ],
+      "interface": "None for USB stick; Martin Companion Cable P/N 91616091",
+      "software": "Martin Companion",
+      "file_type": null,
+      "download": "Martin Companion or martin.com/en-US/firmware"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -2434,6 +2931,20 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "1.6.0",
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "USB stick",
+        "DMX + Martin Companion Cable",
+        "Ethernet (P3 System Controller)"
+      ],
+      "interface": "None for USB stick; Martin Companion Cable P/N 91616091; or P3 System Controller",
+      "software": "Martin Companion; P3 System Controller software",
+      "file_type": ".BANK",
+      "download": "Martin Companion (auto download) or martin.com/en-US/firmware"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -2488,6 +2999,19 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "1.3.0",
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "DMX + Martin Companion Cable",
+        "Ethernet (Martin Companion)"
+      ],
+      "interface": "Martin Companion Cable P/N 91616091",
+      "software": "Martin Companion",
+      "file_type": null,
+      "download": "martin.com/en-US/firmware or Martin Companion"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -2544,6 +3068,20 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "1.6.1",
+      "checked": "2026-10-03",
+      "check_on_fixture": "INFORMATION menu (⚠️ unverified for Encore)",
+      "methods": [
+        "USB stick",
+        "DMX + Uploader and M-DMX (legacy)",
+        "DMX + Martin Companion Cable"
+      ],
+      "interface": "None for USB stick; Martin M-DMX (legacy) or Martin Companion Cable P/N 91616091",
+      "software": "Martin Companion (older: Uploader in Martin DMX Tools)",
+      "file_type": ".BANK",
+      "download": "martin.com/en-US/firmware or Martin Companion"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -2586,6 +3124,20 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "2.2.0",
+      "checked": "2026-10-03",
+      "check_on_fixture": "INFORMATION menu",
+      "methods": [
+        "USB stick",
+        "DMX + Martin Uploader (legacy)",
+        "DMX + Martin Companion Cable"
+      ],
+      "interface": "None for USB stick; Martin Companion Cable P/N 91616091 for DMX",
+      "software": "Martin Companion (older: Martin Uploader)",
+      "file_type": ".BANK",
+      "download": "martin.com/en-US/firmware or Martin Companion"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -2628,6 +3180,20 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "2.3.0",
+      "checked": "2026-10-03",
+      "check_on_fixture": "Control panel: SW VERSION / FW VERSION (exact menu path not captured)",
+      "methods": [
+        "USB stick (USB → FIRMWARE)",
+        "DMX + Martin Companion Cable",
+        "Ethernet (P3 System Controller)"
+      ],
+      "interface": "None for USB stick; Martin Companion Cable P/N 91616091; or P3 System Controller",
+      "software": "Martin Companion",
+      "file_type": null,
+      "download": "Martin Companion (cloud) or martin.com/en-US/firmware"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -2676,6 +3242,19 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "2.3.0B",
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "USB stick",
+        "DMX + Martin Uploader"
+      ],
+      "interface": "None for USB stick; Martin USB Duo or DABS1 USB-DMX interface",
+      "software": "Martin Uploader",
+      "file_type": ".BANK",
+      "download": "martin.com/en-US/firmware"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -2726,6 +3305,16 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [],
+      "interface": null,
+      "software": null,
+      "file_type": null,
+      "download": null
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -2773,6 +3362,18 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "V5.16.24",
+      "checked": "2026-10-03",
+      "check_on_fixture": "AsteraApp → Connected Lights view → Firmware Version sorting mode",
+      "methods": [
+        "AsteraApp background update over Bluetooth via ART7 AsteraBox"
+      ],
+      "interface": "Astera ART7 AsteraBox",
+      "software": "AsteraApp (iOS / Android)",
+      "file_type": null,
+      "download": "Delivered by AsteraApp (release notes: https://update.astera-led.com/firmwares/current/release_notes.html)"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -2861,6 +3462,18 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": "V5.16.24",
+      "checked": "2026-10-03",
+      "check_on_fixture": "AsteraApp → Connected Lights view → Firmware Version sorting mode",
+      "methods": [
+        "AsteraApp background update over Bluetooth via ART7 AsteraBox"
+      ],
+      "interface": "Astera ART7 AsteraBox",
+      "software": "AsteraApp (iOS / Android)",
+      "file_type": null,
+      "download": "Delivered by AsteraApp (release notes: https://update.astera-led.com/firmwares/current/release_notes.html)"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -2911,6 +3524,16 @@
       "modes": []
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": null,
+      "check_on_fixture": null,
+      "methods": [],
+      "interface": null,
+      "software": null,
+      "file_type": null,
+      "download": null
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -2962,6 +3585,16 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [],
+      "interface": null,
+      "software": null,
+      "file_type": null,
+      "download": null
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -3021,6 +3654,18 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "USB A-to-B to a Windows PC during the 4-second \"Testing BootLoad\" window at power-up"
+      ],
+      "interface": "USB A-to-B cable",
+      "software": "Package from MDG Service",
+      "file_type": null,
+      "download": "MDG Service (not a public download)"
+    },
     "tools": [],
     "verification": "manual-verified",
     "last_updated": "2026-10-03",
@@ -3099,6 +3744,18 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "SGM Firmware Tool + SGM USB-to-5-pin-XLR uploader cable"
+      ],
+      "interface": "SGM USB 5-pin XLR uploader cable",
+      "software": "SGM Firmware Tool (Windows)",
+      "file_type": null,
+      "download": "sgmlight.com (P-5 product downloads)"
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -3191,6 +3848,18 @@
       ]
     },
     "menu_password": null,
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": null,
+      "methods": [
+        "Upload menu: cross-load from one Flare to others on the DMX line (password 111)"
+      ],
+      "interface": null,
+      "software": null,
+      "file_type": null,
+      "download": null
+    },
     "tools": [],
     "verification": "community",
     "last_updated": "2026-10-03",
@@ -3235,6 +3904,19 @@
       "modes": []
     },
     "menu_password": "7623",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → Software Versions",
+      "methods": [
+        "DMX + Robe Universal Interface",
+        "ROBE Uploader (Ethernet / RDM)"
+      ],
+      "interface": "Robe Universal Interface (RUNIT); none for ROBE Uploader over Ethernet",
+      "software": "ROBE Uploader; DSU uploader (in the DSU package)",
+      "file_type": "DSU package (.zip)",
+      "download": "robe.cz product page"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -3276,6 +3958,19 @@
       "modes": []
     },
     "menu_password": "7623",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → Software Versions",
+      "methods": [
+        "DMX + Robe Universal Interface",
+        "ROBE Uploader (Ethernet / RDM)"
+      ],
+      "interface": "Robe Universal Interface (RUNIT); none for ROBE Uploader over Ethernet",
+      "software": "ROBE Uploader; DSU uploader (in the DSU package)",
+      "file_type": "DSU package (.zip)",
+      "download": "robe.cz product page"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -3317,6 +4012,19 @@
       "modes": []
     },
     "menu_password": "7623",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → Software Versions",
+      "methods": [
+        "DMX + Robe Universal Interface",
+        "ROBE Uploader (Ethernet / RDM)"
+      ],
+      "interface": "Robe Universal Interface (RUNIT); none for ROBE Uploader over Ethernet",
+      "software": "ROBE Uploader; DSU uploader (in the DSU package)",
+      "file_type": "DSU package (.zip)",
+      "download": "robe.cz product page"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -3359,6 +4067,19 @@
       "modes": []
     },
     "menu_password": "7623",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → Software Versions",
+      "methods": [
+        "DMX + Robe Universal Interface",
+        "ROBE Uploader (Ethernet / RDM)"
+      ],
+      "interface": "Robe Universal Interface (RUNIT); none for ROBE Uploader over Ethernet",
+      "software": "ROBE Uploader; DSU uploader (in the DSU package)",
+      "file_type": "DSU package (.zip)",
+      "download": "robe.cz product page"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -3401,6 +4122,19 @@
       "modes": []
     },
     "menu_password": "7623",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → Software Versions",
+      "methods": [
+        "DMX + Robe Universal Interface",
+        "ROBE Uploader (Ethernet / RDM)"
+      ],
+      "interface": "Robe Universal Interface (RUNIT); none for ROBE Uploader over Ethernet",
+      "software": "ROBE Uploader; DSU uploader (in the DSU package)",
+      "file_type": "DSU package (.zip)",
+      "download": "robe.cz product page"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -3460,6 +4194,19 @@
       ]
     },
     "menu_password": "7623",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → Software Versions",
+      "methods": [
+        "DMX + Robe Universal Interface",
+        "ROBE Uploader (Ethernet / RDM)"
+      ],
+      "interface": "Robe Universal Interface (RUNIT); none for ROBE Uploader over Ethernet",
+      "software": "ROBE Uploader; DSU uploader (in the DSU package)",
+      "file_type": "DSU package (.zip)",
+      "download": "robe.cz product page"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",
@@ -3500,6 +4247,19 @@
       "modes": []
     },
     "menu_password": "7623",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → Software Versions",
+      "methods": [
+        "DMX + Robe Universal Interface",
+        "ROBE Uploader (Ethernet / RDM)"
+      ],
+      "interface": "Robe Universal Interface (RUNIT); none for ROBE Uploader over Ethernet",
+      "software": "ROBE Uploader; DSU uploader (in the DSU package)",
+      "file_type": "DSU package (.zip)",
+      "download": "robe.cz product page"
+    },
     "tools": [],
     "verification": "unverified",
     "last_updated": "2026-10-03",
@@ -3586,6 +4346,19 @@
       ]
     },
     "menu_password": "7623",
+    "firmware": {
+      "latest_known": null,
+      "checked": "2026-10-03",
+      "check_on_fixture": "Information → Software Versions",
+      "methods": [
+        "DMX + Robe Universal Interface",
+        "ROBE Uploader (Ethernet / RDM)"
+      ],
+      "interface": "Robe Universal Interface (RUNIT); none for ROBE Uploader over Ethernet",
+      "software": "ROBE Uploader; DSU uploader (in the DSU package)",
+      "file_type": "DSU package (.zip)",
+      "download": "robe.cz product page"
+    },
     "tools": [],
     "verification": "web-search",
     "last_updated": "2026-10-03",

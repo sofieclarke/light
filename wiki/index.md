@@ -4,7 +4,7 @@
 
 Search tip: in Obsidian or any Markdown app, search the fixture nickname (e.g. `outcast 2x`). Every page lists its aliases.
 
-Reference pages: [Power math](reference/power-math.md) · [DMX troubleshooting](reference/dmx-troubleshooting.md) · [Moving light troubleshooting](reference/moving-light-troubleshooting.md) · [Connectors & pinouts](reference/connectors-and-pinouts.md) · [Tool kit](reference/tool-kit.md) · [Passwords](passwords.md) · [Comparison table](comparison.md) · [Research status](research-status.md)
+Reference pages: [Power math](reference/power-math.md) · [DMX troubleshooting](reference/dmx-troubleshooting.md) · [Moving light troubleshooting](reference/moving-light-troubleshooting.md) · [Connectors & pinouts](reference/connectors-and-pinouts.md) · [Tool kit](reference/tool-kit.md) · [Firmware updates](reference/firmware-updates.md) · [Passwords](passwords.md) · [Firmware table](firmware.md) · [Comparison table](comparison.md) · [Research status](research-status.md)
 
 ## Antari
 
@@ -141,6 +141,8 @@ Reference pages: [Power math](reference/power-math.md) · [DMX troubleshooting](
 - [chauvet common](fixtures/chauvet/_chauvet-common.md)
 - [claypaky common](fixtures/claypaky/_claypaky-common.md)
 - [elation common](fixtures/elation/_elation-common.md)
+- [etc common](fixtures/etc/_etc-common.md)
 - [glp common](fixtures/glp/_glp-common.md)
 - [martin common](fixtures/martin/_martin-common.md)
+- [misc common](fixtures/misc/_misc-common.md)
 - [robe common](fixtures/robe/_robe-common.md)

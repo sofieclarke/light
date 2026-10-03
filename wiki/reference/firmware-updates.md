@@ -20,7 +20,7 @@ How firmware updates work in general, and what to bring. **Each fixture page has
 
 | Maker | Usual method | Hardware | Software | Details |
 |---|---|---|---|---|
-| Chauvet Professional | USB stick (newer) or DMX cable | UPLOAD 08 (USB-to-DMX) | Chauvet uploader | [Chauvet common](../fixtures/chauvet/_chauvet-common.md) |
+| Chauvet Professional | USB stick (Outcast, PXL, Force S: FAT32 ≤ 32 GB, .CHL in root); web server (PXL Bar 16 / Curve 12, MK3); DMX via UPLOAD 08 (R2X/R3, MK3); STRIKE: fixture-to-fixture menu | UPLOAD 08 (USB-to-DMX, 3- and 5-pin), ≤ 10 same-model units per pass | UPLOAD 08 Windows app; files at github.com/Chauvet-Pro/&lt;MODEL&gt; | [Chauvet common](../fixtures/chauvet/_chauvet-common.md) |
 | Robe | DMX/RDM via interface, or Ethernet (several at once) | Robe Universal Interface (RUNIT / WTX) | ROBE Uploader (DSU package from robe.cz); PC on 2.x.x.x for Ethernet | [Robe common](../fixtures/robe/_robe-common.md) |
 | Martin | USB stick (.BANK in root → SERVICE → USB) on newer fixtures; DMX/RDM | Companion Cable P/N 91616091; older: USB Duo / DABS1 | Martin Companion Desktop (Windows); older: Martin Uploader; P3 controller for Aura PXL / Ultra | [Martin common](../fixtures/martin/_martin-common.md) |
 | Claypaky | Fixture-to-fixture (Advanced → 1234 → Upload Firmware, same model), CloudIO box (USB stick, .img), web server, PC | CloudIO Box CA8001, or Claypaky USB/DMX uploader | Files from Claypaky Customer Care | [Claypaky common](../fixtures/claypaky/_claypaky-common.md) |

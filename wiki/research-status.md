@@ -18,7 +18,8 @@ Chauvet Rogue Outcast 2X Wash, Outcast 1 BeamWash, Outcast 3 Spot, COLORado PXL 
 4. **Screw and bit sizes:** almost all TBD. Measure on real fixtures; nobody else has this.
 5. **Error-code tables:** missing for most fixtures (manuals have them; search didn't surface them).
 6. **Photos:** none yet (rear panels, omega brackets, transport locks, safety points, packed cases).
-7. **Road notes:** few forum or Reddit notes found. Add your own.
+7. **Firmware:** every page has a Firmware section. Chauvet versions and release notes come straight from Chauvet's GitHub (solid). Martin, GLP, ETC, Elation and Astera versions come from search summaries. No version numbers found for Robe or Claypaky. Recovery steps are missing for most non-Chauvet fixtures.
+8. **Road notes:** few forum or Reddit notes found. Add your own.
 
 ## Known conflicts to settle
 - Chauvet link limits: this wiki reads them as the total on one feed (matches the 12 A cap). Confirm with Chauvet tech support.
