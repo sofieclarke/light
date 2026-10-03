@@ -20,8 +20,8 @@ power:
   link_max_120v: 3
   link_max_208v: 6
   link_max_230v: 7
-  per_20a_120v: 4
-  per_20a_208v: 7
+  per_20a_120v: 3
+  per_20a_208v: 6
   fuse: "F8A (8 A) in FH15-22A holder, per Chauvet BOM"
 dmx:
   connectors: "5-pin XLR IP65 in/out"
@@ -45,7 +45,7 @@ last_updated: "2026-10-03"
 
 > **2AM CARD** — the stuff you need first
 > - **Password / menu lock:** **2323**. **Hold MENU** on the main screen → passcode screen. **UP** raises the digit, **DOWN** goes to the next digit → **ENTER**. This opens Offset / Zero Adjust.
-> - **Power:** 3.25 A @120 V / 1.92 A @208 V → **4 per 20 A circuit @120 V, 7 @208 V**. Manual's link limit is 3 @120 V, 6 @208 V and 7 @230 V, with a 12 A max.
+> - **Power:** 3.25 A @120 V / 1.92 A @208 V → **3 per circuit @120 V, 6 @208 V** (Chauvet link limit, counted as the total on one feed; 12 A max).
 > - **DMX:** 15 / 24 / 30 / 64 / 111 / 135 ch in the manual. Firmware also has 37CH and 54CH. Address: MENU → Address → 001–512.
 > - **Won't move?** No transport-lock parts in the BOM ⚠️. Try a Reset Function → Pan/Tilt. LEDs stay dark for about 3 s after a full reset on purpose (firmware V1.221103+).
 > - **Tools:** TBD – check on next show.
@@ -68,9 +68,11 @@ last_updated: "2026-10-03"
 | Current (A) | 3.25 | 1.92 | 1.69 |
 | Power (W) | Not found | Not found | Not found |
 | Max power-link (manufacturer) | 3 (12 A max) | 6 (12 A max) | 7 (12 A max; also 7 @240 V) |
-| **Max per 20 A circuit** (16 A continuous) | floor(16/3.25)=4 (link limit 3+1=4) → **4** | floor(16/1.92)=8 (link limit 6+1=7) → **7** | floor(16/1.69)=9 (link limit 7+1=8) → **8** |
+| **Max per 20 A circuit** (16 A continuous) | link limit **3** total (9.8 A) → **3** | link limit **6** total (11.5 A) → **6** | link limit **7** total (11.8 A) → **7** |
 
-- The manual gives the link limit as "up to 3 at 100 V or 120 V". Each limit equals floor(12 A ÷ current), so it may mean the **total** on one 12 A chain. If you read it that way, the conservative counts are **3 @120 V, 6 @208 V**.
+Chauvet link limits are read as the **total** on one feed. Every Chauvet limit works out to about 12 A total, which matches the manual's 12 A cap; see [power math](../../reference/power-math.md).
+
+- The manual gives the link limit as "up to 3 at 100 V or 120 V". Each limit equals floor(12 A ÷ current), so it may mean the **total** on one 12 A chain. This wiki uses that reading: **3 @120 V, 6 @208 V**.
 - Input: 100–240 VAC auto-ranging. Connectors: Seetronic Powerkon IP65 in and out. The US kit ships an Edison to Powerkon cable.
 - Fuse: F8A in an FH15-22A holder with an IP fuse safety cap (BOM).
 

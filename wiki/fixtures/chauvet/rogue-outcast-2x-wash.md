@@ -20,8 +20,8 @@ power:
   link_max_120v: 5
   link_max_208v: 9
   link_max_230v: null
-  per_20a_120v: 6
-  per_20a_208v: 10
+  per_20a_120v: 5
+  per_20a_208v: 9
   fuse: "F8A (8 A) in panel fuse holder FH15-22A, per Chauvet BOM; size/blow type not stated"
 dmx:
   connectors: "5-pin XLR IP65 in/out"
@@ -47,7 +47,7 @@ last_updated: "2026-10-03"
 
 > **2AM CARD** — the stuff you need first
 > - **Password / menu lock:** **2323**. From the main screen, **press and hold MENU** until the passcode screen appears. **UP** raises the digit, **DOWN** moves to the next digit, then **ENTER**. This opens Offset / Zero Adjust (fine home-position trim for Pan, Tilt, Zoom). Source: manual Rev 4/Rev 7 search summaries.
-> - **Power:** 2.47 A @120 V / 1.41 A @208 V → **6 per 20 A circuit @120 V, 10 @208 V**. Manual's link limit is 5 @120 V and 9 @208 V, with a 12 A link maximum.
+> - **Power:** 2.47 A @120 V / 1.41 A @208 V → **5 per circuit @120 V, 9 @208 V** (Chauvet link limit, counted as the total on one feed; 12 A max per circuit).
 > - **DMX:** 15/17/22/33/54/56/33MS/54MS in the manual. Firmware V1.230504+ adds 23CH and 55CH. Address: MENU → Address → 001–512 → ENTER.
 > - **Won't move?** No pan/tilt lock parts show up in Chauvet's parts list (BOM), so it probably has no transport locks ⚠️ unverified. Run Setup → Reset Function → Pan/Tilt.
 > - **Tools:** head back cover uses M3×8 stainless hex socket cap screws and the front cover uses M4×12 countersunk hex screws (BOM). Bit size: see the Tools table.
@@ -76,11 +76,13 @@ last_updated: "2026-10-03"
 | Current (A) | 2.47 | 1.41 | 1.28 |
 | Power (W) | 291 | 284 | 282 |
 | Max power-link (manufacturer) | 5 (12 A max) | 9 (12 A max) | Not found |
-| **Max per 20 A circuit** (16 A continuous) | floor(16/2.47)=6 (link limit 5+1=6) → **6** | floor(16/1.41)=11 (link limit 9+1=10) → **10** | floor(16/1.28)=12 (no link limit found) → **12** |
+| **Max per 20 A circuit** (16 A continuous) | link limit **5** total (5 × 2.47 = 12.4 A, Chauvet's 12 A cap) → **5** | link limit **9** total (9 × 1.41 = 12.7 A) → **9** | floor(12/1.28)=9 (no link limit found, using Chauvet's 12 A cap) → **9** ⚠️ |
+
+Chauvet link limits are read as the **total** on one feed. Every Chauvet limit works out to about 12 A total, which matches the manual's 12 A cap; see [power math](../../reference/power-math.md).
 
 - Input range: 100–240 VAC, 50/60 Hz, auto-ranging.
 - Connectors: Seetronic Powerkon IP65 in and out (BOM parts SAC3MPX male in, SAC3FPX female out). A manual summary describes the supplied input cable as Powerkon A to bare wire. US retail listings for the sister Outcast models show Edison to Powerkon. Powerkon is NOT a standard Neutrik powerCON cable, so carry the right jumpers.
-- **Link-limit wording:** the manual says "power link up to 5 products at 120 V or 9 at 208 V… maximum of 12 A on a single circuit." It does not clearly say whether the first fixture counts. 5 × 2.47 A = 12.35 A, which fits a reading of "5 more units after the first". If you read it as "5 total", the conservative count at 120 V is **5**.
+- **Link-limit wording:** the manual says "power link up to 5 products at 120 V or 9 at 208 V… maximum of 12 A on a single circuit." It does not clearly say whether the first fixture counts. 5 × 2.47 A = 12.35 A and 9 × 1.41 A = 12.7 A, both right at the 12 A cap, so this wiki reads the limit as **5 total @120 V, 9 total @208 V**.
 - Fuse: F8A (8 A) in an FH15-22A holder with an IP fuse cap (Chauvet BOM). Fuse body size and slow/fast type were not stated ⚠️.
 - Inrush notes: Not found.
 

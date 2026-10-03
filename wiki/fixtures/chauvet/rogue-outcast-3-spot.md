@@ -21,7 +21,7 @@ power:
   link_max_208v: 5
   link_max_230v: 6
   per_20a_120v: 3
-  per_20a_208v: 6
+  per_20a_208v: 5
   fuse: "F8A (8 A) in FH15-22A holder, per Chauvet BOM"
 dmx:
   connectors: "5-pin XLR IP65 in/out"
@@ -39,7 +39,7 @@ last_updated: "2026-10-03"
 
 > **2AM CARD** — the stuff you need first
 > - **Password / menu lock:** **2323**. Hold the menu button on the main screen until the passcode screen appears (the R2X and Outcast manuals name MENU). **UP** raises the digit, **DOWN** goes to the next digit → **ENTER**. This opens Offset (Pan / Tilt / Zoom home trim).
-> - **Power:** 4.24 A @120 V / 2.43 A @208 V → **3 per 20 A circuit @120 V, 6 @208 V**. Manual's link limit is 2 @100 V, 3 @120 V, 5 @208 V and 6 @230/240 V, never over 12 A.
+> - **Power:** 4.24 A @120 V / 2.43 A @208 V → **3 per circuit @120 V, 5 @208 V** (Chauvet link limit, counted as the total on one feed; never over 12 A).
 > - **DMX:** 20 or 25 ch. Address: MENU → Address → 001–512.
 > - **Won't move?** It has **pan AND tilt transport locks** (BOM lists pan lock and tilt lock parts). Release both before power-up.
 > - **Tools:** TBD – check on next show. At 51 lb, use two people to hang it.
@@ -60,9 +60,11 @@ last_updated: "2026-10-03"
 | Current (A) | 4.24 | 2.43 | 2.19 |
 | Power (W) | 506 (510 @100 V) | 493 | 494 |
 | Max power-link (manufacturer) | 3 (12 A max) | 5 (12 A max) | 6 (12 A max; also 6 @240 V, 2 @100 V) |
-| **Max per 20 A circuit** (16 A continuous) | floor(16/4.24)=3 (link limit 3+1=4) → **3** | floor(16/2.43)=6 (link limit 5+1=6) → **6** | floor(16/2.19)=7 (link limit 6+1=7) → **7** |
+| **Max per 20 A circuit** (16 A continuous) | link limit **3** total (12.7 A) → **3** | link limit **5** total (12.2 A) → **5** | link limit **6** total (13.1 A) → **6** |
 
-- The manual says "3 units @120 V… never exceed 12 A on a single circuit when power linking". 3 × 4.24 A = 12.7 A, so Chauvet's count probably means units downstream of the first. If you read it as total, the conservative count is **3** @120 V (same answer) and **5** @208 V.
+Chauvet link limits are read as the **total** on one feed. Every Chauvet limit works out to about 12 A total, which matches the manual's 12 A cap; see [power math](../../reference/power-math.md).
+
+- The manual says "3 units @120 V… never exceed 12 A on a single circuit when power linking". 3 × 4.24 A = 12.7 A and 5 × 2.43 A = 12.2 A, both right at the 12 A cap, so this wiki reads the limit as **3 total @120 V, 5 total @208 V**.
 - Connectors: Seetronic Powerkon IP65 in and out. The US kit ships an Edison to Powerkon cable.
 - Fuse: F8A in an FH15-22A holder with an IP fuse cap (BOM).
 
