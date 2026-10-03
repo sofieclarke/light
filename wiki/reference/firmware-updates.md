@@ -21,13 +21,13 @@ How firmware updates work in general, and what to bring. **Each fixture page has
 | Maker | Usual method | Hardware | Software | Details |
 |---|---|---|---|---|
 | Chauvet Professional | USB stick (newer) or DMX cable | UPLOAD 08 (USB-to-DMX) | Chauvet uploader | [Chauvet common](../fixtures/chauvet/_chauvet-common.md) |
-| Robe | DMX cable or Ethernet | Robe Universal Interface (WTX) | ROBE Uploader | [Robe common](../fixtures/robe/_robe-common.md) |
-| Martin | DMX cable | USB-to-DMX cable / USB Duo | Martin Companion (older: Martin Uploader) | [Martin common](../fixtures/martin/_martin-common.md) |
-| Claypaky | Advanced menu → Upload Firmware | See common page | See common page | [Claypaky common](../fixtures/claypaky/_claypaky-common.md) |
-| GLP | See common page | See common page | GLP Uploader ⚠️ | [GLP common](../fixtures/glp/_glp-common.md) |
-| Elation | 3-pin DMX cable, or USB stick on newer models | E-LOADER III | E-LOADER software | [Elation common](../fixtures/elation/_elation-common.md) |
-| ETC | See common page | See common page | See common page | [ETC common](../fixtures/etc/_etc-common.md) |
-| Astera, Solaris, SGM, hazers | Varies | Varies | Varies | [Misc common](../fixtures/misc/_misc-common.md) |
+| Robe | DMX/RDM via interface, or Ethernet (several at once) | Robe Universal Interface (RUNIT / WTX) | ROBE Uploader (DSU package from robe.cz); PC on 2.x.x.x for Ethernet | [Robe common](../fixtures/robe/_robe-common.md) |
+| Martin | USB stick (.BANK in root → SERVICE → USB) on newer fixtures; DMX/RDM | Companion Cable P/N 91616091; older: USB Duo / DABS1 | Martin Companion Desktop (Windows); older: Martin Uploader; P3 controller for Aura PXL / Ultra | [Martin common](../fixtures/martin/_martin-common.md) |
+| Claypaky | Fixture-to-fixture (Advanced → 1234 → Upload Firmware, same model), CloudIO box (USB stick, .img), web server, PC | CloudIO Box CA8001, or Claypaky USB/DMX uploader | Files from Claypaky Customer Care | [Claypaky common](../fixtures/claypaky/_claypaky-common.md) |
+| GLP | DMX line, several at once; X5 also via app / web / fixture push | GLP D3Prog (battery handheld, 5- and 3-pin out) | Loaded from PC over USB; hex/BIN files | [GLP common](../fixtures/glp/_glp-common.md) |
+| Elation | 3-pin DMX from a loader, or USB on some models | E-LOADER III (ELO601, micro SD) | Windows PC to load the SD card; no downgrades | [Elation common](../fixtures/elation/_elation-common.md) |
+| ETC | DMX via Gadget, Net3, or USB drive (Series 3); ColorSource fixture-to-fixture | Gadget / Gadget II, or Net3 gateway | UpdaterAtor (Windows). Pull non-ETC opto-splitters off the line first | [ETC common](../fixtures/etc/_etc-common.md) |
+| Astera, Solaris, SGM, hazers | Astera: app over Bluetooth · Flare: Upload menu, fixture to fixture · SGM: USB-XLR cable · MDG: service only | ART7 / phone; SGM uploader cable | AsteraApp; SGM Firmware Tool | [Misc common](../fixtures/misc/_misc-common.md) |
 
 The maker pages are the source of truth; this table is a summary.
 
@@ -53,9 +53,9 @@ The maker pages are the source of truth; this table is a summary.
 ## When it goes wrong
 | Symptom | What to do |
 |---|---|
-| Uploader can't find the fixture | Fixture not in update mode (many need a menu setting like "Software Update → On" first), wrong cable (3-pin vs 5-pin), console still connected, wrong COM port, driver missing for the interface box. |
+| Uploader can't find the fixture | Fixture not in update mode (many need a menu setting like "Software Update → On" first), wrong cable (3-pin vs 5-pin), console still connected, an opto-splitter in the line (blocks the return data some uploaders need), wrong COM port, driver missing for the interface box. |
 | Update stops partway | Don't power-cycle yet. Retry from the uploader. If the fixture has rebooted dead, use its recovery/bootloader mode. |
-| Fixture dead or stuck on boot logo after an update | Recovery mode via the maker's interface (Chauvet: UPLOAD 08; Robe: DSU mode / "fix broken device"; others on the maker page). If that fails, it's a shop/service repair. |
+| Fixture dead or stuck on boot logo after an update | Recovery mode via the maker's interface (Chauvet: UPLOAD 08; Robe: DSU mode / "fix broken device with RUNIT"; Martin Quantum/Encore: bootloader switch in the base; MDG: USB during "Testing BootLoad" at power-up). If that fails, it's a shop/service repair. |
 | Works, but console control is wrong | Mode list changed. Re-patch with the updated profile, or check the mode number on the fixture. |
 
 ## Sources
