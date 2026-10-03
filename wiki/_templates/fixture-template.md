@@ -29,6 +29,15 @@ dmx:
   protocols: []        # DMX, RDM, Art-Net, sACN, W-DMX, CRMX
   modes: []            # - { name: "Standard", channels: 24 }
 menu_password: null    # e.g. "2323" — also note HOW to enter it in the body
+firmware:
+  latest_known: null   # newest version found, e.g. "V1.260610"
+  checked: null        # date that version was checked, e.g. "2026-10-03"
+  check_on_fixture: "" # menu path that shows the installed version
+  methods: []          # e.g. ["USB stick", "DMX cable + UPLOAD 08", "Ethernet (Robe Uploader)", "RDM"]
+  interface: null      # hardware needed, e.g. "Chauvet UPLOAD 08", "Robe Universal Interface", null if a USB stick is enough
+  software: null       # PC/app software, e.g. "Chauvet Firmware Uploader", "ROBE Uploader", "Martin Companion"
+  file_type: null      # e.g. ".chl", ".dsu", ".pkg"
+  download: null       # where the file lives
 tools: []              # e.g. ["Torx T25", "Phillips #2", "M5 hex"]
 verification: ""       # manual-verified | web-search | community | unverified
 last_updated: ""
@@ -109,7 +118,15 @@ last_updated: ""
 ## Maintenance
 - Recalibrate / reset procedure:
 - Fan / filter cleaning:
-- Firmware update method (tool, connector):
+
+## Firmware
+- Installed version — where to see it on the fixture:
+- Latest known version (date checked) and where to download it:
+- What you need: interface box / cable / software / USB stick format:
+- Update steps (numbered, button by button):
+- Updating a whole rig (how many at once, same model only?, over DMX/Ethernet):
+- If it fails or bricks mid-update (recovery mode):
+- Release notes worth knowing (show-relevant bug fixes, new modes — a mode change can break your console patch):
 
 ## Road notes (community)
 - Real-world gotchas from forums / Reddit / techs. Always say where it came from.

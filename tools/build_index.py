@@ -6,6 +6,7 @@ front matter, and writes:
   wiki/index.md        - fixture list grouped by manufacturer
   wiki/comparison.md   - power / DMX / tools side by side
   wiki/passwords.md    - every known menu passcode in one place
+  wiki/firmware.md     - latest known firmware and update method per fixture
   data/fixtures.json   - all front matter, for the future app
 
 Usage: python3 tools/build_index.py           (rebuild)
@@ -108,7 +109,7 @@ def build_index(fixtures):
            "Every page lists its aliases.\n\n",
            "Reference pages: [Power math](reference/power-math.md) · [DMX troubleshooting](reference/dmx-troubleshooting.md) · "
            "[Moving light troubleshooting](reference/moving-light-troubleshooting.md) · [Connectors & pinouts](reference/connectors-and-pinouts.md) · "
-           "[Tool kit](reference/tool-kit.md) · [Passwords](passwords.md) · [Comparison table](comparison.md) · [Research status](research-status.md)\n\n"]
+           "[Tool kit](reference/tool-kit.md) · [Firmware updates](reference/firmware-updates.md) · [Passwords](passwords.md) · [Firmware table](firmware.md) · [Comparison table](comparison.md) · [Research status](research-status.md)\n\n"]
     by_maker = {}
     for f in fixtures:
         by_maker.setdefault(f.get("manufacturer") or "Unknown", []).append(f)
@@ -165,6 +166,18 @@ def build_passwords(fixtures):
     return "".join(out)
 
 
+def build_firmware(fixtures):
+    out = [HEADER, "# Firmware Table\n\n",
+           "Latest firmware found and how each fixture is updated. Versions change, so check the date. "
+           "Full steps are on each fixture page and in [Firmware updates](reference/firmware-updates.md).\n\n",
+           "| Fixture | Latest found | Checked | Method | Interface | Software | File |\n|---|---|---|---|---|---|---|\n"]
+    for f in sorted(fixtures, key=lambda x: str(x.get("title"))):
+        fw = f.get("firmware") or {}
+        out.append(f"| {link(f)} | {cell(fw.get('latest_known'))} | {cell(fw.get('checked'))} | {cell(fw.get('methods'))} | "
+                   f"{cell(fw.get('interface'))} | {cell(fw.get('software'))} | {cell(fw.get('file_type'))} |\n")
+    return "".join(out)
+
+
 def main():
     fixtures, problems = load()
     for p in problems:
@@ -175,6 +188,7 @@ def main():
     (WIKI / "index.md").write_text(build_index(fixtures), encoding="utf-8")
     (WIKI / "comparison.md").write_text(build_comparison(fixtures), encoding="utf-8")
     (WIKI / "passwords.md").write_text(build_passwords(fixtures), encoding="utf-8")
+    (WIKI / "firmware.md").write_text(build_firmware(fixtures), encoding="utf-8")
     (ROOT / "data").mkdir(exist_ok=True)
     (ROOT / "data" / "fixtures.json").write_text(json.dumps(fixtures, indent=2, default=str, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Built index for {len(fixtures)} fixtures ({len(problems)} problems)")
