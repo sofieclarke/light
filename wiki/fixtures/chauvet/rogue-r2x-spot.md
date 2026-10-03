@@ -156,8 +156,6 @@ The BOM also lists M8×35 and M8×90 screws with M8 lock nuts, location not stat
 ## Sources
 - [R2X Spot UM Rev 3 (Innovation Lighting mirror)](https://www.innovationlighting.net/wp-content/uploads/2024/01/ROGUE_R2X_Spot_UM_Rev3_WO.pdf) — appeared in search results for the 2323 passcode procedure (content not quoted directly)
 - [R2 Spot UM Rev 7 (bplsv mirror)](https://bplsv.com/manfacturers/lighting/manuals/chauvet/ROGUE_R2_Spot_UM_Rev7_WO.pdf), [R2 Spot UM Rev 9](https://www.chauvetprofessional.com/wp-content/uploads/2015/06/ROGUE_R2_Spot_UM_Rev9_WO.pdf) — cited in the summary of Rogue models sharing passcode 2323
-- [github.com/Chauvet-Pro/ROGUER2XSPOT](https://github.com/Chauvet-Pro/ROGUER2XSPOT), [github.com/Chauvet-Pro/ROGUER2SPOT](https://github.com/Chauvet-Pro/ROGUER2SPOT) — firmware history, BOMs (locks, fuse, connectors, gobos, LED module, Omega), firmware strings (modes, messages)
+- [github.com/Chauvet-Pro/ROGUER2XSPOT](https://github.com/Chauvet-Pro/ROGUER2XSPOT), [github.com/Chauvet-Pro/ROGUER2SPOT](https://github.com/Chauvet-Pro/ROGUER2SPOT) — firmware history, BOMs (locks, fuse, connectors, gobos, LED module, Omega), firmware strings (modes, messages) — firmware versions and release notes re-checked 2026-10-03
 - [QLC+ fixture Chauvet-Rogue-R2-Spot.qxf](https://github.com/mcallegari/qlcplus/tree/master/resources/fixtures/Chauvet) — community profile with 18/21 ch modes
-- [github.com/Chauvet-Pro/ROGUER2XSPOT](https://github.com/Chauvet-Pro/ROGUER2XSPOT) — firmware versions, release notes, .CHL file name (checked 2026-10-03)
-- [github.com/Chauvet-Pro/ROGUER2SPOT](https://github.com/Chauvet-Pro/ROGUER2SPOT) — firmware versions, release notes (file list only) (checked 2026-10-03)
 - [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

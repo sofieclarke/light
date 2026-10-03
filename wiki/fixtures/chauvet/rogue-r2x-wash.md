@@ -164,9 +164,8 @@ The handle uses M6×16 screws (BOM).
 ## Sources
 - [R2X Wash manual (manualslib)](https://www.manualslib.com/manual/1824482/Chauvet-Professional-Rogue-R2x-Wash.html) — passcode 2323, hold MENU, offset Pan/Tilt/Zoom
 - [R2X Wash VW manual](https://cdn01.usedlighting.com/products/files/f61f493ac93d46.pdf) — VW variant
-- [github.com/Chauvet-Pro/ROGUER2XWASH](https://github.com/Chauvet-Pro/ROGUER2XWASH) — firmware history, BOM (labelled ROGUER2WASH: powerCON, 7 A fuse, DMX 3/5-pin, Omega, PSU), firmware strings (modes, messages)
+- [github.com/Chauvet-Pro/ROGUER2XWASH](https://github.com/Chauvet-Pro/ROGUER2XWASH) — firmware history, BOM (labelled ROGUER2WASH: powerCON, 7 A fuse, DMX 3/5-pin, Omega, PSU), firmware strings (modes, messages) — firmware versions and release notes re-checked 2026-10-03
 - [ControlBooth: R2x Wash Home Position](https://www.controlbooth.com/threads/chauvet-pro-rogue-r2x-wash-home-position.48256/), [ControlBooth: R2 wash color snap](https://www.controlbooth.com/threads/chauvet-rogue-r2-wash-color-snap.39741/) — road notes
-- [github.com/Chauvet-Pro/ROGUER2XWASH](https://github.com/Chauvet-Pro/ROGUER2XWASH) — firmware versions, release notes, .CHL file name (checked 2026-10-03)
 - [github.com/Chauvet-Pro/ROGUER2XWASHVW](https://github.com/Chauvet-Pro/ROGUER2XWASHVW) — firmware versions, release notes (tags only, VW variant) (checked 2026-10-03)
 - [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload
 - [Firmware Update Instructions for Rogue R1 Wash, R2 Wash, R3 Wash (manualzz mirror)](https://manualzz.com/doc/51992745/chauvet-upload-instructions) — title seen in search; confirms UPLOAD-based updates for the R-series washes (content not read)

@@ -155,6 +155,5 @@ The BOM lists M8×30 and M8×90 screws, location not stated.
 
 ## Sources
 - [Rogue R3X Wash User Manual Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2019/10/Rogue_R3X_Wash_UM_Rev4.pdf) — passcode procedure (top search result for "press and hold … 2323")
-- [github.com/Chauvet-Pro/ROGUER3XWASH](https://github.com/Chauvet-Pro/ROGUER3XWASH) — firmware history, BOM (12 A fuse, powerCON, DMX board, Omega revisions, locks), firmware strings (modes, messages)
-- [github.com/Chauvet-Pro/ROGUER3XWASH](https://github.com/Chauvet-Pro/ROGUER3XWASH) — firmware versions, release notes, .CHL file name (checked 2026-10-03)
+- [github.com/Chauvet-Pro/ROGUER3XWASH](https://github.com/Chauvet-Pro/ROGUER3XWASH) — firmware history, BOM (12 A fuse, powerCON, DMX board, Omega revisions, locks), firmware strings (modes, messages) — firmware versions and release notes re-checked 2026-10-03
 - [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

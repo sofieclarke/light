@@ -140,6 +140,5 @@ last_updated: "2026-10-03"
 - [R3 Spot QRG (AV-iQ)](https://cdn-docs.av-iq.com/dataSheet/Rogue%20R3%20Spot.pdf) — listed in search results only
 - [R3 Beam UM Rev 5](https://www.chauvetprofessional.com/wp-content/uploads/2021/04/Rogue_R3_Beam_UM_Rev5.pdf) — panel lock code, passcode procedure (sibling model)
 - [gearclubdirect R3 Spot listing](https://www.gearclubdirect.com/chauvet-professional-roguer3spot-rogue-r3-spot-includes-powercon-power-cord-2pcs-omega-brackets-control-3-pin-dmx-5-pin-dmx/) — included accessories, 3-pin/5-pin DMX
-- [github.com/Chauvet-Pro/ROGUER3SPOT](https://github.com/Chauvet-Pro/ROGUER3SPOT) — firmware files, BOM (locks, fuse, connectors, gobos), firmware strings (modes, messages)
-- [github.com/Chauvet-Pro/ROGUER3SPOT](https://github.com/Chauvet-Pro/ROGUER3SPOT) — firmware versions, release notes (file list only, no notes) (checked 2026-10-03)
+- [github.com/Chauvet-Pro/ROGUER3SPOT](https://github.com/Chauvet-Pro/ROGUER3SPOT) — firmware files, BOM (locks, fuse, connectors, gobos), firmware strings (modes, messages) — firmware versions and release notes re-checked 2026-10-03
 - [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload
