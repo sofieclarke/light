@@ -36,6 +36,15 @@ dmx:
     - { name: "111CH", channels: 111 }
     - { name: "135CH", channels: 135 }
 menu_password: "2323"
+firmware:
+  latest_known: "V1.251216"
+  checked: "2026-10-03"
+  check_on_fixture: "MENU → Sys Info → Ver"
+  methods: ["USB stick (USB-C)", "DMX cable + UPLOAD 08 (recovery)"]
+  interface: null
+  software: null
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/ROGUEOUTCAST1BEAMWASH"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -121,7 +130,42 @@ The manual's error table was not found.
 | Color shift when RGBW all go 0→255 together | Firmware bug | Fixed in V1.251216 |
 
 ## Maintenance
-- Firmware: USB-C port (BOM). Same USB procedure as the other Outcast models (see `_chauvet-common.md`). Latest found: V1.251216 on github.com/Chauvet-Pro/ROGUEOUTCAST1BEAMWASH.
+- Firmware: see the Firmware section below.
+
+## Firmware
+- Installed version — where to see it on the fixture: **MENU → Sys Info → Ver** (GitHub README; firmware has a "Sys Info" screen).
+- Latest known version: **V1.251216** (latest found 2026-10-03). Download from [github.com/Chauvet-Pro/ROGUEOUTCAST1BEAMWASH](https://github.com/Chauvet-Pro/ROGUEOUTCAST1BEAMWASH) as `V1.251216.zip`, which holds `A1A403-OUTCAST1BEAMWASH-V1.251216-251219-3.CHL`. No separate repo for the BeamWash M was found under the obvious name ⚠️.
+- What you need: a FAT32 USB stick (≤32 GB) with a USB-C plug or an adapter. Keep an **UPLOAD 08** for recovery.
+- Update steps (USB stick, from Chauvet's GitHub README for this model):
+  1. Unzip the download. Copy only the **.CHL** file to the **root** of a **FAT32** stick, **32 GB or smaller**. The GitHub zip also has a `__MACOSX` folder. Don't copy it.
+  2. Power on the fixture and plug the stick into the **USB-C** port. You need a USB-C stick or a USB-A→C adapter. Chauvet's own Firmware USB stick has both plugs.
+  3. **"USB Update"** appears → **YES**.
+  4. If the stick holds several versions, pick one with **UP / DOWN** → **ENTER**.
+  5. **"USB Update"** appears again → **YES**.
+  6. **"USB Update Wait"** shows. It can take several minutes. **Don't cut power or pull the stick while the USB LED blinks.**
+  7. When the LED stops, the motors power down and the display goes blank. **Still don't cut power.** The fixture reboots by itself.
+  8. Check **Sys Info** for the new version, then restart the fixture.
+- Updating a whole rig: one fixture at a time with the stick. No multi-unit USB-over-DMX method is described for this model ⚠️ unverified. For batches, the UPLOAD 08 does up to 10 of the same model (see `_chauvet-common.md`).
+- Units on firmware **older than V1.220217** had a bug where the USB stick wasn't detected. On those, use the UPLOAD 08 (release notes).
+- If it fails or bricks mid-update: pulling power or the stick while the USB LED blinks causes "partial or total firmware failure". Chauvet's fix is the **UPLOAD 08** (GitHub README). In the UPLOAD 08 app, use **Force Upload**:
+  1. Power the fixture off, but leave it connected to the UPLOAD 08.
+  2. Make sure the LED on the UPLOAD 08 is flashing.
+  3. Select the .CHL file.
+  4. Click **Force Upload** and follow the prompts.
+  - Source: UPLOAD 08 Instructions Rev 4. Full setup is in `_chauvet-common.md`.
+- Release notes worth knowing (GitHub README):
+  - **V1.251216**: fixed a color shift when RGBW all go 0→255 together. **Removed the "custom white mode" menu option**, and control-channel values **232–239 are now reserved**. Show files that use those values will behave differently.
+  - V1.250121: improved color matching and mixing.
+  - V1.241125: added a 2-step standalone program.
+  - **V1.240718**: improved dimming. Added separate ring and center LED power adjustment.
+  - V1.230727: dimmer channel improvements.
+  - V1.221103: the LEDs stay dark for 3 s after a full reset, on purpose.
+  - **V1.220822: added new personalities.** The firmware strings show 37CH and 54CH beyond the manual's list ⚠️. A new or renumbered mode means the console patch and fixture profile must match. Update the whole rig to the same version before programming.
+  - V1.220311: fixed the defrost fan staying on all the time.
+  - V1.220217: improved Red Shift. Fixed the USB stick not being detected.
+  - V1.220112: added Red Shift. Made CTO consistent across fixtures.
+  - V1.210831: better color-temperature consistency when dimming.
+  - Earlier versions: minor fixes.
 
 ## Road notes (community)
 - No specific forum notes found.
@@ -131,3 +175,5 @@ The manual's error table was not found.
 - [Outcast 1 BeamWash datasheet](https://saleswl.com/wp-content/uploads/2021/07/Chauvet-Professional-Rogue-Outcast-1-BeamWash-Data-Sheet.pdf), [B&H page](https://www.bhphotovideo.com/c/product/1658235-REG/chauvet_professional_rogueoutcast1beamwash_rogue_outcast_1_beam.html), [Stage Lighting Store](https://www.stagelightingstore.com/Rogue-Outcast-1-BeamWash) — LEDs, weight, zoom, modes, dimensions, pan/tilt, Edison→Powerkon
 - [Outcast 1 BeamWash M manual](https://www.chauvetprofessional.com/wp-content/uploads/2025/03/Rogue_Outcast_1_BeamWash_M_UM_Rev1.pdf) — M variant
 - [github.com/Chauvet-Pro/ROGUEOUTCAST1BEAMWASH](https://github.com/Chauvet-Pro/ROGUEOUTCAST1BEAMWASH) — firmware history, BOM (fuse, connectors, Omega, glass, valve), firmware strings (modes, messages)
+- [github.com/Chauvet-Pro/ROGUEOUTCAST1BEAMWASH](https://github.com/Chauvet-Pro/ROGUEOUTCAST1BEAMWASH) — firmware versions, release notes, USB update procedure, .CHL file name (checked 2026-10-03)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

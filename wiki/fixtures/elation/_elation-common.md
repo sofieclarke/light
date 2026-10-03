@@ -12,7 +12,7 @@ last_updated: "2026-10-03"
 > - **Lamp-hours reset (hybrids): 038.** Path on the Smarty Hybrid: MODE/ESC → Information → Time Information → LampTime Password.
 > - **Battery addressing (Proteus):** with no power, **hold MODE/ESC 10 s** or **hold ENTER 3 s** (manuals differ). The display sleeps after about 1 minute.
 > - **Startup error format:** `XXer` flashing, where XX is the function number. `0Er` = pan.
-> - **Firmware:** E-LOADER III over a 3-pin DMX cable, or a FAT32 USB stick on models with USB. **No downgrades.**
+> - **Firmware:** E-LOADER III (micro SD card, 3-pin DMX cable, power the loader within 10 s of the fixture), or a USB stick in the UPDATE/SERVICE PORT on models that have one. **No downgrades. Write down settings first.**
 
 ## Menu conventions
 - Buttons are MODE/ESC, UP, DOWN and ENTER. Press MODE/ESC to open the main menu, UP/DOWN to move, ENTER to select. Source: Smarty Hybrid lamp-reset path and Proteus battery instructions.
@@ -33,12 +33,52 @@ last_updated: "2026-10-03"
 - How to wake it: one Proteus manual says **hold MODE/ESC for 10 s**, another says **hold ENTER for 3 s**. Try both.
 - The display turns off by itself about 1 minute after the last button press.
 
-## Firmware update
-- **E-LOADER III**: Elation's battery-powered uploader. It connects to the fixture with a **3-pin DMX cable**. Step-by-step instructions are on its product page.
-- **USB**: on fixtures with a USB port, download the firmware from elationlighting.com, copy it to a **FAT32** USB stick, insert it and follow the screen.
-- The older **CUE Software Uploader** also has an Elation product page. Which models it supports was not checked.
-- Before updating, **write down your menu settings**. **Firmware cannot be downgraded.**
-- Elation's support forum has a firmware thread for each model (e.g. "Proteus Maximus Firmware", "Smarty Hybrid Firmware", "Proteus Excalibur Firmware").
+## Firmware updates
+| Fixture | Latest found (checked 2026-10-03) | Method |
+|---|---|---|
+| Proteus Maximus | **V1.8.1** | E-LOADER III (forum thread) |
+| Proteus Hybrid MAX (not the plain Proteus Hybrid) | V1.3.7 (MAX OPS: V1.3.6) | E-LOADER (forum thread) |
+| Proteus Smarty Hybrid (IP65, not the indoor Smarty Hybrid) | V1.4.1 | E-LOADER III / USB (forum thread) |
+| Proteus Hybrid, Smarty Hybrid (indoor) | not found | see the fixture pages |
+
+### The tools
+- **E-LOADER III** (dealer part number **ELO601**): Elation's battery-powered handheld uploader. The update files go on its **micro SD card**, and it connects to the fixture's DMX input with a **3-pin DMX cable**. It's the method for fixtures **without a USB service port**.
+- **USB flash drive** in the fixture's **UPDATE/SERVICE PORT**, on newer models that have one (e.g. the Smarty Hybrid manual). The manual says to put **only the update file** on the drive. The existing wiki notes say **FAT32** ⚠️ not confirmed in the manual summary.
+- **CUE Software Uploader**: the older Elation handheld uploader, also battery-powered and connected over a 3-pin DMX cable. Which models it still covers wasn't checked.
+- A **Windows PC** is needed to download files. The Smarty Hybrid manual says "PC only" (no Mac).
+- **Where the files are:** each model has a firmware thread on Elation's support forum (e.g. "Proteus Maximus Firmware", "Proteus Hybrid MAX Firmware", "Proteus Smarty Hybrid Firmware", "Proteus Excalibur Firmware"). It lists the current version, the tool and the release notes. Elation also gives firmware@elationlighting.com (address from a search summary).
+- **File type:** the E-LOADER III manual summary calls the update file a "GSD file". The exact extension wasn't confirmed.
+
+### E-LOADER III procedure (manual, via search summary)
+1. Check the loader's battery shows **at least two bars**. A flat loader mid-update is the thing to avoid.
+2. Put the update file on the micro SD card in the folder for that fixture, then insert the card in the slot on the **bottom** of the E-LOADER III.
+3. Unplug the console's DMX from the fixture. Connect the loader's signal output to the fixture with a **3-pin DMX cable**.
+4. Power up the fixture, then power up the E-LOADER III **within 10 seconds**.
+5. In the Browser menu, pick the fixture folder → ENTER, then pick the file → ENTER.
+6. Enter the loader password. The manual text shows the default as "OOOOOO" (probably six zeros ⚠️ unverified).
+7. Wait for it to finish. Don't power-cycle either unit during the upload (general knowledge).
+
+### USB procedure (Smarty Hybrid manual, via search summary)
+1. Copy the update file from a PC to a USB flash drive. Nothing else on the drive.
+2. **Disconnect DMX, Art-Net and E-FLY**, then power the fixture on.
+3. Insert the drive in the **UPDATE/SERVICE PORT** on the rear panel.
+4. Menu: **Personality → Service Setting → USB Update**.
+5. Select the file → ENTER → **YES**. The display shows "Updating…%".
+
+### Batch updates
+- Both methods are **one fixture at a time**. No network (Art-Net/sACN) or RDM firmware method was found for these models.
+
+### Recovery
+- No bootloader or recovery mode was found in the sources read. If an update fails, retry with a charged loader or a fresh USB drive, then contact Elation service ⚠️ unverified.
+
+### Gotchas
+- **No downgrades.** "Fixture software cannot be downgraded" (manual). On the Proteus Maximus, the forum says you can't go back to V1.6.x or V1.7.x.
+- **Write down every menu setting first** (manual).
+- Elation says only qualified technicians should do this (manual).
+- **Disconnect the console and wireless** (DMX, Art-Net, E-FLY) before updating (manual, USB procedure).
+- Don't load a sibling model's file: Proteus Hybrid ≠ Proteus Hybrid MAX, and Smarty Hybrid ≠ Proteus Smarty Hybrid.
+- A firmware update can add or renumber DMX modes. Re-check the fixture's mode against the console patch afterwards (general knowledge).
+- Proteus Maximus on V1.6.x: the forum mentions removing board PCB-PCB1187-0-B before V1.7/V1.8. See the [Proteus Maximus page](proteus-maximus.md#firmware).
 
 ## Common error messages
 | Message | Meaning | Fix |
@@ -60,5 +100,8 @@ last_updated: "2026-10-03"
 - [Proteus Maximus manual (novelty.fr)](https://www.novelty.fr/wp-content/uploads/downloaded/downloads/materiel_manuels/elation_proteus-maximus_manuel.pdf): XXer format, retries, multiple errors
 - [Smarty Hybrid manual (ManualsLib)](https://www.manualslib.com/manual/1429186/Elation-Smarty-Hybrid.html): lamp-time password 038, lamp warning colors
 - [E-LOADER III](https://www.elationlighting.com/e-loader-iii-software-uploader), [CUE Software Uploader](https://www.elationlighting.com/cue-software-uploader): firmware tools
+- [E-LOADER III manual (manuals.plus)](https://manuals.plus/elation/professional-e-loader-iii-software-uploader-kit-manual): micro SD, 3-pin DMX, 10 s power-up window, browser/file/password steps, two-bar battery rule (search summary). [Adorama ELO601](https://www.adorama.com/elelo601.html): part number
+- [Smarty Hybrid user manual (Cloudfront)](https://d295jznhem2tn9.cloudfront.net/ItemRelatedFiles/12026/ELATION%20SMARTY%20HYBRID%20-%20USER%20MANUAL.pdf): USB update procedure, no-downgrade and PC-only warnings (search summary)
+- [Elation forum: Proteus Hybrid MAX Firmware](https://forums.elationlighting.com/topic/proteus-hybrid-max-firmware?nc=1): V1.3.7 / V1.3.6 (search summary). The Maximus and Proteus Smarty Hybrid threads below gave V1.8.1 and V1.4.1
 - Elation forum firmware threads: [Proteus Maximus](https://forums.elationlighting.com/topic/proteus-maximus-firmware?nc=1), [Smarty Hybrid](https://forums.elationlighting.com/topic/smarty-hybrid-firmware?nc=1), [Proteus Excalibur](https://forums.elationlighting.com/topic/proteus-excalibur-firmware?nc=1)
 - [Elation forum: Proteus Beam Hybrid ballast error](https://forums.elationlighting.com/topic/proteous-beam-hybrid-ballast-error), [Elation FAQ/Troubleshooting](https://www.elationlighting.com/pages/faq-troubleshooting): ballast and lamp notes

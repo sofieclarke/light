@@ -30,6 +30,15 @@ dmx:
     - { name: "20CH", channels: 20 }
     - { name: "25CH", channels: 25 }
 menu_password: "2323"
+firmware:
+  latest_known: "V1.241025"
+  checked: "2026-10-03"
+  check_on_fixture: "MENU → Sys Info → Ver"
+  methods: ["USB stick (USB-C)", "DMX cable + UPLOAD 08 (recovery)"]
+  interface: null
+  software: null
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/ROGUEOUTCAST3SPOT"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -116,8 +125,33 @@ The BOM also lists "screw M5×6" and "screw 304 CM6×12" but doesn't say where t
 | RDM discovery problems | Early firmware | V1.221014 fixed RDM issues. Update |
 
 ## Maintenance
-- Firmware: USB-C port (BOM). USB-drive procedure in `_chauvet-common.md`. Latest found: V1.241025 on github.com/Chauvet-Pro/ROGUEOUTCAST3SPOT.
 - Cleaning intervals: Not found.
+
+## Firmware
+- Installed version — where to see it on the fixture: **MENU → Sys Info → Ver** (GitHub README; the firmware has "Sys Info" / "System Information" screens).
+- Latest known version: **V1.241025** (latest found 2026-10-03). Download from [github.com/Chauvet-Pro/ROGUEOUTCAST3SPOT](https://github.com/Chauvet-Pro/ROGUEOUTCAST3SPOT) as `V1.241025.zip`, which holds `A4079D-Rogue Outcast 3 Spot-V1.241025-1025-2.CHL`.
+- What you need: a FAT32 USB stick (≤32 GB) with a USB-C plug or an adapter. Keep an **UPLOAD 08** for recovery.
+- Update steps (USB stick, from Chauvet's GitHub README for this model):
+  1. Unzip the download. Copy only the **.CHL** file to the **root** of a **FAT32** stick, **32 GB or smaller**.
+  2. Power on the fixture and plug the stick into the **USB-C** port. You need a USB-C stick or a USB-A→C adapter. Chauvet's own Firmware USB stick has both plugs.
+  3. **"USB Update"** appears → **YES**.
+  4. If the stick holds several versions, pick one with **UP / DOWN** → **ENTER**.
+  5. **"USB Update"** appears again → **YES**.
+  6. **"USB Update Wait"** shows. It can take several minutes. **Don't cut power or pull the stick while the USB LED blinks.**
+  7. When the LED stops, the motors power down and the display goes blank. **Still don't cut power.** The fixture reboots by itself.
+  8. Check **Sys Info** for the new version, then restart the fixture.
+- Updating a whole rig: one fixture at a time with the stick. For batches, the UPLOAD 08 does up to 10 of the same model over DMX (see `_chauvet-common.md`). USB-over-DMX linking is not described for this model ⚠️ unverified.
+- If it fails or bricks mid-update: pulling power or the stick while the USB LED blinks causes "partial or total firmware failure". Chauvet's fix is the **UPLOAD 08** (GitHub README). In the UPLOAD 08 app, use **Force Upload**:
+  1. Power the fixture off, but leave it connected to the UPLOAD 08.
+  2. Make sure the LED on the UPLOAD 08 is flashing.
+  3. Select the .CHL file.
+  4. Click **Force Upload** and follow the prompts.
+  - Source: UPLOAD 08 Instructions Rev 4. Full setup is in `_chauvet-common.md`.
+- Release notes worth knowing (GitHub README):
+  - **V1.241025**: added a standalone menu.
+  - V1.221227: listed as the "initial software version".
+  - **V1.221014**: fixed RDM issues. Update if RDM discovery misbehaves.
+  - No mode changes are listed in the notes.
 
 ## Road notes (community)
 - No specific forum notes found.
@@ -127,3 +161,5 @@ The BOM also lists "screw M5×6" and "screw 304 CM6×12" but doesn't say where t
 - [Chauvet product page](https://chauvetprofessional.com/product/rogue-outcast-3-spot/), [idjnow](https://www.idjnow.com/chauvet-professional-rogue-outcast-3-spot-moving-head.html), [GoKnight](https://goknight.com/chauvet-pro-rogue-outcast-3-spot-outdoor-ready-ip65-moving-head/) — LED, lumens, zoom, modes, wattage per voltage, connectors, GORE valve, gobo sizes, weight
 - [Sweetwater Outcast 3 Spot-2](https://www.sweetwater.com/store/detail/RogueO3Spt2--chauvet-pro-rogue-outcast-3-spot-2-moving-head) — Spot-2 SKU
 - [github.com/Chauvet-Pro/ROGUEOUTCAST3SPOT](https://github.com/Chauvet-Pro/ROGUEOUTCAST3SPOT) — firmware history, BOM (pan/tilt lock parts, fuse, connectors, wheels), firmware strings
+- [github.com/Chauvet-Pro/ROGUEOUTCAST3SPOT](https://github.com/Chauvet-Pro/ROGUEOUTCAST3SPOT) — firmware versions, release notes, USB update procedure, .CHL file name (checked 2026-10-03)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

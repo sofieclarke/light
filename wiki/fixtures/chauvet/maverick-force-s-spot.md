@@ -28,6 +28,15 @@ dmx:
   protocols: []
   modes: []
 menu_password: null
+firmware:
+  latest_known: "V1.240826"
+  checked: "2026-10-03"
+  check_on_fixture: "Fixture Information → firmware version"
+  methods: ["USB stick", "USB stick + DMX daisy chain (multi-unit)", "DMX cable + UPLOAD 08 (recovery)"]
+  interface: null
+  software: null
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/MAVERICKFORCESSPOT"
 tools: []
 verification: "unverified"
 last_updated: "2026-10-03"
@@ -93,6 +102,27 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Not found — fill in from the fixture.
 
+## Firmware
+- Installed version — where to see it on the fixture: **Fixture Information**. Per the manual, it shows firmware version, running mode, DMX address, temperature, running time, IP, subnet mask and MAC.
+- Latest known version: **V1.240826** (latest found 2026-10-03), a "factory update – for internal use only". The last public fix is **V1.211005**. Both are on [github.com/Chauvet-Pro/MAVERICKFORCESSPOT](https://github.com/Chauvet-Pro/MAVERICKFORCESSPOT); the file is `A40715-FORCESSPOT-V1.240826-20250114-2.CHL`.
+- What you need: a FAT32 USB stick (≤32 GB). Keep an UPLOAD 08 for recovery. The port type wasn't captured ⚠️.
+- Update steps (USB stick, from the GitHub README and manual):
+  1. Copy the .CHL file to the **root** of the stick.
+  2. Power on and plug in the stick.
+  3. **"USB UPDATE"** appears → **YES**.
+  4. Pick the version with **UP / DOWN** → **ENTER**.
+  5. **"USB UPDATE"** appears again → **YES**.
+  6. **"USB Update Wait"** shows. **Don't cut power or pull the stick while the USB LED blinks.** It may show "DO NOT UNPLUG, UPDATING".
+  7. It reboots by itself.
+  8. Check Fixture Information, then restart.
+- Updating a whole rig: **"It is possible to update multiple units with the USB if they are daisy chained via DMX"** (README and manual). Chain only Force S Spots and disconnect the console (general knowledge). No unit count is given ⚠️.
+- Web server: the firmware has a web "Upgrade" page with an Upload File button (strings "POST /upgrade/get", "FILE UPLOAD SUCCESS, PLEASE WAIT FOR FIXTURE TO FINISH THE UPGRADE"). Not confirmed in this model's manual ⚠️ unverified.
+- If it fails or bricks mid-update: partial or total firmware failure needs the **UPLOAD 08**. "Please contact Chauvet regarding this device" (manual). Force Upload steps are in `_chauvet-common.md`.
+- Release notes worth knowing (GitHub README):
+  - V1.240826: factory or internal update.
+  - **V1.211005**: fixed the gobo fans.
+  - **V1.210811**: new curve to reduce motor noise (good for theatre or quiet rooms).
+
 ## Road notes (community)
 - None found.
 
@@ -101,3 +131,6 @@ last_updated: "2026-10-03"
 - [Maverick Force S Spot QRG (Full Compass)](https://www.fullcompass.com/common/files/61565-MaverickForceSSpotQuickReferenceGuide.pdf) and [BMI Supply copy](https://shop.bmisupply.com/Resources/en/ItemDocuments/39D1025/BMI.Chauvet.Maverick.Force.S.Spot.QuickReferenceGuide.pdf): the search summary that gave 4 @208 V came from a set that included these
 - [notice-facile manual](https://www.notice-facile.com/en/manual/539158/chauvet+maverick-force-s-spot), [manualslib](https://www.manualslib.com/manual/2409706/Chauvet-Professional-Maverick-Force-S-Spot.html): full manual (not read)
 - [Force S Spot data sheet (parlights)](https://parlights.com/wp-content/uploads/2024/04/MAVERICK-FORCE-S-SPOT-DATASHEET-2.pdf): not read
+- [github.com/Chauvet-Pro/MAVERICKFORCESSPOT](https://github.com/Chauvet-Pro/MAVERICKFORCESSPOT) — firmware versions, release notes, USB update procedure incl. multi-unit DMX chain, .CHL file name (checked 2026-10-03)
+- [Maverick Force S Spot User Manual Rev 7](https://www.chauvetprofessional.com/wp-content/uploads/2021/03/Maverick-Force-S-Spot_UM_Rev7.pdf) — USB update, multi-unit via DMX, Fixture Information contents, UPLOAD 08 recovery (via search summary)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

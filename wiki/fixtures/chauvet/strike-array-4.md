@@ -28,6 +28,15 @@ dmx:
   protocols: []
   modes: []
 menu_password: null
+firmware:
+  latest_known: "V1.3.0"
+  checked: "2026-10-03"
+  check_on_fixture: "Fixture Information"
+  methods: ["USB stick (USB-C)", "USB stick + DMX to other fixtures (Multiple Fixture)"]
+  interface: null
+  software: null
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/STRIKEARRAY4"
 tools: []
 verification: "unverified"
 last_updated: "2026-10-03"
@@ -93,8 +102,35 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Not found — fill in from the fixture.
 
+## Firmware
+- Installed version — where to see it on the fixture: **Fixture Information** (GitHub README).
+- Latest known version: **V1.3.0** (latest found 2026-10-03). Download from [github.com/Chauvet-Pro/STRIKEARRAY4](https://github.com/Chauvet-Pro/STRIKEARRAY4); the file is `Strike Array 4-V1.3.0.chl`. The **STRIKE Array 4C** is a different product with its own repo, STRIKEARRAY4C (latest tag found: V1.0.5). Don't cross-load.
+- What you need: a FAT32 USB stick (≤32 GB) with USB-C or an adapter. For batch updates or recovery, a **5-pin** DMX cable to another fixture. No PC or UPLOAD 08 is needed.
+- Update steps (GitHub README):
+  1. Put the .chl file in the **root** of the stick.
+  2. Power on and plug into the USB-C port.
+  3. **"Upgrade Firmware"** appears → **ENTER**. If something else shows: main menu → **Update Firmware** → **Only This Fixture** / **Multiple Fixture** / **Other Fixture Type**.
+  4. Select the file. **"Are you sure?"** → **ENTER**. A wrong file fails and returns to the main screen. Repeat with the right one.
+  5. Don't power off or pull the stick (several minutes). It reboots itself.
+  6. Check **Fixture Information**, then restart.
+- Updating a whole rig: **Multiple Fixture** updates DMX-linked units of the same product line. **Other Fixture Type** updates a different Chauvet product. V1.210701 fixed using this unit to update a Silens fixture. Set the protocol to **DMX512** and unplug the console (general knowledge). No unit count is given ⚠️.
+- If it fails or bricks mid-update: Chauvet says a **Force Upload** is needed (GitHub README).
+  1. Run a 5-pin DMX cable from a working main fixture to the dead target, with the **target off**.
+  2. Main fixture: protocol DMX512. Stick in → **Upgrade Firmware** → **Multiple Fixture** (or Other Fixture Type).
+  3. Select the file → "Are you sure?" → ENTER. **Power the target on within 1–2 s.** Its display stays off while the main shows 0–100 %.
+  4. The target shows "< UPDATE >" and then reboots. Check its version, then reboot it.
+  - **One target at a time.**
+- Release notes worth knowing (GitHub README):
+  - **V1.3.0**: updated RDM PIDs.
+  - **V1.230817: added a new mode with independent Amber control.** A new or renumbered mode means the console patch and fixture profile must match. Update the whole rig to the same version before programming.
+  - V1.230206 (labeled "STRIKE Array 2" in the README): improved strobe dimming.
+  - V1.220503 (the file is named V1.220523): fixed an OLED display issue.
+  - V1.210701: fixed updating Silens fixtures from this unit.
+
 ## Road notes (community)
 - None collected yet.
 
 ## Sources
-- None. Search budget ran out before this fixture was researched. Start with the manual on chauvetprofessional.com (product page → Downloads → User Manual) and the electrical table in it.
+- Only the Firmware section has been researched (sources below). For power and specs, start with the manual on chauvetprofessional.com (product page → Downloads → User Manual) and the electrical table in it.
+- [github.com/Chauvet-Pro/STRIKEARRAY4](https://github.com/Chauvet-Pro/STRIKEARRAY4) — firmware versions, release notes, USB update and Force Upload procedures, .chl file name (checked 2026-10-03)
+- [github.com/Chauvet-Pro/STRIKEARRAY4C](https://github.com/Chauvet-Pro/STRIKEARRAY4C) — firmware versions, release notes (tags only, 4C variant) (checked 2026-10-03)

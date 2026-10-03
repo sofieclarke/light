@@ -40,6 +40,15 @@ dmx:
     - { name: "Dual Pixels", channels: 48 }
     - { name: "Dual Pixels", channels: 96 }
 menu_password: "2323"
+firmware:
+  latest_known: "V1.251029"
+  checked: "2026-10-03"
+  check_on_fixture: "MENU → Sys Info → Firmware Version (README says 'Fixture Information')"
+  methods: ["USB stick (USB-C)", "Web server (Ethernet)", "DMX cable + UPLOAD 08 (recovery)"]
+  interface: null
+  software: "Web browser (fixture web server)"
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/COLORADOPXLCURVE12"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -130,7 +139,40 @@ The manual has an error table. The search excerpts gave only the names below, wi
 ## Maintenance
 - Recalibrate: Zero Adjust (2323).
 - Fan / filter cleaning: Not found.
-- Firmware update method: **USB.** Setup → USB Update. Put the **.chl** file in the **root** of a **FAT32** drive of **≤32 GB**. Firmware can also be updated through the **Web Server**.
+
+## Firmware
+- Installed version — where to see it on the fixture: the firmware has **Sys Info** screens. The GitHub README says "Fixture Information" ⚠️.
+- Latest known version: **V1.251029** (latest found 2026-10-03). Download from [github.com/Chauvet-Pro/COLORADOPXLCURVE12](https://github.com/Chauvet-Pro/COLORADOPXLCURVE12) as `firmware/V1.251029.zip`, which holds `A40833-COLORado PXL Curve 12-V1.251029-251029-1.CHL`.
+- What you need: a FAT32 USB stick (≤32 GB) with USB-C or an adapter, or a laptop on Ethernet for the web server. Keep an UPLOAD 08 for recovery.
+- Update steps (USB stick, from Chauvet's GitHub README; the manual's menu has Setup → USB Update):
+  1. Unzip the download. Copy only the **.CHL** file to the **root** of a **FAT32** stick, **32 GB or smaller**. The GitHub zip also has a `__MACOSX` folder. Don't copy it.
+  2. Power on and plug the stick into the IP65 **USB-C** port. You need a USB-C stick or an adapter.
+  3. **"USB UPDATE"** appears → **YES**.
+  4. Pick the version with **UP / DOWN** → **ENTER**.
+  5. **"USB UPDATE"** appears again → **YES**.
+  6. **"USB Update Wait"** shows. **Don't cut power or pull the stick while the USB LED blinks.** Some units then show **"DO NOT UNPLUG, UPDATING"**.
+  7. The bar reboots by itself.
+  8. Confirm the version, then restart.
+- Web server route (the manual says firmware can be updated through the Web Server; login unconfirmed for this model, admin/admin on the PXL Bar 16 ⚠️):
+  1. Set the Control Protocol to **Art-Net** and the IP mode to **Static**.
+  2. Cable the fixture to a computer. Give the computer an IP address with the same first 3 numbers as the fixture's.
+  3. Browse to the fixture's IP address. Log in as **admin / admin**.
+  4. Open the **Upgrade** page → choose the file → **Upload File**.
+  5. The page warns "Fixture updating, please wait and do not power off the fixture", then "FILE UPLOAD SUCCESS, PLEASE WAIT FOR FIXTURE TO FINISH THE UPGRADE".
+  - The button and message text come from the web page built into the firmware.
+- Updating a whole rig: one fixture at a time. No batch method found ⚠️.
+- If it fails or bricks mid-update: partial or total firmware failure needs the **UPLOAD 08** (GitHub README). See `_chauvet-common.md`.
+- Release notes worth knowing (GitHub README):
+  - **V1.251029**: strobe refreshes on every value change. **Fixed random movement in MA3 Art-Net mode with RDM on.** Art-Net universes now go up to 32767. The web server works in any control mode. Also listed: "if fixture is set to tilt invert, heads will randomly get stuck during reset". Chauvet doesn't say whether that is fixed or a known issue ⚠️.
+  - V1.250624 / V1.250410: sACN universe limit raised from 256 to 32000.
+  - V1.250508: tilt improvement.
+  - **V1.250120**: fixed the LED color changing when DMX is lost.
+  - **V1.240806**: fixed sACN timing and IGMP subscription bugs.
+  - V1.240509: better calibration and LED color uniformity.
+  - **V1.240411**: fixed color snap. The web server mode names were corrected to Basic, Basic2, Standard, Advanced, Advanced2, Tour and Full PXL; it used to show 3/5/9/12/17/19/37.
+  - V1.240222: fixed IGMP.
+  - **V1.240131: added a new zoom mode.** Check the profile.
+  - V1.231222: improved dimming and added tilt adjustment.
 
 ## Road notes (community)
 - No forum threads turned up in search. Add notes here.
@@ -141,3 +183,5 @@ The manual has an error table. The search excerpts gave only the names below, wi
 - [manualslib, USB update page 13](https://www.manualslib.com/manual/3395060/Chauvet-Colorado-Pxl-Curve-12.html?page=13): USB update, .chl, FAT32, 32 GB, Web Server update
 - [User Manual Rev 1 (Hibino)](https://www.hibinolighting.co.jp/hibino_wp/wp-content/uploads/2023/08/COLORado-PXL-Curve-12_UM_Rev1.pdf): electrical
 - [AV-iQ data sheet](https://cdn-docs.av-iq.com/dataSheet/COLORADOPXLCURVE12.pdf), [B&H](https://www.bhphotovideo.com/c/product/1784524-REG/chauvet_professional_coloradopxlcurve12_colorado_pxl_curve_12.html), [Farralane](https://www.farralane.com/chauvet-professional-colorado-pxl-curve-12-12-x-45w-rgbw-led-ip65-rated-batten-with-12-controllable-tilting-heads-and-5-7-to-36-3-degree-zoom.html): DMX modes, weight, dimensions, zoom, tilt
+- [github.com/Chauvet-Pro/COLORADOPXLCURVE12](https://github.com/Chauvet-Pro/COLORADOPXLCURVE12) — firmware versions, release notes, USB update procedure, .CHL file name; web upgrade page text from the firmware file (checked 2026-10-03)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

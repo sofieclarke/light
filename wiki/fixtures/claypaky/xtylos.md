@@ -29,6 +29,15 @@ dmx:
   modes:
     - { name: "Standard", channels: 31 }
 menu_password: null
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: "Not found — likely the Information menu ⚠️"
+  methods: ["Fixture-to-fixture over DMX (Upload Firmware)", "Web Server over Ethernet", "CloudIO Box + USB stick ⚠️ compatibility unverified"]
+  interface: "None for fixture-to-fixture or Web Server; Claypaky Firmware Uploader USB/DMX interface ⚠️ for PC-over-DMX"
+  software: "Web browser (built-in web server); Claypaky FUL Uploader ⚠️"
+  file_type: ".img (CloudIO USB-stick update); other methods: Not found"
+  download: "Claypaky Customer Care site (service.claypaky.it, restricted login) — ask your Claypaky distributor / rental house"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -110,7 +119,24 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Recalibrate / reset: DMX Reset 128-255.
 - Fan / filter cleaning: forced ventilation with heat sinks. Cleaning procedure: Not found.
-- Firmware update method: see [_claypaky-common.md](_claypaky-common.md).
+
+## Firmware
+- Installed version — where to see it on the fixture: Not found — probably in the Information menu ⚠️. Fill in from the fixture.
+- Latest known version (date checked) and where to download it: **Not found** (checked 2026-10-03). Claypaky doesn't publish version numbers openly. Files live on the restricted **Claypaky Customer Care** site (service.claypaky.it). Ask your distributor or the rental house's service department, and write the version you find here.
+- Update features Claypaky lists for this model: **firmware upload from another fixture** and **firmware upgrade via web server** (Claypaky product page). **Xtylos (CJ3000), Xtylos Aqua (CJ3001) and Mini Xtylos (CJ3002/CJ3003) are different models: don't mix them on the update line** ⚠️. The laser safety logic is in firmware, so don't run a half-updated fixture.
+- What you need:
+  - **Fixture-to-fixture (no PC):** one Xtylos already on the version you want, plus a DMX cable to the others. DMX is 5-pin XLR (QLC+). Ethernet port: Not found on this page, but the web-server feature implies one.
+  - **From a PC:** Claypaky's **Firmware Uploader USB/DMX interface** (retail listings: "Firmware Uploader Kit USB/DMX", part **C61206** listed for the Alpha 1500). ⚠️ unverified which kit and which PC software suit this model. Claypaky's own Tech Corner video calls the PC tool **"FUL Uploader"** (video title only).
+  - **Web Server (Ethernet):** the Xtylos has a built-in web server and Claypaky lists "firmware upgrade via Web Server" (product page). Laptop on the fixture's RJ45, browser to the fixture. The exact steps and IP aren't sourced: see the Tech Corner "Firmware Update with Web Server" video.
+  - **CloudIO / CloudIO Box (CA8001):** copy the `.img` firmware file to the **root** of a USB stick, plug it into the CloudIO, open **Fixture Firmware Uploader**, press **CONTINUE**. Every compatible Claypaky fixture on its DMX OUT updates (CloudIO manual). ⚠️ unverified whether this model is on CloudIO's compatible list. USB stick format: Not found.
+- Update steps (fixture-to-fixture, Advanced menu; menu path from Claypaky manuals):
+  1. Unplug the console from the DMX line ⚠️ (general practice). Leave only fixtures of **the same model** on the line.
+  2. Run DMX from the Xtylos that has the wanted firmware into the first fixture to update, and daisy-chain the rest.
+  3. On the source fixture: menu → **Advanced** → enter access code **1234** → **Upload Firmware** → confirm.
+  4. Don't touch or power-cycle anything until it finishes ⚠️ (general practice). Then check the version on every target (see above).
+- Updating a whole rig: **same model only**, and Claypaky recommends **5–6 units at a time maximum** for fixture-to-fixture (manual, via search summary). CloudIO handles up to 31 lights on one DMX line (CloudIO page). Art-Net / sACN firmware update: Not found.
+- If it fails or bricks mid-update (recovery mode): **Not found.** No bootloader or recovery procedure was found. Retry from a known-good fixture of the same model, then call Claypaky service. See [_claypaky-common.md](_claypaky-common.md#firmware-updates).
+- Release notes worth knowing: Not found. A firmware change can add or renumber DMX modes, so check your console profile against the fixture's mode list after any update.
 
 ## Road notes (community)
 - US variance paperwork has to be in place before the gig, not on the day. Rental houses usually hold the variance and require a trained operator on site (Claypaky/FDA variance summaries).
@@ -123,3 +149,8 @@ last_updated: "2026-10-03"
 - [B&H Xtylos CJ3000](https://www.bhphotovideo.com/c/product/1787603-REG/astera_cj3000e41100s_xtylos_laser_beam_moving.html), [Farralane Xtylos](https://www.farralane.com/clay-paky-xtylos-rgb-laser-moving-head-beam.html) — weight, gobos, breaker, safety logic, 1-7° zoom, 31 ch
 - [Mike Wood "Product In Depth: Xtylos" L&SA Aug 2020](https://www.mikewoodconsulting.com/articles/ClaypakyXtylos.pdf) — background (content not quoted)
 - QLC+ Clay-Paky-Xtylos.qxf (github.com/mcallegari/qlcplus, commit 1ccdab8) — channel order, control values, dimensions (community)
+- [Claypaky Xtylos product page](https://www.claypaky.it/products/xtylos/) — firmware upload from another fixture, firmware upgrade via web server (via search summary)
+- Claypaky instruction manuals (Sharpy [manuals.plus copy](https://manuals.plus/m/0dc75ba9bd5c288c40aa1eb565a0d3d88973ac670f2f407b78f1e04c1552d923), [A.leda B-EYE K10/K20 user guide (cpl.tech)](https://www.cpl.tech/wp-content/uploads/2018/10/Clay-Paky-A-leda-B-EYE-K10-User-Guide.pdf), [Sharpy Plus (ManualsLib)](https://www.manualslib.com/manual/1637972/Claypaky-Sharpy-Plus.html)) — Upload Firmware copies firmware from one fixture to the others on the line, same model only, 5/6 units at a time max (via search summary; the exact manual page wasn't pinned)
+- [B&H: Claypaky C61206 Firmware Uploader USB/DMX interface](https://www.bhphotovideo.com/c/product/1827391-REG/claypaky_c61206_firmware_uploader_usb_dmx_interfacefor.html), [Lightspares: Claypaky Firmware Uploader Kit USB/DMX](https://lightspares.com/claypaky-firmware-uploader-kit-usbdmx-010-074) — the interface exists (retail listings; listed for Alpha-series fixtures)
+- [Claypaky CloudIO Instruction Manual 01.2020 (visiontwo.de)](https://www.visiontwo.de/fileadmin/user_upload/Claypaky_CloudIO_Manual_01.2020.pdf), [06.2022 (ltb.no)](https://ltb.no/media/multicase/documents/claypaky/manual_claypaky_cloudio_06.2022.pdf), [CloudIO product page](https://www.claypaky.it/products/cloudio/) — Fixture Firmware Uploader app, `.img` on USB-key root, up to 31 lights on its DMX line, offline use (via search summary)
+- Claypaky Tech Corner videos (titles only, not watched): [Firmware Update with FUL Uploader](https://www.youtube.com/watch?v=hyeRWUqLlTk), [Firmware Update with Web Server](https://www.youtube.com/watch?v=Jp4SJ3HJ9N4), [Firmware Update from Fixture to Fixture](https://www.youtube.com/watch?v=xGVPVCwnRPg)

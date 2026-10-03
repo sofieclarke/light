@@ -30,6 +30,15 @@ dmx:
     - { name: "31CH", channels: 31 }
     - { name: "39CH", channels: 39 }
 menu_password: "2323"
+firmware:
+  latest_known: "V2.210608"
+  checked: "2026-10-03"
+  check_on_fixture: "Fixture Information (firmware strings; exact field not confirmed)"
+  methods: ["DMX cable + UPLOAD 08", "Web server (Ethernet)"]
+  interface: "Chauvet UPLOAD 08"
+  software: "UPLOAD 08 PC software (Windows) or web browser (admin/admin)"
+  file_type: ".cl / .rar-packed (see page)"
+  download: "https://github.com/Chauvet-Pro/MAVERICKMK3SPOT"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -124,7 +133,39 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Recalibrate: Offset/Zero Adjust (2323).
 - Fan info: the menu shows head fan speed settings (Fan Information).
-- Firmware update method: Not found in the excerpts — fill in.
+
+## Firmware
+- Installed version — where to see it on the fixture: **Fixture Information**. The firmware has a "Fixture Information" screen. The exact version field wasn't confirmed in the manual ⚠️.
+- Latest known version: **V2.210608** (latest found 2026-10-03). The repo [github.com/Chauvet-Pro/MAVERICKMK3SPOT](https://github.com/Chauvet-Pro/MAVERICKMK3SPOT) has no release notes and no tags. Files:
+  - V2.190822 (`MK3 SPOT-V2.190822-20190826-2.CL`).
+  - V2.200401 (`MK3S-V2.200401-20200408-1.CL`).
+  - V2.210608. Its zip contains **`MK3SPOT-V2.210608.rar`**, a second archive you have to extract with a RAR tool to get the firmware file. What's inside wasn't checked ⚠️.
+- What you need: a **Chauvet UPLOAD 08**, a Windows PC with its software, and a DMX cable. **Or** a laptop on Ethernet for the web server.
+- USB stick: ⚠️ unverified. A Chauvet blog describes USB-stick updates for Maverick fixtures, but the MK3 Spot firmware has no "USB Update" screen strings. Assume no USB route unless you find a USB port on the fixture.
+- Update steps (UPLOAD 08 over DMX; full PC setup in `_chauvet-common.md`):
+  1. On a Windows PC, install the UPLOAD 08 software (v4.5.2 or later), Microsoft .NET Framework and the Silicon Labs **CP210x** driver.
+  2. Plug in the UPLOAD 08 with its USB cable. In Device Manager → Ports, set the "Silicon Labs CP210x USB to UART Bridge" to **COM129**.
+  3. Unplug the console. Run a DMX cable from the UPLOAD 08 to the first fixture, then daisy-chain fixtures of **this model only**.
+  4. Power the fixtures on.
+  5. In the app, click **Open** and select the .CHL (or older .CL) file. Follow the on-screen steps.
+  6. Any fixture that doesn't take it → **Force Upload** (see recovery below).
+  7. Check the version afterwards.
+  - Source: UPLOAD 08 Instructions Rev 4. "Unplug the console" is general knowledge.
+- Web server route (the manual says the web server gives access to firmware updates; admin/admin per manual):
+  1. Set the Control Protocol to **Art-Net** and the IP mode to **Static**.
+  2. Cable the fixture to a computer. Give the computer an IP address with the same first 3 numbers as the fixture's.
+  3. Browse to the fixture's IP address. Log in as **admin / admin**.
+  4. Open the **Upgrade** page → choose the file → **Upload File**.
+  5. Wait for "upload file success". Don't power off while it updates.
+  - The button and message text come from the web page built into the firmware.
+- Updating a whole rig: UPLOAD 08 does **up to 10 fixtures of the same product** per pass (Instructions Rev 4). The product page says up to 12, but plan on 10. Don't mix models on the line.
+- If it fails or bricks mid-update: use the UPLOAD 08's **Force Upload**.
+  1. Power the fixture off, but leave it connected.
+  2. Check that the UPLOAD 08 LED is flashing.
+  3. Select the file.
+  4. Click **Force Upload** and follow the prompts.
+  - Source: UPLOAD 08 Instructions Rev 4. If that fails, call Chauvet service.
+- Release notes worth knowing: **none published.** Check what's installed before mixing units in one rig.
 
 ## Road notes (community)
 - PLSN did a road test of this fixture (see Sources). No troubleshooting threads turned up in search. Add notes here.
@@ -137,3 +178,7 @@ last_updated: "2026-10-03"
 - [Maverick MKII Spot User Manual Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2016/05/Maverick_MKII_Spot_UM_Rev4_WO.pdf): 0920 also appears (older model)
 - [B&H listing](https://www.bhphotovideo.com/c/product/1531658-REG/chauvet_professional_maverickmk3spot_maverick_mk_3_spot_ip.html), [Chauvet product page](https://www.chauvetprofessional.com/products/maverick-mk3-spot/), [Musson data sheet](https://media.musson.com/mti/docs/m/a/maverick_mk3_spot.pdf): DMX modes, weight, dimensions, gobo sizes, lux, protocols
 - [PLSN road test](https://plsn.com/articles/road-tests/chauvet-maverick-mk3-spot/)
+- [github.com/Chauvet-Pro/MAVERICKMK3SPOT](https://github.com/Chauvet-Pro/MAVERICKMK3SPOT) — firmware versions, release notes (file list only, no notes; firmware strings for menus and web upgrade page) (checked 2026-10-03)
+- [Maverick MK3 Spot User Manual Rev 6](https://www.chauvetprofessional.com/wp-content/uploads/2019/02/Maverick_MK3_Spot_UM_Rev6.pdf) — web server firmware updates, admin/admin, Art-Net + static IP setup (via search summary)
+- [Updating Maverick fixture software with a USB drive (Chauvet blog)](https://chauvetprofessional.com/updating-maverick-fixture-software-with-a-usb-drive/) — USB route for Maverick fixtures generally (not confirmed for MK3 Spot)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

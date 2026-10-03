@@ -38,6 +38,15 @@ dmx:
     - { name: "Dual Pixels – Standard", channels: 32 }
     - { name: "Dual Pixels – Advanced", channels: 64 }
 menu_password: "2323"
+firmware:
+  latest_known: "V1.250911"
+  checked: "2026-10-03"
+  check_on_fixture: "MENU → Sys Info → Firmware Version (README says 'Fixture Information')"
+  methods: ["USB stick (USB-C)", "Web server (Ethernet) ⚠️", "DMX cable + UPLOAD 08 (recovery)"]
+  interface: null
+  software: null
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/COLORADOPXLBAR8"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -134,7 +143,32 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Recalibrate: Zero Adjust via passcode 2323.
 - Fan / filter cleaning: Not found.
-- Firmware update method: USB. Same procedure as the PXL Bar 16 (USB UPDATE prompt → YES, don't pull the drive while the LED blinks) — ⚠️ assumed from the family, not confirmed in the Bar 8 excerpts.
+
+## Firmware
+- Installed version — where to see it on the fixture: the firmware has **Sys Info** and **Firmware Version** screens. The GitHub README says to check "Fixture Information" ⚠️.
+- Latest known version: **V1.250911** (latest found 2026-10-03). Download from [github.com/Chauvet-Pro/COLORADOPXLBAR8](https://github.com/Chauvet-Pro/COLORADOPXLBAR8) as `FIRMWARE/V1.250911.zip`, which holds `A4073E-COLORADO PXL BAR 8-V1.250911-250911-2.CHL`. That's a different file from the Bar 16's. Don't mix them.
+- What you need: a FAT32 USB stick (≤32 GB) with USB-C or an adapter. Keep an UPLOAD 08 for recovery.
+- Update steps (USB stick, from Chauvet's GitHub README; the PXL Bar 16 manual says to set Setup → **USB Update** → YES first):
+  1. Unzip the download. Copy only the **.CHL** file to the **root** of a **FAT32** stick, **32 GB or smaller**.
+  2. Power on and plug the stick into the IP65 **USB-C** port. You need a USB-C stick or an adapter.
+  3. **"USB UPDATE"** appears → **YES**.
+  4. Pick the version with **UP / DOWN** → **ENTER**.
+  5. **"USB UPDATE"** appears again → **YES**.
+  6. **"USB Update Wait"** shows. **Don't cut power or pull the stick while the USB LED blinks.** Some units then show **"DO NOT UNPLUG, UPDATING"**.
+  7. The bar reboots by itself.
+  8. Confirm the version, then restart.
+- Web server: the firmware contains the same web "Upgrade" page as the Bar 16 (strings "POST /upgrade", "Upload File"). So the Bar 16 web route should work, but it's not confirmed in the Bar 8 manual ⚠️ unverified. The login is unconfirmed too: admin/admin on the Bar 16.
+- Updating a whole rig: one bar at a time. No batch method found ⚠️.
+- If it fails or bricks mid-update: partial or total firmware failure needs the **UPLOAD 08** (GitHub README). Force Upload steps are in `_chauvet-common.md`.
+- Release notes worth knowing (GitHub README):
+  - **V1.250911**: the Art-Net universe range is now 0–32767, and **the way the universe is entered and confirmed changed**. Re-check the network setup after updating.
+  - V1.241023: fixed control-channel values.
+  - V1.240807: new PWM firmware.
+  - **V1.240719**: fixed the thermistor error.
+  - **V1.240219**: fixed IGMP subscription.
+  - V1.230321: fixed dimming issues.
+  - **V1.221102**: tilt can be disabled from the menu. The start LED can be set left or right, from the menu and over DMX. PWM settings were added to the control channel, plus an HTP color preset function. Pixel order can now differ between bars, so check this setting if a chase runs backwards.
+  - V1.220627: fixed Red Shift and a web server message.
 
 ## Road notes (community)
 - No forum threads turned up in search. Add notes here.
@@ -144,3 +178,5 @@ last_updated: "2026-10-03"
 - [User Manual Rev 12 (voltlites mirror)](https://voltlites.com/wp-content/uploads/2026/03/COLORado_PXL-Bar_8_UM_Rev12.pdf), [Rev 11 (saleswl mirror)](https://saleswl.com/wp-content/uploads/2023/01/Chauvet-Professional-COLORado-PXL-Bar-8-User-Guide.pdf), [parlights mirror](https://parlights.com/wp-content/uploads/2024/03/COLORADO-PXL-BAR-8-MANUAL-1.pdf), [Rev 1 (Hibino)](https://www.hibinolighting.co.jp/hibino_wp/wp-content/uploads/2022/09/COLORado_PXL_Bar_8_UM_Rev1.pdf): electrical and error tables
 - [4Wall rental listing](https://www.4wall.com/rentals/9759046/chauvet-professional-colorado-pxl-bar-8-ip65), [B&H](https://www.bhphotovideo.com/c/product/1691786-REG/chauvet_professional_coloradopxlbar8_colorado_pxl_bar_8_rgbw.html), [TS Stage](https://tsstage.com/products/colorado-pxl-bar-8): DMX modes, weight, dimensions, zoom
 - [Farralane listing](https://www.farralane.com/chauvet-pro-colorado-pxl-bar-8-8-x-45w-rgbw-led-outdoor-motorized-tilting-batten-with-zoom.html): 3.5°–47.3° zoom (disagrees slightly)
+- [github.com/Chauvet-Pro/COLORADOPXLBAR8](https://github.com/Chauvet-Pro/COLORADOPXLBAR8) — firmware versions, release notes, USB update procedure, .CHL file name; web upgrade strings from the firmware file (checked 2026-10-03)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

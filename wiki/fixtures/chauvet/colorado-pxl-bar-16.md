@@ -40,6 +40,15 @@ dmx:
     - { name: "Dual Control Pixels – Standard", channels: 64 }
     - { name: "Dual Control Pixels – Advanced", channels: 128 }
 menu_password: "2323"
+firmware:
+  latest_known: "V1.260709"
+  checked: "2026-10-03"
+  check_on_fixture: "MENU → Sys Info → Firmware Version (README says 'Fixture Information'); also shown on the web server page"
+  methods: ["USB stick (USB-C)", "Web server (Ethernet)", "DMX cable + UPLOAD 08 (recovery)"]
+  interface: null
+  software: "Web browser (fixture web server, admin/admin)"
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/COLORADOPXLBAR16"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -154,7 +163,42 @@ Also in the manual: 100 V 8.35 A (link 0) and 240 V 3.50 A (link 3).
 ## Maintenance
 - Recalibrate / reset procedure: Zero Adjust (passcode 2323) for the tilt offset. Factory reset: menu location not found.
 - Fan / filter cleaning: Not found — fill in from the fixture.
-- Firmware update method (tool, connector): **USB flash drive in the IP65 USB-C port.** Power on, plug in the drive, wait for **"USB UPDATE"**, select **YES**. **Don't cut power or pull the drive while the USB LED is blinking**, or you'll get partial or total firmware failure that needs Chauvet's UPLOAD 08 device to recover. Enable it first under Setup → USB Update → YES. Per the sibling Curve 12 manual, the firmware file is a **.chl** in the drive's root on a FAT32 drive of up to 32 GB (⚠️ unverified for the Bar 16).
+
+## Firmware
+- Installed version — where to see it on the fixture: the firmware has **Sys Info** and **Firmware Version** screens. The GitHub README says to check "Fixture Information" ⚠️, so check both names. The web server page also shows "Version:".
+- Latest known version: **V1.260709** (latest found 2026-10-03). Download from [github.com/Chauvet-Pro/COLORADOPXLBAR16](https://github.com/Chauvet-Pro/COLORADOPXLBAR16) as `Firmware/V1.260709.zip`, which holds `A4073F-COLORADO PXL BAR 16-V1.2607C-260709-1.CHL`. Chauvet's note: **"Please update all units as soon as possible."** A git tag V1.250911 also exists, but it has no README entry.
+- What you need: a FAT32 USB stick (≤32 GB) with USB-C or an adapter, **or** a laptop and Ethernet cable for the web server. Keep an UPLOAD 08 for recovery.
+- If the stick does nothing: Setup → **USB Update** must be **YES** (manual).
+- Update steps (USB stick, from Chauvet's GitHub README; the PXL Bar 16 manual says to set Setup → **USB Update** → YES first):
+  1. Unzip the download. Copy only the **.CHL** file to the **root** of a **FAT32** stick, **32 GB or smaller**. The GitHub zip also has a `__MACOSX` folder. Don't copy it.
+  2. Power on and plug the stick into the IP65 **USB-C** port. You need a USB-C stick or an adapter.
+  3. **"USB UPDATE"** appears → **YES**.
+  4. Pick the version with **UP / DOWN** → **ENTER**.
+  5. **"USB UPDATE"** appears again → **YES**.
+  6. **"USB Update Wait"** shows. **Don't cut power or pull the stick while the USB LED blinks.** Some units then show **"DO NOT UNPLUG, UPDATING"**.
+  7. The bar reboots by itself.
+  8. Confirm the version, then restart.
+- Web server route (the manual says the Upgrade page updates the firmware):
+  1. Set the Control Protocol to **Art-Net** and the IP mode to **Static**.
+  2. Cable the fixture to a computer. Give the computer an IP address with the same first 3 numbers as the fixture's.
+  3. Browse to the fixture's IP address. Log in as **admin / admin**.
+  4. Open the **Upgrade** page → choose the file → **Upload File**.
+  5. The page warns "Fixture updating, please wait and do not power off the fixture", then "FILE UPLOAD SUCCESS, PLEASE WAIT FOR FIXTURE TO FINISH THE UPGRADE".
+  - The button and message text come from the web page built into the firmware.
+- Updating a whole rig: the GitHub README and manual excerpts give one bar at a time, by stick or web server. A batch method for this model wasn't found ⚠️ unverified.
+- If it fails or bricks mid-update: pulling power or the stick while the LED blinks causes partial or total firmware failure. Recovery needs the **UPLOAD 08** (GitHub README). Use Force Upload: see `_chauvet-common.md`.
+- Release notes worth knowing (GitHub README):
+  - **V1.260709**: fixed voltage fluctuations for stability and reliability. Chauvet says update all units ASAP.
+  - **V1.251014**: strobe refreshes on every value change. **Fixed bars moving randomly in MA3 Art-Net mode with RDM on.** The web server now works in any control mode.
+  - V1.241023: fixed control-channel values.
+  - V1.241014: fixed the flash-button timing on network control.
+  - V1.240830: new PWM firmware. Fixed Single Zoom.
+  - **V1.240719**: fixed the thermistor error.
+  - **V1.240219**: fixed IGMP subscription (sACN multicast).
+  - V1.230522: Factory Reset no longer wipes the pixel color calibration.
+  - V1.230321: fixed dimming issues.
+  - V1.220627: fixed Red Shift and a web server display message.
+  - V1.220411: fixed a strobe issue.
 
 ## Road notes (community)
 - No forum threads (Reddit / ControlBooth / Blue Room) on this fixture turned up in search. Add your own notes here.
@@ -172,3 +216,6 @@ Also in the manual: 100 V 8.35 A (link 0) and 240 V 3.50 A (link 3).
 - [Adorama listing](https://www.adorama.com/chauvet-dj-colorado-pxl-bar-16-rgbw-led-batten-light-black/p/chcpxlbar16): protocol list including Kling-Net (retailer, unverified)
 - [PXL Bar 8 User Manual Rev 9](https://www.chauvetprofessional.com/wp-content/uploads/2021/11/COLORado_PXL-Bar_8_UM_Rev9.pdf): fan error codes (sibling model)
 - [PXL Curve 12 manual on manualslib (USB update page)](https://www.manualslib.com/manual/3395060/Chauvet-Colorado-Pxl-Curve-12.html?page=13): .chl / FAT32 / 32 GB (sibling model)
+- [github.com/Chauvet-Pro/COLORADOPXLBAR16](https://github.com/Chauvet-Pro/COLORADOPXLBAR16) — firmware versions, release notes, USB update procedure, .CHL file name; web server upgrade page text from the firmware file (checked 2026-10-03)
+- [COLORado PXL Bar 16 User Manual Rev 10](https://www.chauvetprofessional.com/wp-content/uploads/2021/11/COLORado_PXL_16_UM_Rev10.pdf) — web server Upgrade page, admin/admin, Art-Net + static IP setup (via search summary)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

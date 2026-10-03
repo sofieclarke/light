@@ -40,7 +40,7 @@ firmware:
   interface: "ETC USB/DMX Gadget or Gadget II (4267A1001 / 4267A1004)"
   software: "ETC UpdaterAtor (Windows only)"
   file_type: null
-  download: "Inside UpdaterAtor (Setup Versions \u2192 Download All Latest Software), or etcconnect.com"
+  download: "Inside UpdaterAtor (Setup Versions → Download All Latest Software), or etcconnect.com"
 tools: []
 verification: "community"
 last_updated: "2026-10-03"

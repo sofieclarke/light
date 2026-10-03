@@ -31,7 +31,7 @@ menu_password: null
 firmware:
   latest_known: "V5.16.24"
   checked: "2026-10-03"
-  check_on_fixture: "AsteraApp \u2192 Connected Lights view \u2192 Firmware Version sorting mode"
+  check_on_fixture: "AsteraApp → Connected Lights view → Firmware Version sorting mode"
   methods: ["AsteraApp background update over Bluetooth via ART7 AsteraBox"]
   interface: "Astera ART7 AsteraBox"
   software: "AsteraApp (iOS / Android)"

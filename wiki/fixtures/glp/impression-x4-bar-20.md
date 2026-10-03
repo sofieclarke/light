@@ -34,6 +34,15 @@ dmx:
     - { name: "Dual Pixel High Res (dpixh)", channels: 49 }
     - { name: "Single Pixel (spix)", channels: 88 }
 menu_password: null
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: "Not found (manual refers to main software v0.60 and a separate Tilt firmware V.20)"
+  methods: ["DMX link with GLP D3Prog ⚠️ (GLP's standard tool; not confirmed for this model)"]
+  interface: "GLP D3Prog (USB/Sub-D 9 to PC; 5-pin + 3-pin XLR out) ⚠️"
+  software: "D3Prog PC transfer (software name not found)"
+  file_type: ".hex (Intel hex) or .bin, depending on firmware version ⚠️"
+  download: "glp.de product page → Downloads, or GLP iQ.Service Portal; also germanlightproducts.com/downloads"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -139,7 +148,22 @@ last_updated: "2026-10-03"
 - Recalibrate / reset: menu **Reset** runs a reset and recalibrates all functions. The manual notes this needs Tilt firmware V.20 or later.
 - The Special menu also has: **Tilt reset** (whether tilt moves during reset), **Tilt current** (tilt motor on/off) and **Tilt slow** (slow tilt speed) (manual).
 - Fan / filter cleaning: Not found.
-- Firmware update method: Not found in the manual excerpts. See [_glp-common.md](_glp-common.md).
+
+## Firmware
+- Installed version — where to see it on the fixture: Not found in the manual excerpts. The manual is written for software **v0.60** and mentions a separate **Tilt firmware** (menu Reset needs Tilt firmware **V.20** or later), so there are at least two firmware parts.
+- Latest known version (date checked) and where to download it: **Not found** (checked 2026-10-03). The glp.de X4 Bar 20 page has a firmware download dated **2023-05-02** (0.25 MB), but the version number wasn't in the summary. Read it off the download name and fill it in here.
+- What you need:
+  - **GLP D3Prog** (GLP's firmware programmer). Load the firmware into one of its memory slots from a PC over **USB (Type B)** or **Sub-D 9**, then plug it into the fixture's DMX in. It has **both 5-pin and 3-pin female XLR**, so no adapter needed. Runs on 2x 1.2 V Mignon (AA) rechargeables, so it works with no mains near it (glp.de). Retail part no. **9506** is listed for the "D-Prog" uploader ⚠️ (may be the older model). ⚠️ D3Prog isn't named for the X4 Bar 20 specifically in what was found; it's GLP's general tool.
+  - USB port / Art-Net update / iQ.Service: Not found.
+- Update steps:
+  1. On the PC, import the firmware into a D3Prog memory slot. Pick file type **Intel hex** or **BIN** to match the firmware file (GLP tech note, via search summary).
+  2. **Unplug the console and anything else on the line that you aren't updating.** GLP says no other DMX receivers or consoles may be active (tech note, via search summary).
+  3. D3Prog XLR out → DMX in of the first fixture, daisy-chain the rest. Fixtures powered.
+  4. Choose the slot on the D3Prog and start the upload. The button sequence on the D3Prog: Not found.
+  5. Don't power-cycle until it reports done ⚠️ (general practice), then check the version on each fixture.
+- Updating a whole rig: D3Prog updates several fixtures on one DMX line at once (glp.de). **Don't mix X4 Bar 10s and X4 Bar 20s on the update line** ⚠️ (different footprints, probably different firmware). Per-line maximum: Not found.
+- If it fails or bricks mid-update (recovery mode): Not found. The D3Prog can also program via AVR/ISP (service level). Contact support@glp.de.
+- Release notes worth knowing: If **Reset** in the Special menu does nothing, the Tilt firmware is older than V.20 (manual). Release notes for the 2023 file: Not found.
 
 ## Road notes (community)
 - PLSN road test: very quiet tilt with no lag on reversal. The tilt lock is on the yoke. The power supply is in the base and the LCD is in the middle of the base.
@@ -159,3 +183,7 @@ last_updated: "2026-10-03"
 - [X4 Bar 10 User Manual (Full Compass)](https://www.fullcompass.com/common/files/45323-impressionX4Bar10UserManual.pdf) — Bar 10: 200 VA, 8 kg, 7 modes, Normal 33 / Compressed 19
 - [MA Lighting forum thread](https://forum.malighting.com/forum/thread/62384-impr-x4-bar-20-model/) — 3D model complaint
 - [GLP X4 Bar Brackets](https://glp.de/en/products/miscellaneous/accessories/x4-bar-brackets-en) — accessory brackets exist
+- [GLP impression X4 Bar 20 product page](https://glp.de/en/products/entertainment-lighting/moving-lights/impression-x4-bar-20-en) — firmware download dated 2023-05-02 (0.25 MB), version not shown in the summary (via search summary)
+- [GLP D3Prog product page (glp.de)](https://glp.de/en/products/service-firmware/service-tools/d3prog-en) — D3Prog: USB / Sub-D 9 to PC, memory slots, DMX link or AVR/ISP output, XLR 5- and 3-pin female, 2x 1.2 V Mignon batteries, several fixtures at once (via search summary)
+- GLP Tech News [2019/10/30](https://www.glp.de/en/service/tech-info-archive/archive/80-glp-tech-news-2019-10-30?tmpl=component) and [2019/01/14](https://www.glp.de/en/service/tech-info-archive/archive/73-glp-tech-news-2019-01-14) — hex vs BIN file type when importing to the D3Prog, daisy-chain via DMX with no other receivers or consoles active (via search summary; which note said what wasn't pinned)
+- [GoKnight: GLP 9506 D-Prog Uploader](https://goknight.com/german-light-products-9506-d-prog-uploader/), [Solotech: GLP 9506 D-Prog Firmware Uploader](https://shop.solotech.com/products/glp-9506-d-prog-firmware-uploader) — retail part number 9506 (D-Prog; may be the older model, not D3Prog)

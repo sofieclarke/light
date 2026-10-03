@@ -137,7 +137,7 @@ last_updated: "2026-10-03"
 - Release notes worth knowing (forum thread, via search summary):
   - V1.8.1: "Sun Protection updated" and "Hibernation updated".
   - You can update within the V1.6.x, V1.7.x and V1.8.x lines, but **you cannot go back down to V1.6.x or V1.7.x**.
-  - The thread says a fixture on **V1.6.x** needs board **PCB1187-0-B** dealt with ("remove … first") before it can take V1.7.x or V1.8.x. ⚠️ Read the thread or ask Elation before touching a V1.6.x unit.
+  - For fixtures on **V1.6.x**, the thread says to remove board **PCB-PCB1187-0-B** first, before loading V1.7.x or V1.8.x. That's a hardware job. ⚠️ Read the thread or ask Elation before touching a V1.6.x unit.
   - Write down your menu settings first. Firmware cannot be downgraded.
 
 ## Road notes (community)

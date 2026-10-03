@@ -30,6 +30,15 @@ dmx:
     - { name: "18CH", channels: 18 }
     - { name: "21CH", channels: 21 }
 menu_password: "2323"
+firmware:
+  latest_known: "V4.231211"
+  checked: "2026-10-03"
+  check_on_fixture: "MENU → Sys Info → Ver"
+  methods: ["DMX cable + UPLOAD 08"]
+  interface: "Chauvet UPLOAD 08"
+  software: "UPLOAD 08 PC software (Windows)"
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/ROGUER2XSPOT"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -110,7 +119,36 @@ The BOM also lists M8×35 and M8×90 screws with M8 lock nuts, location not stat
 | Manual test mode broken | Old firmware | V4.231211 |
 
 ## Maintenance
-- Firmware: .CHL (R2X) or .CL (R2) files on github.com/Chauvet-Pro/ROGUER2XSPOT and /ROGUER2SPOT. No USB update instructions in these repos, so expect UPLOAD 08 over DMX ⚠️. Latest R2X Spot: V4.231211.
+- Firmware: see the Firmware section below.
+
+## Firmware
+- Installed version — where to see it on the fixture: **MENU → Sys Info → Ver**. The firmware has "Sys Info" / "System Information" screens. The exact field wasn't seen in this model's manual ⚠️.
+- Latest known version: **R2X Spot V4.231211** (latest found 2026-10-03). Download from [github.com/Chauvet-Pro/ROGUER2XSPOT](https://github.com/Chauvet-Pro/ROGUER2XSPOT); the file is `R2X SPOT-V4.231211.CHL`. The **original R2 Spot** is a separate repo, [ROGUER2SPOT](https://github.com/Chauvet-Pro/ROGUER2SPOT): latest file V4.1, 04-28-2016, with no release notes. Don't cross-load R2 and R2X files.
+- What you need: a **Chauvet UPLOAD 08** (USB-to-DMX box with 3-pin and 5-pin XLR), a Windows PC with the UPLOAD 08 software, and a DMX cable. This fixture has no USB port in its BOM, and the repo has no USB instructions ⚠️.
+- Update steps (UPLOAD 08 over DMX; full PC setup in `_chauvet-common.md`):
+  1. On a Windows PC, install the UPLOAD 08 software (v4.5.2 or later), Microsoft .NET Framework and the Silicon Labs **CP210x** driver.
+  2. Plug in the UPLOAD 08 with its USB cable. In Device Manager → Ports, set the "Silicon Labs CP210x USB to UART Bridge" to **COM129**.
+  3. Unplug the console. Run a DMX cable from the UPLOAD 08 to the first fixture, then daisy-chain fixtures of **this model only**.
+  4. Power the fixtures on.
+  5. In the app, click **Open** and select the .CHL (or older .CL) file. Follow the on-screen steps.
+  6. Any fixture that doesn't take it → **Force Upload** (see recovery below).
+  7. Check the version afterwards.
+  - Source: UPLOAD 08 Instructions Rev 4. "Unplug the console" is general knowledge.
+- Updating a whole rig: UPLOAD 08 does **up to 10 fixtures of the same product** per pass (Instructions Rev 4). The product page says up to 12, but plan on 10. Don't mix models on the line.
+- If it fails or bricks mid-update: use the UPLOAD 08's **Force Upload**.
+  1. Power the fixture off, but leave it connected.
+  2. Check that the UPLOAD 08 LED is flashing.
+  3. Select the file.
+  4. Click **Force Upload** and follow the prompts.
+  - Source: UPLOAD 08 Instructions Rev 4. If that fails, call Chauvet service.
+- Release notes worth knowing (GitHub README):
+  - V4.231211: fixed manual test mode.
+  - **V4.230301, V4.211014, V4.210712: RDM fixes.**
+  - **V4.211118**: works on fixtures with both new and old ICs. Use this or later on mixed-age stock.
+  - **V4.200225**: corrected the product UID and fixed ETC identifying. Update if Eos or RDM discovery misbehaves.
+  - V4.191024: supports the new MCU on the main PCB. Hardware revisions exist, so old files may not suit new boards.
+  - V4.20171217: first R2X release.
+  - No mode changes are listed.
 
 ## Road notes (community)
 - No specific notes found.
@@ -120,3 +158,6 @@ The BOM also lists M8×35 and M8×90 screws with M8 lock nuts, location not stat
 - [R2 Spot UM Rev 7 (bplsv mirror)](https://bplsv.com/manfacturers/lighting/manuals/chauvet/ROGUE_R2_Spot_UM_Rev7_WO.pdf), [R2 Spot UM Rev 9](https://www.chauvetprofessional.com/wp-content/uploads/2015/06/ROGUE_R2_Spot_UM_Rev9_WO.pdf) — cited in the summary of Rogue models sharing passcode 2323
 - [github.com/Chauvet-Pro/ROGUER2XSPOT](https://github.com/Chauvet-Pro/ROGUER2XSPOT), [github.com/Chauvet-Pro/ROGUER2SPOT](https://github.com/Chauvet-Pro/ROGUER2SPOT) — firmware history, BOMs (locks, fuse, connectors, gobos, LED module, Omega), firmware strings (modes, messages)
 - [QLC+ fixture Chauvet-Rogue-R2-Spot.qxf](https://github.com/mcallegari/qlcplus/tree/master/resources/fixtures/Chauvet) — community profile with 18/21 ch modes
+- [github.com/Chauvet-Pro/ROGUER2XSPOT](https://github.com/Chauvet-Pro/ROGUER2XSPOT) — firmware versions, release notes, .CHL file name (checked 2026-10-03)
+- [github.com/Chauvet-Pro/ROGUER2SPOT](https://github.com/Chauvet-Pro/ROGUER2SPOT) — firmware versions, release notes (file list only) (checked 2026-10-03)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

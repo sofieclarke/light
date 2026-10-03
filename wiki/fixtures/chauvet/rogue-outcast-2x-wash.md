@@ -38,6 +38,15 @@ dmx:
     - { name: "55CH", channels: 55 }
     - { name: "56CH", channels: 56 }
 menu_password: "2323"
+firmware:
+  latest_known: "V1.260610"
+  checked: "2026-10-03"
+  check_on_fixture: "MENU → Sys Info → Ver"
+  methods: ["USB stick (USB-C)", "DMX cable + UPLOAD 08 (recovery)"]
+  interface: null
+  software: null
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/ROGUEOUTCAST2XWASH"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -139,12 +148,36 @@ The manual's error-code table did not come through in search. Not found — fill
 ## Maintenance
 - Recalibrate: Setup → Reset Function → Pan/Tilt / Zoom / All.
 - Fans: Fan Mode Auto / Full / ECO. Cleaning interval: Not found.
-- **Firmware:** USB flash drive in the fixture's USB-C port (BOM lists a USB-C connector). Use FAT32, 32 GB max, with the .chl file in the root folder.
-  1. Power on and insert the drive. "USB Update" appears → YES.
-  2. Pick the version → ENTER → YES.
-  3. "USB Update Wait" shows. **Do not cut power while the USB LED blinks.**
-  4. The fixture reboots. Check Sys Info.
-- If a USB update fails part-way, Chauvet says you need the **UPLOAD 08** to recover. Latest firmware as of this writing: V1.260610 on github.com/Chauvet-Pro/ROGUEOUTCAST2XWASH. See `_chauvet-common.md`.
+
+## Firmware
+- Installed version — where to see it on the fixture: **MENU → Sys Info → Ver** (GitHub README says to check Sys Info. The firmware has "Sys Info" / "System Information" screens).
+- Latest known version: **V1.260610** (latest found 2026-10-03). Download from [github.com/Chauvet-Pro/ROGUEOUTCAST2XWASH](https://github.com/Chauvet-Pro/ROGUEOUTCAST2XWASH) as `V1.260610.zip`, which holds `A4078F-OUTCAST2XWASH-V1.260610-260625-2.CHL`. The **2X Wash M** has its own repo, ROGUEOUTCAST2XWASHM (latest tag found: V1.250911). Don't cross-load the files.
+- What you need: a FAT32 USB stick (≤32 GB) with a USB-C plug or an adapter. No laptop needed. Keep an **UPLOAD 08** (box + Windows app) for recovery.
+- Update steps (USB stick, from Chauvet's GitHub README for this model):
+  1. Unzip the download. Copy only the **.CHL** file to the **root** of a **FAT32** stick, **32 GB or smaller**.
+  2. Power on the fixture and plug the stick into the **USB-C** port. You need a USB-C stick or a USB-A→C adapter. Chauvet's own Firmware USB stick has both plugs.
+  3. **"USB Update"** appears → **YES**.
+  4. If the stick holds several versions, pick one with **UP / DOWN** → **ENTER**.
+  5. **"USB Update"** appears again → **YES**.
+  6. **"USB Update Wait"** shows. It can take several minutes. **Don't cut power or pull the stick while the USB LED blinks.**
+  7. When the LED stops, the motors power down and the display goes blank. **Still don't cut power.** The fixture reboots by itself.
+  8. Check **Sys Info** for the new version, then restart the fixture.
+- Updating a whole rig: one fixture at a time with the stick. The README doesn't describe a multi-unit USB update over DMX for this model ⚠️ unverified. For many units at once, the UPLOAD 08 does up to 10 of the same model over DMX (see `_chauvet-common.md`).
+- If it fails or bricks mid-update: pulling power or the stick while the USB LED blinks causes "partial or total firmware failure". Chauvet's fix is the **UPLOAD 08** (GitHub README). In the UPLOAD 08 app, use **Force Upload**:
+  1. Power the fixture off, but leave it connected to the UPLOAD 08.
+  2. Make sure the LED on the UPLOAD 08 is flashing.
+  3. Select the .CHL file.
+  4. Click **Force Upload** and follow the prompts.
+  - Source: UPLOAD 08 Instructions Rev 4. Full setup is in `_chauvet-common.md`.
+- Release notes worth knowing (GitHub README):
+  - **V1.260610**: added a CTC preset to the color macro channel.
+  - V1.250911: improved Random Strobe.
+  - V1.241125: added a 2-step standalone program.
+  - **V1.240318**: fixed white shifting as it settles after a color change.
+  - **V1.230928**: fixed ring flicker at low-end dimming.
+  - **V1.230504: added the 55CH and 23CH personalities.** Fixtures on older firmware won't have those modes. A new or renumbered mode means the console patch and fixture profile must match. Update the whole rig to the same version before programming.
+  - V1.221115: fixed a minor USB bug.
+  - V1.220606: first release.
 
 ## Road notes (community)
 - No Outcast 2X–specific forum threads turned up. ControlBooth threads on its sibling the R2X Wash (home position 90° off after DMX re-plug; color-change delay on R2 Wash) are on the R2X Wash page.
@@ -157,3 +190,6 @@ The manual's error-code table did not come through in search. Not found — fill
 - [Outcast 2X Wash datasheet (Full Compass)](https://www.fullcompass.com/common/files/84770-RogueOutcast2XWashDatasheet.pdf), [B&H product page](https://www.bhphotovideo.com/c/product/1714499-REG/chauvet_professional_rogueoutcast2xwash_rogue_outcast_2x_washincludes.html), [Full Compass product](https://www.fullcompass.com/prod/612879-chauvet-pro-rogue-outcast-2x-wash-moving-head-wash-fixture) — weight, dimensions, LEDs, zoom, lumens, Powerkon
 - [github.com/Chauvet-Pro/ROGUEOUTCAST2XWASH](https://github.com/Chauvet-Pro/ROGUEOUTCAST2XWASH) — firmware history, USB update procedure, BOM PDF (fuse F8A, connectors, screws, Omega CD-D11, vent valve, USB-C), firmware strings (error messages, modes)
 - [manuals.plus copy](https://manuals.plus/chauvet-professional/1512-rogue-outcast-2x-wash-manual) — passcode procedure, cross-check
+- [github.com/Chauvet-Pro/ROGUEOUTCAST2XWASH](https://github.com/Chauvet-Pro/ROGUEOUTCAST2XWASH) — firmware versions, release notes, USB update procedure, .CHL file name (checked 2026-10-03)
+- [github.com/Chauvet-Pro/ROGUEOUTCAST2XWASHM](https://github.com/Chauvet-Pro/ROGUEOUTCAST2XWASHM) — firmware versions, release notes (tags only, M variant) (checked 2026-10-03)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload

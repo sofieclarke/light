@@ -34,6 +34,15 @@ dmx:
     - { name: "Mode 4 SPix Pro", channels: 62 }
     - { name: "Mode 3 SPix", channels: 68 }
 menu_password: null
+firmware:
+  latest_known: "1.95"
+  checked: "2026-10-03"
+  check_on_fixture: "Information → SW/HW versions (main and distributed)"
+  methods: ["DMX link with GLP D3Prog", "GLP iQ.Service Portal (file source) ⚠️"]
+  interface: "GLP D3Prog (USB/Sub-D 9 to PC; 5-pin + 3-pin XLR out)"
+  software: "D3Prog PC transfer (software name not found)"
+  file_type: ".bin (3 driver files, updated in sequence) ⚠️"
+  download: "glp.de product page → Downloads, or GLP iQ.Service Portal; also germanlightproducts.com/downloads"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -148,8 +157,25 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Recalibrate / reset: Not found in excerpts.
 - Fan / cooling: the Information menu lets you watch fan operation and temperatures (manual).
-- Firmware update method: Not found in the user-manual excerpts. See [_glp-common.md](_glp-common.md). Check the SW version in Information before swapping profiles.
 - A technical service manual (rev 2.0, 2023) exists for GLP service partners.
+
+## Firmware
+- Installed version — where to see it on the fixture: **Information** menu → main and distributed **SW/HW versions** (manual). Software strings look like **178-69-19** (= 1.78) in the manual.
+- Latest known version (date checked) and where to download it: **1.95** (latest found, checked 2026-10-03): a GLP download page titled "JDC-1 Firmware 1.95" exists on germanlightproducts.com (title only, not read). V1.90 and 1.61_67_18 pages also exist. The JDC1 product page on glp.de points to the **iQ.Service Portal** for the latest firmware.
+- What you need:
+  - **GLP D3Prog** (GLP's firmware programmer). Load the firmware into one of its memory slots from a PC over **USB (Type B)** or **Sub-D 9**, then plug it into the fixture's DMX in. It has **both 5-pin and 3-pin female XLR**, so no adapter needed. Runs on 2x 1.2 V Mignon (AA) rechargeables, so it works with no mains near it (glp.de). Retail part no. **9506** is listed for the "D-Prog" uploader ⚠️ (may be the older model).
+  - Files: the JDC-1 update is **BIN files: all 3 driver files have to be updated in sequence**. Choose file type **BIN** when importing to the D3Prog (GLP firmware note, via search summary ⚠️ unverified wording).
+  - USB port on the fixture / Art-Net update: Not found for the JDC1.
+- Update steps:
+  1. On the PC, import the firmware into a D3Prog memory slot. Pick file type **Intel hex** or **BIN** to match the firmware file (GLP tech note, via search summary).
+  2. **Unplug the console and anything else on the line that you aren't updating.** GLP says no other DMX receivers or consoles may be active (tech note, via search summary).
+  3. D3Prog XLR out → DMX in of the first fixture, daisy-chain the rest. Fixtures powered.
+  4. Choose the slot on the D3Prog and start the upload. The button sequence on the D3Prog: Not found.
+  5. Don't power-cycle until it reports done ⚠️ (general practice), then check the version on each fixture.
+  6. Repeat for each of the 3 driver files in the order GLP gives in the release note ⚠️ (order not found).
+- Updating a whole rig: Daisy-chain over DMX with the D3Prog; GLP says several fixtures on a line can be done at once. A per-line maximum: Not found. Keep the line JDC1-only ⚠️.
+- If it fails or bricks mid-update (recovery mode): A GLP firmware page says: **if your fixture is on V1.78 or below, update the Bootloader first** before the main application (via search summary, and it wasn't pinned to the JDC-1 page ⚠️). The D3Prog can also program over **AVR/ISP**, which is a service-level route (glp.de); details are in the JDC1 technical service manual (rev 2.0, not read). Otherwise contact support@glp.de.
+- Release notes worth knowing: **SW 1.78 added Mode 6 Easy (11 ch).** Older fixtures (1.35 / 1.70) only have 5 modes. Updating a mixed rig changes which modes exist, so check your console patch. Detailed release notes for 1.90 / 1.95: Not found.
 
 ## Road notes (community)
 - No Reddit, ControlBooth or Blue Room threads were found in the searches.
@@ -171,3 +197,8 @@ last_updated: "2026-10-03"
 - [JDC Burst 1 User Manual](https://www.germanlightproducts.com/wp-content/uploads/2025/06/GLP-JDC-Burst1-User-Manual-EN-Rev20250606-02.pdf) — successor; Ethernet menu structure (used only as a ⚠️ hint)
 - [Soundlightup road test](https://en.soundlightup.com/archives-3/tests/glp-jdc1-the-led-strobe-that-tilts.html) — not read
 - [Open Fixture Library: GLP JDC1](https://open-fixture-library.org/glp/jdc1)
+- GLP download pages (germanlightproducts.com, titles only, not read): [JDC-1 Firmware 1.95](https://www.germanlightproducts.com/download/jdc-1-firmware-1-95/), [JDC-1 Firmware V1.90](https://www.germanlightproducts.com/download/jdc-1-firmware-v1-90/), [JDC-1 Software Version 1.61_67_18](https://www.germanlightproducts.com/download/jdc-1-software-version-1-61_67_18/)
+- [GLP D3Prog product page (glp.de)](https://glp.de/en/products/service-firmware/service-tools/d3prog-en) — D3Prog: USB / Sub-D 9 to PC, memory slots, DMX link or AVR/ISP output, XLR 5- and 3-pin female, 2x 1.2 V Mignon batteries, several fixtures at once (via search summary)
+- GLP Tech News [2019/10/30](https://www.glp.de/en/service/tech-info-archive/archive/80-glp-tech-news-2019-10-30?tmpl=component) and [2019/01/14](https://www.glp.de/en/service/tech-info-archive/archive/73-glp-tech-news-2019-01-14) — hex vs BIN file type when importing to the D3Prog, daisy-chain via DMX with no other receivers or consoles active (via search summary; which note said what wasn't pinned)
+- [GoKnight: GLP 9506 D-Prog Uploader](https://goknight.com/german-light-products-9506-d-prog-uploader/), [Solotech: GLP 9506 D-Prog Firmware Uploader](https://shop.solotech.com/products/glp-9506-d-prog-firmware-uploader) — retail part number 9506 (D-Prog; may be the older model, not D3Prog)
+- [JDC Burst 1 User Manual Rev 20250606-02](https://www.germanlightproducts.com/wp-content/uploads/2025/06/GLP-JDC-Burst1-User-Manual-EN-Rev20250606-02.pdf) — successor: update via DMX link with D-Prog, GLP iQ.Mesh or GLP iQ.Tool; Burst 1 firmware V0.3.4.0 (Aug 2025) (via search summary)

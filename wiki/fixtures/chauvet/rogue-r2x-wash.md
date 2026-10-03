@@ -38,6 +38,15 @@ dmx:
     - { name: "55CH", channels: 55 }
     - { name: "56CH", channels: 56 }
 menu_password: "2323"
+firmware:
+  latest_known: "V1.250715"
+  checked: "2026-10-03"
+  check_on_fixture: "MENU → Sys Info → Ver"
+  methods: ["DMX cable + UPLOAD 08"]
+  interface: "Chauvet UPLOAD 08"
+  software: "UPLOAD 08 PC software (Windows)"
+  file_type: ".chl"
+  download: "https://github.com/Chauvet-Pro/ROGUER2XWASH"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -118,7 +127,35 @@ The handle uses M6×16 screws (BOM).
 | RDM problems | Old firmware | V1.230614 / V1.230627 |
 
 ## Maintenance
-- Firmware: GitHub repo files are .CHL. The BOM shows no USB connector and the repo has no USB instructions, so expect the **UPLOAD 08** over DMX ⚠️ (see `_chauvet-common.md`). Latest found: V1.250715.
+- Firmware: see the Firmware section below.
+
+## Firmware
+- Installed version — where to see it on the fixture: **MENU → Sys Info → Ver**. The firmware has "Sys Info" / "System Information" screens. A search summary of Chauvet Rogue manuals describes Sys Info → Ver as "V_._____" ⚠️ (not confirmed on this model's manual).
+- Latest known version: **V1.250715** (latest found 2026-10-03). Download from [github.com/Chauvet-Pro/ROGUER2XWASH](https://github.com/Chauvet-Pro/ROGUER2XWASH); the file is `R2XW-V1.250715-250716-1.CHL`. The **R2X Wash VW** has its own repo, ROGUER2XWASHVW (latest tag found: V1.250710). Don't cross-load.
+- What you need: a **Chauvet UPLOAD 08**, a Windows PC with its software, and a DMX cable (3-pin or 5-pin both work on this fixture). The BOM shows no USB port ⚠️.
+- Update steps (UPLOAD 08 over DMX; full PC setup in `_chauvet-common.md`):
+  1. On a Windows PC, install the UPLOAD 08 software (v4.5.2 or later), Microsoft .NET Framework and the Silicon Labs **CP210x** driver.
+  2. Plug in the UPLOAD 08 with its USB cable. In Device Manager → Ports, set the "Silicon Labs CP210x USB to UART Bridge" to **COM129**.
+  3. Unplug the console. Run a DMX cable from the UPLOAD 08 to the first fixture, then daisy-chain fixtures of **this model only**.
+  4. Power the fixtures on.
+  5. In the app, click **Open** and select the .CHL (or older .CL) file. Follow the on-screen steps.
+  6. Any fixture that doesn't take it → **Force Upload** (see recovery below).
+  7. Check the version afterwards.
+  - Source: UPLOAD 08 Instructions Rev 4. "Unplug the console" is general knowledge.
+- Updating a whole rig: UPLOAD 08 does **up to 10 fixtures of the same product** per pass (Instructions Rev 4). The product page says up to 12, but plan on 10. Don't mix models on the line.
+- If it fails or bricks mid-update: use the UPLOAD 08's **Force Upload**.
+  1. Power the fixture off, but leave it connected.
+  2. Check that the UPLOAD 08 LED is flashing.
+  3. Select the file.
+  4. Click **Force Upload** and follow the prompts.
+  - Source: UPLOAD 08 Instructions Rev 4. If that fails, call Chauvet service.
+- Release notes worth knowing (GitHub README):
+  - **V1.250715: fixed personality names being mislabeled.** If the menu's mode names don't match your console library, update. Then re-check the patch.
+  - V1.241212: internal only, no changes.
+  - **V1.230627 / V1.230614: RDM fixes.**
+  - V1.201119: fixed the center LED not matching the color of the 2 outer rings.
+  - V1.191202: fixed output changing between dim modes.
+  - Mixed-version rigs can look different side by side.
 
 ## Road notes (community)
 - ControlBooth thread "Chauvet Pro Rogue R2x Wash Home Position": a venue added 8 R2X units and found the home position 90° off, perpendicular to the LCD instead of parallel. It happened after DMX was plugged back in.
@@ -129,3 +166,7 @@ The handle uses M6×16 screws (BOM).
 - [R2X Wash VW manual](https://cdn01.usedlighting.com/products/files/f61f493ac93d46.pdf) — VW variant
 - [github.com/Chauvet-Pro/ROGUER2XWASH](https://github.com/Chauvet-Pro/ROGUER2XWASH) — firmware history, BOM (labelled ROGUER2WASH: powerCON, 7 A fuse, DMX 3/5-pin, Omega, PSU), firmware strings (modes, messages)
 - [ControlBooth: R2x Wash Home Position](https://www.controlbooth.com/threads/chauvet-pro-rogue-r2x-wash-home-position.48256/), [ControlBooth: R2 wash color snap](https://www.controlbooth.com/threads/chauvet-rogue-r2-wash-color-snap.39741/) — road notes
+- [github.com/Chauvet-Pro/ROGUER2XWASH](https://github.com/Chauvet-Pro/ROGUER2XWASH) — firmware versions, release notes, .CHL file name (checked 2026-10-03)
+- [github.com/Chauvet-Pro/ROGUER2XWASHVW](https://github.com/Chauvet-Pro/ROGUER2XWASHVW) — firmware versions, release notes (tags only, VW variant) (checked 2026-10-03)
+- [UPLOAD 08 Instructions Rev 4](https://www.chauvetprofessional.com/wp-content/uploads/2015/12/UPLOAD_08_Instructions_Rev4.pdf) — UPLOAD 08 PC setup, COM129, up to 10 same-product fixtures, Force Upload
+- [Firmware Update Instructions for Rogue R1 Wash, R2 Wash, R3 Wash (manualzz mirror)](https://manualzz.com/doc/51992745/chauvet-upload-instructions) — title seen in search; confirms UPLOAD-based updates for the R-series washes (content not read)
