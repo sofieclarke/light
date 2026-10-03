@@ -21,7 +21,7 @@ power:
   link_max_120v: null  # manufacturer's power-link limit
   link_max_208v: null
   link_max_230v: null
-  per_20a_120v: null   # min( floor(16 / amps_120v), link_max_120v + 1 if linking from a feed )  — see reference/power-math.md
+  per_20a_120v: null   # min( floor(16 / amps_120v), link_max_120v as TOTAL on one feed, any maker cap e.g. Chauvet 12 A ) — see reference/power-math.md
   per_20a_208v: null
   fuse: ""
 dmx:
