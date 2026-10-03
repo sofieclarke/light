@@ -1,0 +1,3594 @@
+[
+  {
+    "title": "Chauvet Professional Color STRIKE M",
+    "manufacturer": "Chauvet Professional",
+    "model": "Color STRIKE M",
+    "aliases": [
+      "color strike m",
+      "colour strike m",
+      "strike m",
+      "colorstrikem"
+    ],
+    "type": "strobe",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": "",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/color-strike-m.md"
+  },
+  {
+    "title": "Chauvet Professional COLORado PXL Bar 16",
+    "manufacturer": "Chauvet Professional",
+    "model": "COLORado PXL Bar 16",
+    "aliases": [
+      "pxl bar 16",
+      "pxl 16",
+      "pxl bar",
+      "pxl line",
+      "colorado pxl 16",
+      "coloradopxlbar16",
+      "bar pxl 16",
+      "pixel bar 16"
+    ],
+    "type": "pixel-bar",
+    "light_source": "LED 16x 45W RGBW",
+    "ip_rating": "IP65",
+    "weight_lb": 45.6,
+    "weight_kg": 20.7,
+    "dimensions": "39.37 x 5.47 x 10.75 in (1000 x 139 x 273 mm)",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-ranging",
+      "connector_in": "powerCON TRUE1-compatible (IP65)",
+      "connector_out": "powerCON TRUE1-compatible (IP65)",
+      "watts_max": 790,
+      "amps_120v": 6.6,
+      "amps_208v": 3.821,
+      "amps_230v": 3.485,
+      "link_max_120v": 0,
+      "link_max_208v": 3,
+      "link_max_230v": 3,
+      "per_20a_120v": 1,
+      "per_20a_208v": 3,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": "IP65 5-pin XLR in/out, IP65 Ethernet (TCP/IP) in/out, IP65 USB-C (firmware)",
+      "protocols": [
+        "DMX",
+        "RDM",
+        "Art-Net",
+        "sACN",
+        "Kling-Net"
+      ],
+      "modes": [
+        {
+          "name": "Single Control – Basic2",
+          "channels": 19
+        },
+        {
+          "name": "Single Control – Basic",
+          "channels": 20
+        },
+        {
+          "name": "Single Control – Standard",
+          "channels": 84
+        },
+        {
+          "name": "Single Control – Advanced",
+          "channels": 154
+        },
+        {
+          "name": "Single Control – Tour",
+          "channels": 186
+        },
+        {
+          "name": "Dual Control Movement – Basic2",
+          "channels": 7
+        },
+        {
+          "name": "Dual Control Movement – Basic",
+          "channels": 8
+        },
+        {
+          "name": "Dual Control Movement – Standard",
+          "channels": 20
+        },
+        {
+          "name": "Dual Control Movement – Advanced",
+          "channels": 26
+        },
+        {
+          "name": "Dual Control Pixels – Basic",
+          "channels": 48
+        },
+        {
+          "name": "Dual Control Pixels – Standard",
+          "channels": 64
+        },
+        {
+          "name": "Dual Control Pixels – Advanced",
+          "channels": 128
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/colorado-pxl-bar-16.md"
+  },
+  {
+    "title": "Chauvet Professional COLORado PXL Bar 8",
+    "manufacturer": "Chauvet Professional",
+    "model": "COLORado PXL Bar 8",
+    "aliases": [
+      "pxl bar 8",
+      "pxl 8",
+      "colorado pxl 8",
+      "coloradopxlbar8",
+      "bar pxl 8",
+      "half pxl",
+      "pixel bar 8"
+    ],
+    "type": "pixel-bar",
+    "light_source": "LED 8x 45W RGBW",
+    "ip_rating": "IP65",
+    "weight_lb": 25.2,
+    "weight_kg": 11.5,
+    "dimensions": "19.69 x 5.47 x 10.75 in (500 x 139 x 273 mm)",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-ranging",
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 422,
+      "amps_120v": 3.497,
+      "amps_208v": 2.013,
+      "amps_230v": 1.83,
+      "link_max_120v": 3,
+      "link_max_208v": 5,
+      "link_max_230v": 6,
+      "per_20a_120v": 3,
+      "per_20a_208v": 5,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": "IP65 5-pin XLR in/out, IP65 Ethernet in/out (⚠️ assumed same as PXL Bar 16)",
+      "protocols": [
+        "DMX",
+        "RDM",
+        "Art-Net",
+        "sACN"
+      ],
+      "modes": [
+        {
+          "name": "Single – Basic",
+          "channels": 19
+        },
+        {
+          "name": "Single – Standard",
+          "channels": 51
+        },
+        {
+          "name": "Single – Advanced",
+          "channels": 89
+        },
+        {
+          "name": "Single – Tour",
+          "channels": 105
+        },
+        {
+          "name": "Dual Movement – Basic",
+          "channels": 7
+        },
+        {
+          "name": "Dual Movement – Standard",
+          "channels": 19
+        },
+        {
+          "name": "Dual Movement – Advanced",
+          "channels": 25
+        },
+        {
+          "name": "Dual Pixels – Basic",
+          "channels": 24
+        },
+        {
+          "name": "Dual Pixels – Standard",
+          "channels": 32
+        },
+        {
+          "name": "Dual Pixels – Advanced",
+          "channels": 64
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/colorado-pxl-bar-8.md"
+  },
+  {
+    "title": "Chauvet Professional COLORado PXL Curve 12",
+    "manufacturer": "Chauvet Professional",
+    "model": "COLORado PXL Curve 12",
+    "aliases": [
+      "pxl curve",
+      "pxl curve 12",
+      "curve 12",
+      "colorado pxl curve",
+      "coloradopxlcurve12"
+    ],
+    "type": "pixel-bar",
+    "light_source": "LED 12x 45W RGBW (12 individually tilting heads)",
+    "ip_rating": "IP65",
+    "weight_lb": 76,
+    "weight_kg": 34.5,
+    "dimensions": "39.49 x 12.76 x 6.65 in (1003 x 324 x 169 mm)",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-ranging (⚠️ assumed from family)",
+      "connector_in": "Seetronic Powerkon IP65 (power input cord with Edison plug, US)",
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": 6.7,
+      "amps_208v": 3.8,
+      "amps_230v": null,
+      "link_max_120v": 1,
+      "link_max_208v": 3,
+      "link_max_230v": 3,
+      "per_20a_120v": 1,
+      "per_20a_208v": 3,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [
+        "DMX",
+        "Art-Net",
+        "sACN"
+      ],
+      "modes": [
+        {
+          "name": "Single",
+          "channels": 20
+        },
+        {
+          "name": "Single",
+          "channels": 53
+        },
+        {
+          "name": "Single",
+          "channels": 101
+        },
+        {
+          "name": "Single",
+          "channels": 155
+        },
+        {
+          "name": "Single",
+          "channels": 179
+        },
+        {
+          "name": "Dual Movement",
+          "channels": 8
+        },
+        {
+          "name": "Dual Movement",
+          "channels": 41
+        },
+        {
+          "name": "Dual Movement",
+          "channels": 53
+        },
+        {
+          "name": "Dual Movement",
+          "channels": 59
+        },
+        {
+          "name": "Dual Pixels",
+          "channels": 36
+        },
+        {
+          "name": "Dual Pixels",
+          "channels": 48
+        },
+        {
+          "name": "Dual Pixels",
+          "channels": 96
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/colorado-pxl-curve-12.md"
+  },
+  {
+    "title": "Chauvet Professional Maverick Force S Spot",
+    "manufacturer": "Chauvet Professional",
+    "model": "Maverick Force S Spot",
+    "aliases": [
+      "force s spot",
+      "force s",
+      "maverick force s",
+      "mav force s",
+      "maverickforcesspot"
+    ],
+    "type": "spot",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": "",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": 2,
+      "link_max_208v": null,
+      "link_max_230v": 5,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/maverick-force-s-spot.md"
+  },
+  {
+    "title": "Chauvet Professional Maverick MK3 Spot",
+    "manufacturer": "Chauvet Professional",
+    "model": "Maverick MK3 Spot",
+    "aliases": [
+      "mk3 spot",
+      "maverick mk3",
+      "mav mk3 spot",
+      "maverick mk 3 spot",
+      "maverickmk3spot",
+      "mk3"
+    ],
+    "type": "spot",
+    "light_source": "LED 820W cool white",
+    "ip_rating": null,
+    "weight_lb": 72.9,
+    "weight_kg": 33,
+    "dimensions": "16.10 x 11.92 x 29.76 in (409 x 303 x 756 mm)",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-ranging",
+      "connector_in": "powerCON TRUE1-compatible",
+      "connector_out": null,
+      "watts_max": 1180,
+      "amps_120v": 9.9,
+      "amps_208v": 5.6,
+      "amps_230v": 5.04,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": 1,
+      "per_20a_208v": 2,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [
+        "DMX",
+        "RDM",
+        "W-DMX",
+        "Art-Net",
+        "sACN"
+      ],
+      "modes": [
+        {
+          "name": "31CH",
+          "channels": 31
+        },
+        {
+          "name": "39CH",
+          "channels": 39
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/maverick-mk3-spot.md"
+  },
+  {
+    "title": "Chauvet Professional Maverick MK3 Wash",
+    "manufacturer": "Chauvet Professional",
+    "model": "Maverick MK3 Wash",
+    "aliases": [
+      "mk3 wash",
+      "maverick mk3 wash",
+      "mav mk3 wash",
+      "maverick mk 3 wash",
+      "maverickmk3wash"
+    ],
+    "type": "wash",
+    "light_source": "LED 27x 40W RGBW",
+    "ip_rating": null,
+    "weight_lb": 68.2,
+    "weight_kg": 31,
+    "dimensions": "",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-ranging",
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 1120,
+      "amps_120v": 9.51,
+      "amps_208v": 5.35,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": 1,
+      "per_20a_208v": 2,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": "3-pin and 5-pin XLR in/out, 2x Amphenol XLRnet (Ethernet) through ports",
+      "protocols": [
+        "DMX",
+        "W-DMX",
+        "Art-Net",
+        "sACN",
+        "Kling-Net"
+      ],
+      "modes": [
+        {
+          "name": "Single",
+          "channels": 20
+        },
+        {
+          "name": "Single",
+          "channels": 129
+        },
+        {
+          "name": "Single",
+          "channels": 243
+        },
+        {
+          "name": "Single",
+          "channels": 297
+        },
+        {
+          "name": "Dual – Function",
+          "channels": 9
+        },
+        {
+          "name": "Dual – Function",
+          "channels": 21
+        },
+        {
+          "name": "Dual – Function",
+          "channels": 27
+        },
+        {
+          "name": "Dual – Pixel",
+          "channels": 81
+        },
+        {
+          "name": "Dual – Pixel",
+          "channels": 108
+        },
+        {
+          "name": "Dual – Pixel",
+          "channels": 216
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/maverick-mk3-wash.md"
+  },
+  {
+    "title": "Chauvet Professional Rogue Outcast 1 BeamWash",
+    "manufacturer": "Chauvet Professional",
+    "model": "Rogue Outcast 1 BeamWash",
+    "aliases": [
+      "outcast 1",
+      "outcast 1 beamwash",
+      "outcast 1 beam wash",
+      "rogue outcast 1",
+      "o1 beamwash",
+      "rogueoutcast1beamwash"
+    ],
+    "type": "beam-wash",
+    "light_source": "LED 7x 45W RGBW + ring of 97x 0.2W RGB (12 zones)",
+    "ip_rating": "IP65",
+    "weight_lb": 20,
+    "weight_kg": 9.16,
+    "dimensions": "11.92 x 7.58 x 15.75 in (303 x 192 x 391 mm)",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-ranging",
+      "connector_in": "Seetronic Powerkon IP65 (SAC3MPX)",
+      "connector_out": "Seetronic Powerkon IP65 (SAC3FPX)",
+      "watts_max": null,
+      "amps_120v": 3.25,
+      "amps_208v": 1.92,
+      "amps_230v": 1.69,
+      "link_max_120v": 3,
+      "link_max_208v": 6,
+      "link_max_230v": 7,
+      "per_20a_120v": 3,
+      "per_20a_208v": 6,
+      "fuse": "F8A (8 A) in FH15-22A holder, per Chauvet BOM"
+    },
+    "dmx": {
+      "connectors": "5-pin XLR IP65 in/out",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "15CH",
+          "channels": 15
+        },
+        {
+          "name": "24CH",
+          "channels": 24
+        },
+        {
+          "name": "30CH",
+          "channels": 30
+        },
+        {
+          "name": "37CH",
+          "channels": 37
+        },
+        {
+          "name": "54CH",
+          "channels": 54
+        },
+        {
+          "name": "64CH",
+          "channels": 64
+        },
+        {
+          "name": "111CH",
+          "channels": 111
+        },
+        {
+          "name": "135CH",
+          "channels": 135
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/rogue-outcast-1-beamwash.md"
+  },
+  {
+    "title": "Chauvet Professional Rogue Outcast 2X Wash",
+    "manufacturer": "Chauvet Professional",
+    "model": "Rogue Outcast 2X Wash",
+    "aliases": [
+      "outcast 2x",
+      "outcast 2x wash",
+      "rogue outcast 2x",
+      "o2x wash",
+      "rogueoutcast2xwash"
+    ],
+    "type": "wash",
+    "light_source": "LED 19x 25W RGBW quad-color, 5 pixel zones",
+    "ip_rating": "IP65",
+    "weight_lb": 23.4,
+    "weight_kg": 10.6,
+    "dimensions": "11.92 x 8.58 x 14.1 in (303 x 218 x 361 mm)",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-ranging",
+      "connector_in": "Seetronic Powerkon IP65 (SAC3MPX)",
+      "connector_out": "Seetronic Powerkon IP65 (SAC3FPX)",
+      "watts_max": 291,
+      "amps_120v": 2.47,
+      "amps_208v": 1.41,
+      "amps_230v": 1.28,
+      "link_max_120v": 5,
+      "link_max_208v": 9,
+      "link_max_230v": null,
+      "per_20a_120v": 5,
+      "per_20a_208v": 9,
+      "fuse": "F8A (8 A) in panel fuse holder FH15-22A, per Chauvet BOM; size/blow type not stated"
+    },
+    "dmx": {
+      "connectors": "5-pin XLR IP65 in/out",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "15CH",
+          "channels": 15
+        },
+        {
+          "name": "17CH",
+          "channels": 17
+        },
+        {
+          "name": "22CH",
+          "channels": 22
+        },
+        {
+          "name": "23CH",
+          "channels": 23
+        },
+        {
+          "name": "33CH",
+          "channels": 33
+        },
+        {
+          "name": "33MS",
+          "channels": 33
+        },
+        {
+          "name": "54CH",
+          "channels": 54
+        },
+        {
+          "name": "54MS",
+          "channels": 54
+        },
+        {
+          "name": "55CH",
+          "channels": 55
+        },
+        {
+          "name": "56CH",
+          "channels": 56
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/rogue-outcast-2x-wash.md"
+  },
+  {
+    "title": "Chauvet Professional Rogue Outcast 3 Spot",
+    "manufacturer": "Chauvet Professional",
+    "model": "Rogue Outcast 3 Spot",
+    "aliases": [
+      "outcast 3",
+      "outcast 3 spot",
+      "rogue outcast 3",
+      "outcast 3 spot-2",
+      "rogueoutcast3spot",
+      "rogueoutcast3spot-2"
+    ],
+    "type": "spot",
+    "light_source": "LED 1x 300W cool white, 7044 K",
+    "ip_rating": "IP65",
+    "weight_lb": 51,
+    "weight_kg": 23.2,
+    "dimensions": null,
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-ranging",
+      "connector_in": "Seetronic Powerkon IP65 (SAC3MPX)",
+      "connector_out": "Seetronic Powerkon IP65 (SAC3FPX)",
+      "watts_max": 510,
+      "amps_120v": 4.24,
+      "amps_208v": 2.43,
+      "amps_230v": 2.19,
+      "link_max_120v": 3,
+      "link_max_208v": 5,
+      "link_max_230v": 6,
+      "per_20a_120v": 3,
+      "per_20a_208v": 5,
+      "fuse": "F8A (8 A) in FH15-22A holder, per Chauvet BOM"
+    },
+    "dmx": {
+      "connectors": "5-pin XLR IP65 in/out",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "20CH",
+          "channels": 20
+        },
+        {
+          "name": "25CH",
+          "channels": 25
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/rogue-outcast-3-spot.md"
+  },
+  {
+    "title": "Chauvet Professional Rogue R2X Spot",
+    "manufacturer": "Chauvet Professional",
+    "model": "Rogue R2X Spot",
+    "aliases": [
+      "r2x spot",
+      "rogue r2x spot",
+      "r2 spot",
+      "rogue r2 spot",
+      "roguer2xspot",
+      "roguer2spot"
+    ],
+    "type": "spot",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": "Neutrik powerCON NAC3MPA-1 (blue), per BOM",
+      "connector_out": "Neutrik powerCON NAC3MPB-1 (grey), per BOM",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": "7 A, 5x20 mm, 250 V (BOM)"
+    },
+    "dmx": {
+      "connectors": "3-pin and 5-pin XLR in/out (BOM)",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "18CH",
+          "channels": 18
+        },
+        {
+          "name": "21CH",
+          "channels": 21
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/rogue-r2x-spot.md"
+  },
+  {
+    "title": "Chauvet Professional Rogue R2X Wash",
+    "manufacturer": "Chauvet Professional",
+    "model": "Rogue R2X Wash",
+    "aliases": [
+      "r2x wash",
+      "r2x",
+      "rogue r2x",
+      "rogue r2x wash",
+      "roguer2xwash"
+    ],
+    "type": "wash",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": "Neutrik powerCON (NAC3MPA, blue), per R2 Wash BOM in the R2X repo",
+      "connector_out": "Neutrik powerCON out (grey), per same BOM",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": "7 A, 5x20 mm, 250 V (BOM labelled ROGUER2WASH — verify on the R2X)"
+    },
+    "dmx": {
+      "connectors": "3-pin and 5-pin XLR in/out (4-in-1 DMX board, per BOM)",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "15CH",
+          "channels": 15
+        },
+        {
+          "name": "17CH",
+          "channels": 17
+        },
+        {
+          "name": "22CH",
+          "channels": 22
+        },
+        {
+          "name": "23CH",
+          "channels": 23
+        },
+        {
+          "name": "33CH",
+          "channels": 33
+        },
+        {
+          "name": "33MS",
+          "channels": 33
+        },
+        {
+          "name": "54CH",
+          "channels": 54
+        },
+        {
+          "name": "54MS",
+          "channels": 54
+        },
+        {
+          "name": "55CH",
+          "channels": 55
+        },
+        {
+          "name": "56CH",
+          "channels": 56
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/rogue-r2x-wash.md"
+  },
+  {
+    "title": "Chauvet Professional Rogue R3 Spot",
+    "manufacturer": "Chauvet Professional",
+    "model": "Rogue R3 Spot",
+    "aliases": [
+      "r3 spot",
+      "rogue r3 spot",
+      "roguer3spot"
+    ],
+    "type": "spot",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": "Neutrik powerCON NAC3MPA-1 (blue), per BOM",
+      "connector_out": "Neutrik powerCON NAC3MPB-1 (grey), per BOM",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": "7 A, 5x20 mm, 250 V (BOM)"
+    },
+    "dmx": {
+      "connectors": "3-pin and 5-pin XLR in/out",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "19CH",
+          "channels": 19
+        },
+        {
+          "name": "25CH",
+          "channels": 25
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/rogue-r3-spot.md"
+  },
+  {
+    "title": "Chauvet Professional Rogue R3X Wash",
+    "manufacturer": "Chauvet Professional",
+    "model": "Rogue R3X Wash",
+    "aliases": [
+      "r3x wash",
+      "r3x",
+      "rogue r3x",
+      "rogue r3x wash",
+      "roguer3xwash"
+    ],
+    "type": "wash",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": "Neutrik powerCON NAC3MPA-1 (blue), per BOM",
+      "connector_out": "Neutrik powerCON NAC3MPB-1 (grey), per BOM",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": "12 A, 250 V (BOM: 'fuse 12A 520 250V', likely 5x20 mm)"
+    },
+    "dmx": {
+      "connectors": "3-pin and 5-pin XLR in/out (BOM)",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "15CH",
+          "channels": 15
+        },
+        {
+          "name": "21CH",
+          "channels": 21
+        },
+        {
+          "name": "27CH",
+          "channels": 27
+        },
+        {
+          "name": "33MS",
+          "channels": 33
+        },
+        {
+          "name": "54MS",
+          "channels": 54
+        },
+        {
+          "name": "62CH",
+          "channels": 62
+        },
+        {
+          "name": "71CH",
+          "channels": 71
+        },
+        {
+          "name": "107CH",
+          "channels": 107
+        }
+      ]
+    },
+    "menu_password": "2323",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/rogue-r3x-wash.md"
+  },
+  {
+    "title": "Chauvet Professional Strike Array 4",
+    "manufacturer": "Chauvet Professional",
+    "model": "Strike Array 4",
+    "aliases": [
+      "strike array 4",
+      "strike 4",
+      "strike array",
+      "4-lite led blinder",
+      "strikearray4"
+    ],
+    "type": "blinder",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": "",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/chauvet/strike-array-4.md"
+  },
+  {
+    "title": "Claypaky A.leda B-EYE K20",
+    "manufacturer": "Claypaky",
+    "model": "A.leda B-EYE K20",
+    "aliases": [
+      "b-eye k20",
+      "beye k20",
+      "b eye",
+      "k20",
+      "a.leda b-eye k20",
+      "b-eye",
+      "beye"
+    ],
+    "type": "beam-wash",
+    "light_source": "LED 37x Osram Ostar 15W RGBW (LED count derived from pixel-mode footprint; LED type per Open Fixture Library)",
+    "ip_rating": null,
+    "weight_lb": 46.3,
+    "weight_kg": 21,
+    "dimensions": "approx. 395 x 476 x 330 mm (OFL); QLC+ lists height 589 mm",
+    "power": {
+      "input": "",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "3-pin and 5-pin XLR (community data)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "Standard",
+          "channels": 21
+        },
+        {
+          "name": "Shapes",
+          "channels": 35
+        },
+        {
+          "name": "Extended RGB",
+          "channels": 132
+        },
+        {
+          "name": "Extended RGBW",
+          "channels": 169
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/claypaky/b-eye-k20.md"
+  },
+  {
+    "title": "Claypaky Mythos 2",
+    "manufacturer": "Claypaky",
+    "model": "Mythos 2",
+    "aliases": [
+      "mythos 2",
+      "mythos2",
+      "c61396",
+      "clay paky mythos 2",
+      "claypaky mythos 2",
+      "mythos"
+    ],
+    "type": "hybrid",
+    "light_source": "Osram Sirius HRI 440W X",
+    "ip_rating": null,
+    "weight_lb": 70.54,
+    "weight_kg": 32,
+    "dimensions": "L 420 mm (16.53 in) x W 396 mm (15.59 in) x H 628 mm (24.72 in)",
+    "power": {
+      "input": "115/230 V 50/60 Hz with automatic power supply switching (manual); rental specs list 100-240 V",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": 700,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR in/out",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "Standard",
+          "channels": 30
+        },
+        {
+          "name": "Vector",
+          "channels": 34
+        }
+      ]
+    },
+    "menu_password": "1234",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/claypaky/mythos-2.md"
+  },
+  {
+    "title": "Claypaky Scenius Unico",
+    "manufacturer": "Claypaky",
+    "model": "Scenius Unico",
+    "aliases": [
+      "scenius unico",
+      "unico",
+      "scenius",
+      "claypaky scenius unico"
+    ],
+    "type": "profile",
+    "light_source": "Osram Lok-it! HTI 1400/PS discharge, 6000 K (community data); lamp control offers 1200 W and 1400 W modes",
+    "ip_rating": null,
+    "weight_lb": 100.5,
+    "weight_kg": 45.6,
+    "dimensions": "approx. 360 x 803 x 410 mm (W x H x D, QLC+ community data)",
+    "power": {
+      "input": "",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": 1,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (community data)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "Standard",
+          "channels": 40
+        },
+        {
+          "name": "Vector",
+          "channels": 44
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/claypaky/scenius-unico.md"
+  },
+  {
+    "title": "Claypaky Sharpy Plus",
+    "manufacturer": "Claypaky",
+    "model": "Sharpy Plus",
+    "aliases": [
+      "sharpy plus",
+      "sharpy+",
+      "cd3000",
+      "clay paky sharpy plus",
+      "claypaky sharpy plus"
+    ],
+    "type": "hybrid",
+    "light_source": "Osram Sirius HRI 330W X8",
+    "ip_rating": "IP20",
+    "weight_lb": 50.7,
+    "weight_kg": 23,
+    "dimensions": "Base 307 x 375 mm, height 635 mm with head vertical (datasheet)",
+    "power": {
+      "input": "100-240 V, 50/60 Hz, electronic auto-range with active PFC",
+      "connector_in": "Neutrik powerCON TRUE1",
+      "connector_out": null,
+      "watts_max": 540,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "Locking 5-pin XLR in/out, RJ45 Ethernet",
+      "protocols": [
+        "DMX",
+        "RDM",
+        "Art-Net",
+        "sACN"
+      ],
+      "modes": [
+        {
+          "name": "Standard",
+          "channels": 31
+        }
+      ]
+    },
+    "menu_password": "1234",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/claypaky/sharpy-plus.md"
+  },
+  {
+    "title": "Claypaky Sharpy X Frame",
+    "manufacturer": "Claypaky",
+    "model": "Sharpy X Frame",
+    "aliases": [
+      "sharpy x frame",
+      "sharpy xframe",
+      "x frame",
+      "xframe",
+      "claypaky sharpy x frame"
+    ],
+    "type": "hybrid",
+    "light_source": "Discharge 550 W, 8000 K (retailer listing); QLC+ wrongly lists LED",
+    "ip_rating": null,
+    "weight_lb": 61.7,
+    "weight_kg": 28,
+    "dimensions": "approx. 350 x 668 x 306 mm (W x H x D, QLC+ community data)",
+    "power": {
+      "input": "",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (community data)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "Standard",
+          "channels": 43
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/claypaky/sharpy-x-frame.md"
+  },
+  {
+    "title": "Claypaky Sharpy",
+    "manufacturer": "Claypaky",
+    "model": "Sharpy",
+    "aliases": [
+      "sharpy",
+      "clay paky sharpy",
+      "claypaky sharpy",
+      "c61375",
+      "original sharpy",
+      "sharpy 189"
+    ],
+    "type": "beam",
+    "light_source": "Discharge 189W short-arc (manual: Osram Sirius HRI 190W+; Christie Lites lists Philips 5R)",
+    "ip_rating": null,
+    "weight_lb": 41.8,
+    "weight_kg": 19,
+    "dimensions": "H 475 mm (18.70 in) x W 330 mm (12.99 in) x D 280 mm (11.02 in) (datasheet)",
+    "power": {
+      "input": "Manual/datasheet: power supplies 100-120 V 50/60 Hz and 200-240 V 50/60 Hz (datasheet header: 115/230 V). Auto-switching not confirmed.",
+      "connector_in": "Christie Lites lists Neutrik TRUE1 (may be rental retrofit; unverified for factory units)",
+      "connector_out": null,
+      "watts_max": 350,
+      "amps_120v": 2.59,
+      "amps_208v": 1.44,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": 6,
+      "per_20a_208v": 11,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "XLR 3-pin and XLR 5-pin in/thru (Christie Lites spec)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "Standard",
+          "channels": 16
+        },
+        {
+          "name": "Vector",
+          "channels": 20
+        }
+      ]
+    },
+    "menu_password": "1234",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/claypaky/sharpy.md"
+  },
+  {
+    "title": "Claypaky Xtylos",
+    "manufacturer": "Claypaky",
+    "model": "Xtylos",
+    "aliases": [
+      "xtylos",
+      "cj3000",
+      "claypaky xtylos",
+      "clay paky xtylos",
+      "laser beam"
+    ],
+    "type": "beam",
+    "light_source": "Custom RGB laser module (each colour under 100 W), ~20,000 h",
+    "ip_rating": "IP20",
+    "weight_lb": 52.13,
+    "weight_kg": 24,
+    "dimensions": "approx. 388 x 582 x 294 mm (W x H x D, QLC+ community data)",
+    "power": {
+      "input": "100-240 V, 50/60 Hz, electronic auto-range with active PFC",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": 400,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": "Bipolar circuit breaker with thermal protection (manufacturer)"
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (others not confirmed)",
+      "protocols": [
+        "DMX",
+        "RDM",
+        "Art-Net",
+        "sACN"
+      ],
+      "modes": [
+        {
+          "name": "Standard",
+          "channels": 31
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/claypaky/xtylos.md"
+  },
+  {
+    "title": "Elation Proteus Hybrid",
+    "manufacturer": "Elation Professional",
+    "model": "Proteus Hybrid",
+    "aliases": [
+      "proteus hybrid",
+      "proteus hybrid wmg",
+      "proteus 3-in-1"
+    ],
+    "type": "hybrid",
+    "light_source": "Philips MSD Platinum 21R 470W discharge, 8,000K",
+    "ip_rating": "IP65",
+    "weight_lb": 84,
+    "weight_kg": 38,
+    "dimensions": null,
+    "power": {
+      "input": "AC 100–240 V, 50/60 Hz, auto-switching",
+      "connector_in": "Neutrik powerCON TRUE1",
+      "connector_out": null,
+      "watts_max": 700,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": "IP-rated 5-pin XLR in/out, RJ45 ethernet in/out",
+      "protocols": [
+        "DMX",
+        "RDM",
+        "Art-Net",
+        "sACN",
+        "E-FLY wireless"
+      ],
+      "modes": [
+        {
+          "name": "24ch",
+          "channels": 24
+        },
+        {
+          "name": "26ch",
+          "channels": 26
+        },
+        {
+          "name": "37ch",
+          "channels": 37
+        }
+      ]
+    },
+    "menu_password": "050",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/elation/proteus-hybrid.md"
+  },
+  {
+    "title": "Elation Proteus Maximus",
+    "manufacturer": "Elation Professional",
+    "model": "Proteus Maximus",
+    "aliases": [
+      "proteus maximus",
+      "maximus",
+      "proteus max profile",
+      "proteus maximus wmg",
+      "prm992"
+    ],
+    "type": "profile",
+    "light_source": "LED 950W white engine, 6,500K, CRI 70+",
+    "ip_rating": "IP65",
+    "weight_lb": 117,
+    "weight_kg": 53,
+    "dimensions": null,
+    "power": {
+      "input": "AC 100–240 V, 50/60 Hz (one summary of the same manual says 120–240 V)",
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 1400,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [
+        "DMX",
+        "RDM",
+        "Art-Net",
+        "sACN"
+      ],
+      "modes": [
+        {
+          "name": "37ch",
+          "channels": 37
+        },
+        {
+          "name": "61ch",
+          "channels": 61
+        }
+      ]
+    },
+    "menu_password": "050",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/elation/proteus-maximus.md"
+  },
+  {
+    "title": "Elation Smarty Hybrid",
+    "manufacturer": "Elation Professional",
+    "model": "Smarty Hybrid",
+    "aliases": [
+      "smarty hybrid",
+      "smarty",
+      "esh253",
+      "smarty hybrid fil"
+    ],
+    "type": "hybrid",
+    "light_source": "Philips MSD Platinum 200 Flex discharge, selectable 190/240/280W",
+    "ip_rating": null,
+    "weight_lb": 49.0,
+    "weight_kg": 22.2,
+    "dimensions": "15.2 in W x 15.9 in D x 24.0 in H",
+    "power": {
+      "input": "AC 100–240 V, 50/60 Hz, auto-switching",
+      "connector_in": "Neutrik powerCON TRUE1",
+      "connector_out": "Neutrik powerCON TRUE1",
+      "watts_max": 480,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": [
+        {
+          "name": "20ch",
+          "channels": 20
+        },
+        {
+          "name": "34ch",
+          "channels": 34
+        }
+      ]
+    },
+    "menu_password": "038",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/elation/smarty-hybrid.md"
+  },
+  {
+    "title": "ETC ColorSource PAR",
+    "manufacturer": "ETC",
+    "model": "ColorSource PAR",
+    "aliases": [
+      "colorsource par",
+      "cs par",
+      "colorsource",
+      "etc par",
+      "color source par"
+    ],
+    "type": "par",
+    "light_source": "LED, 40 Lumileds LUXEON Z, RGB-L (red, green, blue, lime)",
+    "ip_rating": null,
+    "weight_lb": 8.3,
+    "weight_kg": 3.77,
+    "dimensions": "203 x 310 x 240 mm (OFL / QLC+ community data)",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (community data)",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "5ch (default)",
+          "channels": 5
+        },
+        {
+          "name": "6ch Direct",
+          "channels": 6
+        },
+        {
+          "name": "3ch RGB",
+          "channels": 3
+        },
+        {
+          "name": "1ch",
+          "channels": 1
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/etc/colorsource-par.md"
+  },
+  {
+    "title": "ETC Source Four LED Series 2 Lustr",
+    "manufacturer": "ETC",
+    "model": "Source Four LED Series 2 Lustr",
+    "aliases": [
+      "lustr 2",
+      "series 2 lustr",
+      "s4 led series 2",
+      "source four led series 2",
+      "lustr+",
+      "s4 lustr"
+    ],
+    "type": "ellipsoidal",
+    "light_source": "LED, 60 7-color Lumileds LUXEON Rebel emitters",
+    "ip_rating": null,
+    "weight_lb": 18.3,
+    "weight_kg": 8.3,
+    "dimensions": "338 x 615 x 631 mm (OFL community data)",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 171,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (OFL community data)",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "Direct",
+          "channels": 10
+        },
+        {
+          "name": "HSI",
+          "channels": 6
+        },
+        {
+          "name": "HSIC",
+          "channels": 7
+        },
+        {
+          "name": "RGB",
+          "channels": 6
+        },
+        {
+          "name": "Studio",
+          "channels": 6
+        },
+        {
+          "name": "HSI Plus 7",
+          "channels": 15
+        },
+        {
+          "name": "HSIC Plus 7",
+          "channels": 16
+        },
+        {
+          "name": "RGB Plus 7",
+          "channels": 15
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/etc/source-four-led-series-2-lustr.md"
+  },
+  {
+    "title": "ETC Source Four LED Series 3 Lustr X8",
+    "manufacturer": "ETC",
+    "model": "Source Four LED Series 3 Lustr X8",
+    "aliases": [
+      "lustr x8",
+      "series 3 lustr",
+      "s4 led series 3",
+      "source four led series 3",
+      "s4 lustr x8",
+      "lustr 3",
+      "s4 led"
+    ],
+    "type": "ellipsoidal",
+    "light_source": "LED, 90 Lumileds LUXEON C and CZ emitters, 8-color (Lustr X8)",
+    "ip_rating": null,
+    "weight_lb": 19.6,
+    "weight_kg": 8.9,
+    "dimensions": "216 x 298 x 700 mm (OFL community data, lens tube not stated)",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 340,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (OFL community data)",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "Direct",
+          "channels": 12
+        },
+        {
+          "name": "Expanded",
+          "channels": 11
+        },
+        {
+          "name": "Studio",
+          "channels": 7
+        },
+        {
+          "name": "HSIC",
+          "channels": 8
+        },
+        {
+          "name": "3ch RGB",
+          "channels": 3
+        },
+        {
+          "name": "1ch (Intensity)",
+          "channels": 1
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/etc/source-four-led-series-3-lustr-x8.md"
+  },
+  {
+    "title": "ETC Source Four",
+    "manufacturer": "ETC",
+    "model": "Source Four (tungsten ellipsoidal)",
+    "aliases": [
+      "source four",
+      "source 4",
+      "s4",
+      "leko",
+      "ellipsoidal",
+      "ers",
+      "s4 leko",
+      "source four ellipsoidal",
+      "hpl leko"
+    ],
+    "type": "ellipsoidal",
+    "light_source": "HPL tungsten-halogen lamp, 575 W or 750 W (120 V, 115 V or 230 V versions)",
+    "ip_rating": null,
+    "weight_lb": 14,
+    "weight_kg": 6.4,
+    "dimensions": null,
+    "power": {
+      "input": "Set by the lamp installed: 115 V / 120 V HPL on US rigs, 230 V HPL in EU. Fed from a dimmer, not a constant feed",
+      "connector_in": "Pigtail — varies by rental house (stage pin / Edison / twist-lock / powerCON). Check the plug",
+      "connector_out": "",
+      "watts_max": 750,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": 3,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "None — conventional fixture, controlled through a dimmer",
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/etc/source-four.md"
+  },
+  {
+    "title": "GLP impression FR10 Bar",
+    "manufacturer": "GLP (German Light Products)",
+    "model": "impression FR10 Bar",
+    "aliases": [
+      "fr10",
+      "fr10 bar",
+      "impression fr10 bar",
+      "glp fr10"
+    ],
+    "type": "pixel-bar",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": "",
+    "power": {
+      "input": "",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "",
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/glp/impression-fr10-bar.md"
+  },
+  {
+    "title": "GLP impression S350",
+    "manufacturer": "GLP (German Light Products)",
+    "model": "impression S350",
+    "aliases": [
+      "s350",
+      "impression s350",
+      "glp s350"
+    ],
+    "type": "profile",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": "",
+    "power": {
+      "input": "",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "",
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/glp/impression-s350.md"
+  },
+  {
+    "title": "GLP impression X4 Bar 20",
+    "manufacturer": "GLP (German Light Products)",
+    "model": "impression X4 Bar 20",
+    "aliases": [
+      "x4 bar 20",
+      "x4 bar",
+      "x4bar20",
+      "impression x4 bar",
+      "glp x4 bar",
+      "x4 bar 10",
+      "impr x4 bar 20"
+    ],
+    "type": "pixel-bar",
+    "light_source": "LED 20x 15W RGBW",
+    "ip_rating": null,
+    "weight_lb": 32,
+    "weight_kg": 14.5,
+    "dimensions": "1000 x 100 x 240 mm (39.4 x 3.9 x 9.4 in), L x W x H per manual summary",
+    "power": {
+      "input": "100–240 VAC, 50–60 Hz, auto-sensing",
+      "connector_in": "Neutrik powerCON (exact type not confirmed)",
+      "connector_out": "Neutrik powerCON thru (exact type not confirmed)",
+      "watts_max": 550,
+      "amps_120v": 4.6,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": 3,
+      "per_20a_208v": null,
+      "fuse": "Micro-fuse 5x20 mm, T5A"
+    },
+    "dmx": {
+      "connectors": "5-pin XLR in/thru",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "Compressed (comp)",
+          "channels": 20
+        },
+        {
+          "name": "Normal (norm)",
+          "channels": 34
+        },
+        {
+          "name": "High Resolution (hires)",
+          "channels": 35
+        },
+        {
+          "name": "Dual Pixel (dpix)",
+          "channels": 48
+        },
+        {
+          "name": "Dual Pixel High Res (dpixh)",
+          "channels": 49
+        },
+        {
+          "name": "Single Pixel (spix)",
+          "channels": 88
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/glp/impression-x4-bar-20.md"
+  },
+  {
+    "title": "GLP impression X4 / X4 S / X4 L",
+    "manufacturer": "GLP (German Light Products)",
+    "model": "impression X4 (family: X4, X4 S, X4 L)",
+    "aliases": [
+      "x4",
+      "impression x4",
+      "glp x4",
+      "x4 s",
+      "x4s",
+      "x4 small",
+      "x4 l",
+      "x4l",
+      "x4 large",
+      "impression x4 s",
+      "impression x4 l"
+    ],
+    "type": "wash",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": "",
+    "power": {
+      "input": "",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "",
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/glp/impression-x4-x4s-x4l.md"
+  },
+  {
+    "title": "GLP impression X5",
+    "manufacturer": "GLP (German Light Products)",
+    "model": "impression X5",
+    "aliases": [
+      "x5",
+      "impression x5",
+      "glp x5"
+    ],
+    "type": "wash",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": "",
+    "power": {
+      "input": "",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "",
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/glp/impression-x5.md"
+  },
+  {
+    "title": "GLP JDC Line 1000",
+    "manufacturer": "GLP (German Light Products)",
+    "model": "JDC Line 1000",
+    "aliases": [
+      "jdc line",
+      "jdc line 1000",
+      "jdc line 1m",
+      "jdc line 500"
+    ],
+    "type": "strobe",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": "",
+    "power": {
+      "input": "",
+      "connector_in": "",
+      "connector_out": "",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "",
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/glp/jdc-line-1000.md"
+  },
+  {
+    "title": "GLP JDC1",
+    "manufacturer": "GLP (German Light Products)",
+    "model": "JDC1",
+    "aliases": [
+      "jdc1",
+      "jdc-1",
+      "jdc 1",
+      "jdc",
+      "glp strobe",
+      "jdc1 strobe",
+      "hybrid strobe"
+    ],
+    "type": "strobe",
+    "light_source": "LED: cool-white linear tube (12 beam pixels) + RGB plates (12 plate pixels)",
+    "ip_rating": null,
+    "weight_lb": 24,
+    "weight_kg": 10.8,
+    "dimensions": "154 x 390 x 284 mm (L x W x H, head horizontal)",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, autosensing",
+      "connector_in": "Neutrik powerCON TRUE1 (20 A)",
+      "connector_out": "none (no AC thru per search summary)",
+      "watts_max": 1200,
+      "amps_120v": null,
+      "amps_208v": 5.8,
+      "amps_230v": 5.3,
+      "link_max_120v": 0,
+      "link_max_208v": 0,
+      "link_max_230v": 0,
+      "per_20a_120v": 1,
+      "per_20a_208v": 2,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR in/thru; etherCON (unconfirmed for JDC1)",
+      "protocols": [
+        "DMX",
+        "RDM",
+        "Art-Net",
+        "sACN"
+      ],
+      "modes": [
+        {
+          "name": "Mode 6 Easy (SW 1.78+)",
+          "channels": 11
+        },
+        {
+          "name": "Mode 1 Compressed Pro",
+          "channels": 14
+        },
+        {
+          "name": "Mode 5 1Pix Pro",
+          "channels": 17
+        },
+        {
+          "name": "Mode 2 Normal",
+          "channels": 23
+        },
+        {
+          "name": "Mode 4 SPix Pro",
+          "channels": 62
+        },
+        {
+          "name": "Mode 3 SPix",
+          "channels": 68
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/glp/jdc1.md"
+  },
+  {
+    "title": "Martin Atomic 3000 DMX",
+    "manufacturer": "Martin",
+    "model": "Atomic 3000 DMX",
+    "aliases": [
+      "atomic",
+      "atomic 3000",
+      "atomic 3k",
+      "atomic strobe",
+      "atomic dmx",
+      "atomic colors",
+      "atomic 3000 led",
+      "atomic led"
+    ],
+    "type": "strobe",
+    "light_source": "3000 W xenon flash tube, 5600 K",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": "about 425–450 x 239–245 x 234–240 mm (community libraries disagree slightly)",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": "3-pin and 5-pin XLR (community libraries)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "Mode 1 (simple)",
+          "channels": 1
+        },
+        {
+          "name": "Mode 2",
+          "channels": 3
+        },
+        {
+          "name": "Mode 3",
+          "channels": 4
+        },
+        {
+          "name": "Mode 1 + Atomic Colors",
+          "channels": 2
+        },
+        {
+          "name": "Mode 2 + Atomic Colors",
+          "channels": 4
+        },
+        {
+          "name": "Mode 3 + Atomic Colors",
+          "channels": 5
+        },
+        {
+          "name": "Mode 1 + Atomic Colors + fan",
+          "channels": 3
+        },
+        {
+          "name": "Mode 2 + Atomic Colors + fan",
+          "channels": 5
+        },
+        {
+          "name": "Mode 3 + Atomic Colors + fan",
+          "channels": 6
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/martin/atomic-3000-dmx.md"
+  },
+  {
+    "title": "Martin ERA 400 Performance",
+    "manufacturer": "Martin",
+    "model": "ERA 400 Performance",
+    "aliases": [
+      "era 400",
+      "era400",
+      "era 400 performance",
+      "era performance",
+      "era"
+    ],
+    "type": "profile",
+    "light_source": "White LED (wattage not confirmed)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": 22.5,
+    "dimensions": "about 237 x 632 x 379 mm (QLC+, W x H x D, unverified)",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (QLC+)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "Standard",
+          "channels": 30
+        },
+        {
+          "name": "Extended",
+          "channels": 32
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/martin/era-400-performance.md"
+  },
+  {
+    "title": "Martin MAC Aura PXL",
+    "manufacturer": "Martin",
+    "model": "MAC Aura PXL",
+    "aliases": [
+      "aura pxl",
+      "mac aura pxl",
+      "pxl",
+      "aura pixel"
+    ],
+    "type": "wash",
+    "light_source": "LED, 19x 40 W RGBW beam pixels + RGB Aura backlight (141 Aura pixels)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": "100–240 VAC nominal, 50/60 Hz",
+      "connector_in": "Neutrik powerCON TRUE1",
+      "connector_out": "Neutrik powerCON TRUE1 (AC throughput)",
+      "watts_max": 560,
+      "amps_120v": 6.4,
+      "amps_208v": 2.8,
+      "amps_230v": 2.8,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": 2,
+      "per_20a_208v": 5,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [
+        "DMX",
+        "P3"
+      ],
+      "modes": [
+        {
+          "name": "Compact",
+          "channels": 17
+        },
+        {
+          "name": "Basic",
+          "channels": 32
+        },
+        {
+          "name": "Extended",
+          "channels": 89
+        },
+        {
+          "name": "Ludicrous",
+          "channels": 512
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/martin/mac-aura-pxl.md"
+  },
+  {
+    "title": "Martin MAC Aura XB",
+    "manufacturer": "Martin",
+    "model": "MAC Aura XB",
+    "aliases": [
+      "aura xb",
+      "mac aura xb",
+      "aura",
+      "auras",
+      "xb"
+    ],
+    "type": "wash",
+    "light_source": "LED, RGBW beam LEDs + RGB Aura backlight (exact LED count not confirmed)",
+    "ip_rating": null,
+    "weight_lb": 14.4,
+    "weight_kg": 6.5,
+    "dimensions": "302 x 302 x 360 mm (11.9 x 11.9 x 14.2 in), L x W across yoke x H head straight up",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-ranging",
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 400,
+      "amps_120v": 3.2,
+      "amps_208v": 1.8,
+      "amps_230v": null,
+      "link_max_120v": 3,
+      "link_max_208v": 8,
+      "link_max_230v": 8,
+      "per_20a_120v": 3,
+      "per_20a_208v": 8,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "Standard (STD)",
+          "channels": 14
+        },
+        {
+          "name": "Extended (EXT)",
+          "channels": 25
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/martin/mac-aura-xb.md"
+  },
+  {
+    "title": "Martin MAC Encore Performance",
+    "manufacturer": "Martin",
+    "model": "MAC Encore Performance (CLD / WRM)",
+    "aliases": [
+      "encore",
+      "encore performance",
+      "mac encore",
+      "encore cld",
+      "encore wrm",
+      "encore performance cld",
+      "encore performance wrm"
+    ],
+    "type": "profile",
+    "light_source": "White LED engine. CLD = cool-white version, WRM = warm-white version (wattage not confirmed)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": 31,
+    "dimensions": "480 x 740 x 452 mm (community libraries, W x H x D)",
+    "power": {
+      "input": null,
+      "connector_in": "Neutrik powerCON TRUE1 (input only, per Open Fixture Library)",
+      "connector_out": "none listed (no power thru per Open Fixture Library)",
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (community libraries)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "CLD (single mode)",
+          "channels": 38
+        },
+        {
+          "name": "WRM (single mode)",
+          "channels": 38
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/martin/mac-encore-performance.md"
+  },
+  {
+    "title": "Martin MAC Quantum Wash",
+    "manufacturer": "Martin",
+    "model": "MAC Quantum Wash",
+    "aliases": [
+      "quantum",
+      "quantum wash",
+      "mac quantum",
+      "mac quantum wash"
+    ],
+    "type": "wash",
+    "light_source": "LED (configuration not confirmed)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/martin/mac-quantum-wash.md"
+  },
+  {
+    "title": "Martin MAC Ultra Performance",
+    "manufacturer": "Martin",
+    "model": "MAC Ultra Performance",
+    "aliases": [
+      "ultra",
+      "mac ultra",
+      "ultra performance",
+      "ultra perf"
+    ],
+    "type": "profile",
+    "light_source": "LED (wattage not confirmed)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/martin/mac-ultra-performance.md"
+  },
+  {
+    "title": "Martin MAC Viper Profile",
+    "manufacturer": "Martin",
+    "model": "MAC Viper Profile",
+    "aliases": [
+      "viper",
+      "viper profile",
+      "mac viper",
+      "viper performance",
+      "viper airfx",
+      "viper air fx",
+      "viper wash",
+      "viper wash dx"
+    ],
+    "type": "profile",
+    "light_source": "1000 W short-arc discharge lamp (exact lamp part number not confirmed)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (per community fixture libraries)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/martin/mac-viper-profile.md"
+  },
+  {
+    "title": "Antari HZ-500",
+    "manufacturer": "Antari",
+    "model": "HZ-500",
+    "aliases": [
+      "hz-500",
+      "hz500",
+      "antari hz500",
+      "antari hazer",
+      "antari hz-500"
+    ],
+    "type": "atmospheric",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (community data)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "1 Channel",
+          "channels": 1
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/misc/antari-hz-500.md"
+  },
+  {
+    "title": "Astera AX1 PixelTube",
+    "manufacturer": "Astera",
+    "model": "AX1 PixelTube",
+    "aliases": [
+      "ax1",
+      "astera ax1",
+      "pixeltube",
+      "pixel tube",
+      "astera tube",
+      "astera"
+    ],
+    "type": "pixel-bar",
+    "light_source": "LED RGBW, pixel controllable",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [
+        "DMX",
+        "CRMX"
+      ],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/misc/astera-ax1-pixeltube.md"
+  },
+  {
+    "title": "Astera Titan Tube (FP1)",
+    "manufacturer": "Astera",
+    "model": "FP1 Titan Tube",
+    "aliases": [
+      "titan",
+      "titan tube",
+      "astera titan",
+      "fp1",
+      "astera tube",
+      "astera"
+    ],
+    "type": "pixel-bar",
+    "light_source": "LED, tunable white plus RGB pixels (16 pixels)",
+    "ip_rating": null,
+    "weight_lb": 3.0,
+    "weight_kg": 1.35,
+    "dimensions": "1035 x 42 x 42 mm (OFL community data)",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 48,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (OFL community data)",
+      "protocols": [
+        "DMX",
+        "CRMX"
+      ],
+      "modes": [
+        {
+          "name": "1: RGB",
+          "channels": 3
+        },
+        {
+          "name": "2: RGBW",
+          "channels": 4
+        },
+        {
+          "name": "4: DIM RGB",
+          "channels": 4
+        },
+        {
+          "name": "5: DIM RGBW",
+          "channels": 5
+        },
+        {
+          "name": "7: RGB CCT DIM IND",
+          "channels": 6
+        },
+        {
+          "name": "15: Effect Mode Fix",
+          "channels": 13
+        },
+        {
+          "name": "17: RGB.RGB. 4pix",
+          "channels": 15
+        },
+        {
+          "name": "41: RGB.RGB. 16pix",
+          "channels": 63
+        },
+        {
+          "name": "89: D CCT GM CRO RGB",
+          "channels": 7
+        },
+        {
+          "name": "90: D CCT GM HUE SAT",
+          "channels": 5
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/misc/astera-titan-tube.md"
+  },
+  {
+    "title": "Generic 2-lite / 4-lite DWE Blinder (Molefay type)",
+    "manufacturer": "Generic (Mole-Richardson Molefay and clones)",
+    "model": "2-lite / 4-lite DWE blinder",
+    "aliases": [
+      "blinder",
+      "2-lite",
+      "4-lite",
+      "2 lite",
+      "4 lite",
+      "molefay",
+      "mole fay",
+      "dwe blinder",
+      "audience blinder",
+      "2-cell",
+      "4-cell",
+      "8-lite"
+    ],
+    "type": "blinder",
+    "light_source": "Tungsten PAR36 DWE lamps, 650 W 120 V each (2 or 4 per fixture)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": "120 V lamps. Wired EITHER in parallel for 120 V OR in series pairs for 208/240 V. READ THE FIXTURE LABEL",
+      "connector_in": "Varies by rental house",
+      "connector_out": "",
+      "watts_max": 2600,
+      "amps_120v": 10.83,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": 1,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "None — fed from a dimmer",
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/misc/generic-molefay-dwe-blinder.md"
+  },
+  {
+    "title": "Look Solutions Unique 2.1",
+    "manufacturer": "Look Solutions",
+    "model": "Unique 2.1",
+    "aliases": [
+      "unique",
+      "unique 2.1",
+      "unique 2",
+      "look unique",
+      "look hazer",
+      "look solutions unique"
+    ],
+    "type": "atmospheric",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": 19.2,
+    "weight_kg": 8.7,
+    "dimensions": "250 x 250 x 470 mm (QLC+ community data)",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 1500,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (QLC+ community data)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "2 Channel",
+          "channels": 2
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/misc/look-solutions-unique-2-1.md"
+  },
+  {
+    "title": "MDG theONE",
+    "manufacturer": "MDG Fog Generators",
+    "model": "theONE Atmospheric Generator (Model 1.30 / 1.31)",
+    "aliases": [
+      "theone",
+      "the one",
+      "mdg",
+      "mdg the one",
+      "mdg hazer",
+      "mdg theone",
+      "the one hazer"
+    ],
+    "type": "atmospheric",
+    "light_source": null,
+    "ip_rating": null,
+    "weight_lb": 50,
+    "weight_kg": 23,
+    "dimensions": "Standalone 24 in H x 10 in W x 12 in D (61 x 25 x 30 cm). Touring rack 42 x 30 x 24 in (106 x 76 x 61 cm), 265 lb / 120 kg loaded",
+    "power": {
+      "input": "100–250 VAC, 50/60 Hz, single phase",
+      "connector_in": "IEC C19-type inlet (OFL community data) — fill in from the fixture",
+      "connector_out": "",
+      "watts_max": 1480,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": 1,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR in/out, RJ45 Ethernet, USB-B (diagnostic/bootload)",
+      "protocols": [
+        "DMX",
+        "RDM",
+        "Art-Net",
+        "sACN",
+        "Pathport",
+        "ETC Net2",
+        "ETC Net3",
+        "Strand ShowNet"
+      ],
+      "modes": [
+        {
+          "name": "Standard",
+          "channels": 5
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "manual-verified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/misc/mdg-theone.md"
+  },
+  {
+    "title": "SGM P-5",
+    "manufacturer": "SGM",
+    "model": "P-5",
+    "aliases": [
+      "p5",
+      "p-5",
+      "sgm p5",
+      "sgm p-5",
+      "p-5 rgbw"
+    ],
+    "type": "wash",
+    "light_source": "LED, 44 x 10 W RGBW (OFL community data)",
+    "ip_rating": null,
+    "weight_lb": 19.6,
+    "weight_kg": 8.9,
+    "dimensions": "497 x 268 x 122 mm (OFL community data)",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 450,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (OFL community data)",
+      "protocols": [
+        "DMX"
+      ],
+      "modes": [
+        {
+          "name": "3-channel Full Color Calibrated",
+          "channels": 3
+        },
+        {
+          "name": "4-channel RAW",
+          "channels": 4
+        },
+        {
+          "name": "6-channel RAW",
+          "channels": 6
+        },
+        {
+          "name": "6-channel CTC",
+          "channels": 6
+        },
+        {
+          "name": "8-channel RAW 16bit",
+          "channels": 8
+        },
+        {
+          "name": "9-channel RAW 16bit",
+          "channels": 9
+        },
+        {
+          "name": "10-channel RAW 16bit",
+          "channels": 10
+        },
+        {
+          "name": "10-channel CTC",
+          "channels": 10
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/misc/sgm-p-5.md"
+  },
+  {
+    "title": "Solaris Flare",
+    "manufacturer": "TMB / Solaris",
+    "model": "Solaris Flare",
+    "aliases": [
+      "flare",
+      "solaris flare",
+      "tmb flare",
+      "flare q+",
+      "flare qplus",
+      "solaris flare q+"
+    ],
+    "type": "strobe",
+    "light_source": "LED, 96 x 10 W RGBW Cree LEDs (OFL community data)",
+    "ip_rating": null,
+    "weight_lb": 20.9,
+    "weight_kg": 9.5,
+    "dimensions": "210 x 232 x 497 mm (OFL community data)",
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": 1000,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": ""
+    },
+    "dmx": {
+      "connectors": "5-pin XLR (OFL community data)",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "Basic RGB 8bit",
+          "channels": 3
+        },
+        {
+          "name": "Basic RGB 16bit",
+          "channels": 6
+        },
+        {
+          "name": "Basic RGBW 8bit",
+          "channels": 4
+        },
+        {
+          "name": "Basic RGBW 16bit",
+          "channels": 8
+        },
+        {
+          "name": "Strobe Only",
+          "channels": 4
+        },
+        {
+          "name": "RGB Strobe",
+          "channels": 7
+        },
+        {
+          "name": "RGBW Strobe",
+          "channels": 8
+        },
+        {
+          "name": "Advanced RGB Strobe 1-Pixel",
+          "channels": 10
+        },
+        {
+          "name": "Advanced RGB Strobe 2V/2H-Pixel",
+          "channels": 13
+        },
+        {
+          "name": "Advanced RGBW Strobe 1-Pixel",
+          "channels": 12
+        },
+        {
+          "name": "Advanced RGBW Strobe 2V/2H-Pixel",
+          "channels": 16
+        }
+      ]
+    },
+    "menu_password": null,
+    "tools": [],
+    "verification": "community",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/misc/solaris-flare.md"
+  },
+  {
+    "title": "Robe BMFL Spot",
+    "manufacturer": "Robe",
+    "model": "Robin BMFL Spot",
+    "aliases": [
+      "bmfl",
+      "bmfl spot",
+      "robin bmfl spot",
+      "bmfl blade",
+      "bmfl washbeam",
+      "bmfl wb"
+    ],
+    "type": "spot",
+    "light_source": "Osram Lok-it! HTI 1700/PS discharge lamp (general knowledge, unverified)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": "7623",
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/robe/bmfl-spot.md"
+  },
+  {
+    "title": "Robe Esprite",
+    "manufacturer": "Robe",
+    "model": "Robin Esprite",
+    "aliases": [
+      "esprite",
+      "robin esprite",
+      "esprite profile"
+    ],
+    "type": "profile",
+    "light_source": "LED engine, white (general knowledge: ~650 W TE engine, unverified)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": "7623",
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/robe/esprite.md"
+  },
+  {
+    "title": "Robe Forte",
+    "manufacturer": "Robe",
+    "model": "Robin Forte",
+    "aliases": [
+      "forte",
+      "robin forte",
+      "forte profile"
+    ],
+    "type": "profile",
+    "light_source": "LED engine, white (general knowledge: ~1000 W TE engine, unverified)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": "7623",
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/robe/forte.md"
+  },
+  {
+    "title": "Robe iFORTE",
+    "manufacturer": "Robe",
+    "model": "Robin iFORTE",
+    "aliases": [
+      "iforte",
+      "i forte",
+      "robin iforte",
+      "iforte ip65"
+    ],
+    "type": "profile",
+    "light_source": "LED engine, white (general knowledge, unverified)",
+    "ip_rating": "IP65",
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": "7623",
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/robe/iforte.md"
+  },
+  {
+    "title": "Robe LEDBeam 150",
+    "manufacturer": "Robe",
+    "model": "Robin LEDBeam 150",
+    "aliases": [
+      "ledbeam 150",
+      "led beam 150",
+      "robin ledbeam 150",
+      "lb150"
+    ],
+    "type": "beam-wash",
+    "light_source": "LED 7x RGBW (general knowledge: 7x 40 W RGBW, unverified)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": "7623",
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/robe/ledbeam-150.md"
+  },
+  {
+    "title": "Robe MegaPointe",
+    "manufacturer": "Robe",
+    "model": "Robin MegaPointe",
+    "aliases": [
+      "megapointe",
+      "mega pointe",
+      "robin megapointe",
+      "mega"
+    ],
+    "type": "hybrid",
+    "light_source": "Osram Sirius HRI 470W discharge lamp (Standard 470 W / Eco 380 W)",
+    "ip_rating": null,
+    "weight_lb": 48.5,
+    "weight_kg": 22,
+    "dimensions": "H 640 mm (25.2 in, head vertical) x W 396 mm (15.6 in) x D 230 mm (9.1 in)",
+    "power": {
+      "input": "100–240 VAC, 50/60 Hz, auto-switching",
+      "connector_in": "Neutrik powerCON TRUE1",
+      "connector_out": null,
+      "watts_max": 670,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [
+        "DMX",
+        "RDM",
+        "Art-Net",
+        "MA-Net",
+        "MA-Net2",
+        "sACN",
+        "CRMX (wireless version)"
+      ],
+      "modes": [
+        {
+          "name": "Mode 1",
+          "channels": 39
+        },
+        {
+          "name": "Mode 2",
+          "channels": 34
+        }
+      ]
+    },
+    "menu_password": "7623",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/robe/megapointe.md"
+  },
+  {
+    "title": "Robe Pointe",
+    "manufacturer": "Robe",
+    "model": "Robin Pointe",
+    "aliases": [
+      "pointe",
+      "robin pointe"
+    ],
+    "type": "hybrid",
+    "light_source": "Osram Sirius HRI 280W discharge lamp (general knowledge, unverified)",
+    "ip_rating": null,
+    "weight_lb": null,
+    "weight_kg": null,
+    "dimensions": null,
+    "power": {
+      "input": null,
+      "connector_in": null,
+      "connector_out": null,
+      "watts_max": null,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": null,
+      "protocols": [],
+      "modes": []
+    },
+    "menu_password": "7623",
+    "tools": [],
+    "verification": "unverified",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/robe/pointe.md"
+  },
+  {
+    "title": "Robe Spiider",
+    "manufacturer": "Robe",
+    "model": "Robin Spiider",
+    "aliases": [
+      "spiider",
+      "spider",
+      "robin spiider",
+      "spiider washbeam"
+    ],
+    "type": "beam-wash",
+    "light_source": "LED: 1x 60W RGBW centre (Flower effect) + 18x RGBW ring LEDs (30 W per datasheet; some listings say 40 W)",
+    "ip_rating": null,
+    "weight_lb": 29.2,
+    "weight_kg": 13.3,
+    "dimensions": "H 477 mm (18.7 in) x W 390 mm (15.3 in) x D 252 mm (9.9 in)",
+    "power": {
+      "input": null,
+      "connector_in": "Neutrik powerCON TRUE1",
+      "connector_out": null,
+      "watts_max": 660,
+      "amps_120v": null,
+      "amps_208v": null,
+      "amps_230v": null,
+      "link_max_120v": null,
+      "link_max_208v": null,
+      "link_max_230v": null,
+      "per_20a_120v": null,
+      "per_20a_208v": null,
+      "fuse": null
+    },
+    "dmx": {
+      "connectors": "Locking 3-pin and 5-pin XLR in/out (DMX/RDM)",
+      "protocols": [
+        "DMX",
+        "RDM"
+      ],
+      "modes": [
+        {
+          "name": "Mode 1 (3-zones)",
+          "channels": 49
+        },
+        {
+          "name": "Mode 2 (Basic)",
+          "channels": 27
+        },
+        {
+          "name": "Mode 3",
+          "channels": 33
+        },
+        {
+          "name": "Mode 4",
+          "channels": 90
+        },
+        {
+          "name": "Mode 5",
+          "channels": 27
+        },
+        {
+          "name": "Mode 6",
+          "channels": 47
+        },
+        {
+          "name": "Mode 7",
+          "channels": 91
+        },
+        {
+          "name": "Mode 8",
+          "channels": 110
+        },
+        {
+          "name": "Mode 9",
+          "channels": 104
+        },
+        {
+          "name": "Mode 10",
+          "channels": 123
+        }
+      ]
+    },
+    "menu_password": "7623",
+    "tools": [],
+    "verification": "web-search",
+    "last_updated": "2026-10-03",
+    "path": "fixtures/robe/spiider.md"
+  }
+]

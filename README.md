@@ -23,6 +23,7 @@ The wiki is plain Markdown, so any Markdown app can search it with no signal.
 | `wiki/index.md` | Every fixture, grouped by manufacturer (generated) |
 | `wiki/passwords.md` | Every known menu passcode on one page (generated) |
 | `wiki/comparison.md` | Power, link limits, DMX modes and tools side by side (generated) |
+| `wiki/research-status.md` | What is solid, what is a stub, and known conflicts |
 | `wiki/reference/` | Power math, DMX/network troubleshooting, moving-light troubleshooting, connectors & pinouts, tool kit |
 | `wiki/fixtures/<maker>/` | One page per fixture, plus a `_<maker>-common.md` page for shared menus, firmware and error codes |
 | `wiki/_templates/fixture-template.md` | Template for new fixture pages |

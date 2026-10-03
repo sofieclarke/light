@@ -14,13 +14,13 @@ power:
   connector_in: "Varies by rental house"
   connector_out: ""
   watts_max: 2600
-  amps_120v: 5.42
+  amps_120v: 10.83     # 2-lite wired for 120 V (2 x 5.42 A per lamp). A 4-lite on 120 V is 21.7 A: 2 circuits.
   amps_208v: null
   amps_230v: null
   link_max_120v: null
   link_max_208v: null
   link_max_230v: null
-  per_20a_120v: null
+  per_20a_120v: 1      # 2-lite. A 4-lite on 120 V does NOT fit one 20 A circuit.
   per_20a_208v: null
   fuse: ""
 dmx:
