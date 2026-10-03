@@ -36,6 +36,15 @@ dmx:
     - { name: "10-channel RAW 16bit", channels: 10 }
     - { name: "10-channel CTC", channels: 10 }
 menu_password: null
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["SGM Firmware Tool + SGM USB-to-5-pin-XLR uploader cable"]
+  interface: "SGM USB 5-pin XLR uploader cable"
+  software: "SGM Firmware Tool (Windows)"
+  file_type: null
+  download: "sgmlight.com (P-5 product downloads)"
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -112,8 +121,19 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Not found.
 
+## Firmware
+- Installed version — where to see it on the fixture: menu path not found in the sources read.
+- Latest known version (date checked) and where to download it: **not found** (checked 2026-10-03). Files and the SGM Firmware Tool are on sgmlight.com.
+- What you need (P-5 manual Rev J, via search summary): the **SGM USB-to-5-pin-XLR uploader cable**, a **Windows** PC and the **SGM Firmware Tool**. The same cable also works with SGM's **RDM Addressing Tool**, which changes fixture settings remotely. RDM is for settings, not firmware.
+- Update steps: install the SGM Firmware Tool, connect the uploader cable to the fixture's 5-pin DMX in, load the P-5 file and run it. Button-level steps weren't in the summaries. See "Upgrading the firmware" in the P-5 manual and SGM's "How to update firmware on SGM fixtures" video.
+- Updating a whole rig: not confirmed. ⚠️ Keep only P-5s on the line and disconnect the console.
+- If it fails or bricks mid-update: not found. Contact SGM support.
+- Release notes worth knowing: the mode list on this page comes from an older OFL import. **Newer firmware may add modes**, so check the fixture menu against your console patch after updating.
+
 ## Road notes (community)
 - Nothing confirmed found. Search budget ran out.
 
 ## Sources
 - [Open Fixture Library: sgm/p-5.json](https://github.com/OpenLightingProject/open-fixture-library/blob/master/fixtures/sgm/p-5.json) (imported from QLC+ 4.12): modes, 450 W, 8.9 kg, dimensions, LED count. OFL links the [SGM P-5 Series User Manual Rev J](https://sgmlight.com/Files/Files/Perfion/StrRDDATAUserManualFileGroup/P-5/FileRDDATAUserManualP5SeriesWEB/SGM%20P-5%20Series%20User%20Manual%20STD%20and%20POI%20(Rev.%20J).pdf) and [DMX protocol Rev4](https://sgmlight.com/Files/Files/Perfion/StrRDDATADMXFileGroup/P-5%20RGBW/FileRDDATADMXChartsP5RGBWRnD/DMX_Protocol_P_5_Rev4.pdf) (sgmlight.com blocked, not read).
+- [SGM P-5 Series User Manual STD and POI Rev J (TSL mirror)](https://www.tsllighting.com/wp-content/uploads/2018/12/SGMP-5SeriesUserManualSTDandPOIRev.J.pdf), [Upgrading the firmware (ManualsLib p.32)](https://www.manualslib.com/manual/1033544/Sgm-P-5-Wash-Light.html?page=32): uploader cable, SGM Firmware Tool, Windows (search summary)
+- [SGM RDM Addressing Tool](https://www.sgmlighting.com/products/architecture/rdm-addressing-tool), [SGM Firmware Tool how-to (benart.net)](http://www.benart.net/Images/Uploads/MyContents/F_20151127173350020911.pdf), [How to update firmware on SGM fixtures (YouTube)](https://www.youtube.com/watch?v=LL0BYBvD38w): tools (search summary)

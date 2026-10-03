@@ -39,6 +39,15 @@ dmx:
     - { name: "Advanced RGBW Strobe 1-Pixel", channels: 12 }
     - { name: "Advanced RGBW Strobe 2V/2H-Pixel", channels: 16 }
 menu_password: null
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["Upload menu: cross-load from one Flare to others on the DMX line (password 111)"]
+  interface: null
+  software: null
+  file_type: null
+  download: null
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -124,9 +133,19 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Not found.
 
+## Firmware
+- Installed version — where to see it on the fixture: menu path not found. OFL lists software **9.3C** for the profile it was built from.
+- Latest known version (date checked) and where to download it: **not found** (checked 2026-10-03). TMB's Flare manuals exist for software versions from 8.2 up to **11.3** (the combined "Flare Q+, Flare Q+ LR, Flare, Flare Jr" manual on tmb.com). Whether 11.3 runs on an original Flare wasn't confirmed ⚠️. No standalone "Solaris firmware updater" PC tool was found.
+- What you need: one Flare that already has the software you want, and a DMX cable to the others.
+- Update steps (Flare manual via search summary): the **Upload** menu function cross-loads software from one Flare to the others on the DMX line. It asks for a **password: 111**. Detailed button steps weren't in the summary. Read the Upload section of the manual.
+- Updating a whole rig: the Upload function sends to every Flare downstream on the line. **Don't use it with other fixture types on the line** (manual).
+- If it fails or bricks mid-update: not found. Contact TMB.
+- Release notes worth knowing: not found. RDM only works on units with "14R" in the serial number (see Data & addressing). That's a hardware revision, not something firmware adds ⚠️ unverified.
+
 ## Road notes (community)
 - Nothing confirmed found. Search budget ran out.
 
 ## Sources
 - [Open Fixture Library: tmb/solaris-flare.json](https://github.com/OpenLightingProject/open-fixture-library/blob/master/fixtures/tmb/solaris-flare.json): modes, channel values, 1000 W, 9.5 kg, dimensions, LED type, the RDM "14R" serial note. OFL cites the [archived TMB Solaris Flare manual](https://web.archive.org/web/20190219222320/http://pub.tmb.com/solaris/pdf/Solaris-Flare-Manual.pdf) (couldn't be fetched).
 - [GDTF manufacturer-release files for Flare Q+ Rayzr / XL / XLR](https://github.com/Ai-Lampy/Lampy-Paperwork/tree/main/gdtf/fixtures/solaris): only confirms those variants exist. Not used for numbers.
+- [Solaris Flare operation manual (ManualsLib)](https://www.manualslib.com/manual/1034357/Solaris-Flare.html), [Flare Q+ / Flare / Flare Jr operation manual (tmb.com)](https://tmb.com/docs/solaris/flare/Solaris-Flare-Manual.pdf), [Flare software 8.8 manual (4Wall)](https://cdn.4wall.com/cms/rentals/files/f56033c4bf1b65.pdf): Upload cross-load function, password 111, manual software versions 8.2–11.3 (search summary)

@@ -30,6 +30,15 @@ dmx:
     - { name: "20ch", channels: 20 }
     - { name: "34ch", channels: 34 }
 menu_password: "038"
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["USB stick in the UPDATE/SERVICE PORT", "E-LOADER III over 3-pin DMX"]
+  interface: null
+  software: null
+  file_type: null
+  download: null
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -119,7 +128,21 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Recalibrate / reset procedure: Not found for this model.
 - Fan / filter cleaning: Not found.
-- Firmware update method: Elation forum has a "Smarty Hybrid Firmware" thread. Elation methods: **E-LOADER III** over 3-pin DMX, or FAT32 USB on models with USB (⚠️ unconfirmed for this model). Note settings first; no downgrades.
+
+## Firmware
+- Installed version — where to see it on the fixture: not found in the sources read.
+- Latest known version (date checked) and where to download it: **not confirmed** (checked 2026-10-03). Elation's forum thread at [smarty-hybrid-firmware](https://forums.elationlighting.com/topic/smarty-hybrid-firmware?nc=1) is titled **"Proteus Smarty Hybrid Firmware"** and lists **V1.4.1** with "E-Loader III/USB" as the tool. That's the IP65 Proteus model, not this indoor Smarty Hybrid. Check the file name matches your fixture before loading it. Ask firmware@elationlighting.com (address from a search summary).
+- What you need: a USB flash drive with **only the update file on it**, and a **Windows PC** to download the file (the manual says PC only, no Mac). The E-LOADER III (3-pin DMX) is the alternative.
+- Update steps (USB, from the Smarty Hybrid manual via search summary):
+  1. Copy the update file from a PC to the USB flash drive. Nothing else on the drive.
+  2. **Disconnect DMX, Art-Net and E-FLY**, then power the fixture ON.
+  3. Insert the drive into the **UPDATE/SERVICE PORT** on the rear connection panel.
+  4. Go to the **Personality** main menu → **Service Setting** → **USB Update**.
+  5. Select the file name on the display and press ENTER.
+  6. Select **YES**. The display shows "Updating…%". Don't power off until it's done.
+- Updating a whole rig: one fixture at a time (USB stick or E-LOADER III). No batch method found.
+- If it fails or bricks mid-update: no recovery procedure found. Contact Elation service.
+- Release notes worth knowing: none found for this model. The manual says only qualified technicians should do this, write down all menu settings first, and **firmware cannot be downgraded**.
 
 ## Road notes (community)
 - Elation community forum: ballast sits in the base on Elation hybrids; a bad lamp can throw ballast errors — swap the lamp before condemning the ballast. (forums.elationlighting.com)
@@ -131,4 +154,6 @@ last_updated: "2026-10-03"
 - [elationlighting.com Smarty Hybrid](https://www.elationlighting.com/products/smarty-hybrid), [PLSN review](https://plsn.com/archives/august-2018/elation-smarty-hybrid/) — 480 W max / 420 W typical, lamp wattages
 - [Full Compass](https://www.fullcompass.com/prod/563713-elation-smarty-hybrid-280w-long-life-discharge-hybrid-beam-spot-wash-fixture-with-zoom-and-cmy-fil-insert), [B&H](https://www.bhphotovideo.com/c/product/1454631-REG/elation_professional_smarty_hybrid_fil_cmy_280w_color_mixing.html), [Stage Lighting Store ESH253](https://www.stagelightingstore.com/Smarty-Hybrid-FIL) — weight, 20/34 ch, zoom ranges, prisms, colors, dimensions, gobo counts
 - [Elation forum: Smarty Hybrid](https://forums.elationlighting.com/topic/smarty-hybrid?nc=1), [Proteus Beam Hybrid ballast error](https://forums.elationlighting.com/topic/proteous-beam-hybrid-ballast-error), [Elation FAQ/Troubleshooting](https://www.elationlighting.com/pages/faq-troubleshooting) — ballast/lamp and fan notes
-- [Elation forum: Smarty Hybrid Firmware](https://forums.elationlighting.com/topic/smarty-hybrid-firmware?nc=1) — firmware thread
+- [Smarty Hybrid user manual (Cloudfront)](https://d295jznhem2tn9.cloudfront.net/ItemRelatedFiles/12026/ELATION%20SMARTY%20HYBRID%20-%20USER%20MANUAL.pdf): USB update steps, UPDATE/SERVICE PORT, no downgrade, PC only (search summary)
+- [Elation forum: Proteus Smarty Hybrid Firmware](https://forums.elationlighting.com/topic/smarty-hybrid-firmware?nc=1): V1.4.1 and E-Loader III/USB, for the Proteus model (search summary)
+- [E-LOADER III](https://www.elationlighting.com/e-loader-iii-software-uploader) and [E-LOADER III manual (manuals.plus)](https://manuals.plus/elation/professional-e-loader-iii-software-uploader-kit-manual): uploader procedure (search summary)

@@ -28,6 +28,15 @@ dmx:
   protocols: []
   modes: []
 menu_password: null
+firmware:
+  latest_known: null
+  checked: null
+  check_on_fixture: null
+  methods: []
+  interface: null
+  software: null
+  file_type: null
+  download: null
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -109,6 +118,9 @@ All figures computed from lamp ratings with Ohm's law (resistive load, PF = 1). 
 
 ## Maintenance
 - Check the lamp terminal connections and the high-temp wiring for heat damage (general knowledge).
+
+## Firmware
+- **None.** Lamps and wiring only. No electronics to update.
 
 ## Road notes (community)
 - Nothing forum-confirmed found (search budget ran out). The series-wiring trap is standard industry knowledge, also flagged in [reference/power-math.md](../../reference/power-math.md).

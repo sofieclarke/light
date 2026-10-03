@@ -29,6 +29,15 @@ dmx:
   modes:
     - { name: "2 Channel", channels: 2 }
 menu_password: null
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: []
+  interface: null
+  software: null
+  file_type: null
+  download: null
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -104,6 +113,9 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Always shut down via MENU → OFF or DMX removal so it runs the power-down sequence. This "keeps it clean and will help it last" (community).
 
+## Firmware
+- **No user firmware procedure found** (checked 2026-10-03). Look Solutions' [downloads page](https://www.looksolutions.com/en/downloads-en.html) lists a "GPU-Updater" tool (Windows and Mac), but which machines it covers and whether the Unique 2.1 uses it wasn't confirmed ⚠️. Ask Look Solutions or the distributor before trying.
+
 ## Road notes (community)
 - newtheatre (Nottingham New Theatre) wiki: 2-channel; few-minute warm-up; fan loud at full; fan 15% / haze 7–10% for misty stage; the two power-off methods above.
 
@@ -111,3 +123,4 @@ last_updated: "2026-10-03"
 - [QLC+ Look-Solutions-Unique-2.1.qxf](https://github.com/mcallegari/qlcplus/blob/master/resources/fixtures/Look_Solutions/Look-Solutions-Unique-2.1.qxf): 2 ch (Pump, Fan), 1500 W, 8.7 kg, dimensions.
 - [GDTF Look Solutions Unique 2.1 (community, Lampy-Paperwork mirror)](https://github.com/Ai-Lampy/Lampy-Paperwork/tree/main/gdtf/fixtures/look_solutions): channel sets (Haze off/40/60/full, Fan off/half/full).
 - [newtheatre wiki: Atmospherics and Effects](https://github.com/newtheatre/wiki/blob/master/_content/tech-guides/atmos.md): road notes, shutdown procedure, settings.
+- [Look Solutions downloads](https://www.looksolutions.com/en/downloads-en.html): GPU-Updater tool listing (search summary; coverage not confirmed)

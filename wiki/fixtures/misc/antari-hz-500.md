@@ -29,6 +29,15 @@ dmx:
   modes:
     - { name: "1 Channel", channels: 1 }
 menu_password: null
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: []
+  interface: null
+  software: null
+  file_type: null
+  download: null
 tools: []
 verification: "unverified"
 last_updated: "2026-10-03"
@@ -93,9 +102,13 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Not found.
 
+## Firmware
+- **None found** (checked 2026-10-03). No firmware update procedure or tool for the HZ-500 turned up. The manual summaries only cover the rear-panel LCD settings (fog duration, interval, DMX address, door sensor).
+
 ## Road notes (community)
 - Nothing found. Search budget ran out.
 
 ## Sources
 - [GDTF Antari@HZ-500@rev1 (Lampy-Paperwork mirror)](https://github.com/Ai-Lampy/Lampy-Paperwork/tree/main/gdtf/fixtures/antari): 1-ch mode, channel sets (0 no haze / 251 haze on), weight 31.5, description text.
 - [QLC+ Antari-HZ-500.qxf (r26D/dmx-fixtures)](https://github.com/r26D/dmx-fixtures/blob/master/QLC/Fixtures/Antari-HZ-500.qxf): 1 ch, 400 W, 31.5 weight, 375 × 350 × 510 mm (all community, unverified).
+- [Antari HZ-500 product page](https://antari.com/products/hz-500/), [HZ-500 user manual (ManualsLib)](https://www.manualslib.com/manual/892121/Antari-Hz-500.html): no firmware procedure found (search summary)

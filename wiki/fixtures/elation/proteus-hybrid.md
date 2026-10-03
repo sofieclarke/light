@@ -31,6 +31,15 @@ dmx:
     - { name: "26ch", channels: 26 }
     - { name: "37ch", channels: 37 }
 menu_password: "050"
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["E-LOADER III over 3-pin DMX (Elation's general method, not confirmed for this model)"]
+  interface: "Elation E-LOADER III (ELO601)"
+  software: null
+  file_type: null
+  download: null
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -123,7 +132,15 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Recalibrate / reset procedure: calibration menu behind password 050 (Proteus series).
 - Fan / filter cleaning: Not found.
-- Firmware update method: Elation **E-LOADER III** via 3-pin DMX cable, or FAT32 USB stick on models with a USB port (⚠️ unconfirmed whether this model has USB). Note settings first; firmware can't be downgraded.
+
+## Firmware
+- Installed version — where to see it on the fixture: not found in the sources read.
+- Latest known version (date checked) and where to download it: **not found** (checked 2026-10-03). No Elation forum firmware thread for the plain Proteus Hybrid turned up. Don't load **Proteus Hybrid MAX** files (the MAX thread lists V1.3.7, and V1.3.6 for the MAX OPS). That's a different fixture.
+- What you need: Elation's general tool is the **E-LOADER III** (battery handheld, micro SD card, **3-pin DMX cable**) ⚠️ not confirmed for this model. Whether this model has a USB service port was not confirmed.
+- Update steps: see the E-LOADER III procedure in [_elation-common.md](_elation-common.md#firmware-updates).
+- Updating a whole rig: one fixture at a time with the E-LOADER III. No batch method found.
+- If it fails or bricks mid-update: no recovery procedure found. Contact Elation service.
+- Release notes worth knowing: none found. Write down your menu settings first. **Firmware cannot be downgraded** (Elation general rule).
 
 ## Road notes (community)
 - None found in this pass (Reddit/ControlBooth searches returned nothing model-specific). ⚠️ Add from techs.
@@ -138,4 +155,5 @@ last_updated: "2026-10-03"
 - [elationlighting.com Proteus Hybrid](https://www.elationlighting.com/products/proteus-hybrid) — 700 W, 100–240 V
 - Proteus-series manuals for passwords 050/011: [Odeon](https://goknight.com/content/documentation/ELATION%20PROTEUS%20ODEON%20-%20USER%20MANUAL.pdf), [Excalibur](https://d295jznhem2tn9.cloudfront.net/ItemRelatedFiles/12937/ELATION%20PROTEUS%20EXCALIBUR%20-%20USER%20MANUAL.pdf), [Hybrid Max](https://d295jznhem2tn9.cloudfront.net/ItemRelatedFiles/13622/ELATION%20PROTEUS%20HYBRID%20MAX%20-%20USER%20MANUAL.pdf)
 - [Elation forum: Proteus Beam Hybrid ballast error](https://forums.elationlighting.com/topic/proteous-beam-hybrid-ballast-error) — community ballast notes
-- [E-LOADER III](https://www.elationlighting.com/e-loader-iii-software-uploader) — firmware tool
+- [Elation forum: Proteus Hybrid MAX Firmware](https://forums.elationlighting.com/topic/proteus-hybrid-max-firmware?nc=1): MAX versions, so you don't load the wrong file (search summary)
+- [E-LOADER III](https://www.elationlighting.com/e-loader-iii-software-uploader) and [E-LOADER III manual (manuals.plus)](https://manuals.plus/elation/professional-e-loader-iii-software-uploader-kit-manual): uploader procedure (search summary)

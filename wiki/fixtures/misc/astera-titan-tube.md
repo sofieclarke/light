@@ -38,6 +38,15 @@ dmx:
     - { name: "89: D CCT GM CRO RGB", channels: 7 }
     - { name: "90: D CCT GM HUE SAT", channels: 5 }
 menu_password: null
+firmware:
+  latest_known: "V5.16.24"
+  checked: "2026-10-03"
+  check_on_fixture: "AsteraApp \u2192 Connected Lights view \u2192 Firmware Version sorting mode"
+  methods: ["AsteraApp background update over Bluetooth via ART7 AsteraBox"]
+  interface: "Astera ART7 AsteraBox"
+  software: "AsteraApp (iOS / Android)"
+  file_type: null
+  download: "Delivered by AsteraApp (release notes: https://update.astera-led.com/firmwares/current/release_notes.html)"
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -122,7 +131,19 @@ last_updated: "2026-10-03"
 | No wireless response | Not linked to the transmitter | Re-link (unlink/link from the transmitter) ⚠️ procedure not found |
 
 ## Maintenance
-- Firmware: AsteraApp (general knowledge) ⚠️.
+
+## Firmware
+- Installed version — where to see it: in the **AsteraApp**. The Connected Lights view has a **Firmware Version sorting mode** that shows each light's version (search summary). No on-fixture menu path found.
+- Latest known version (date checked) and where to download it: **V5.16.24** (latest found, checked 2026-10-03). That's the title of Astera's "current" firmware release-notes page. Which product families it covers wasn't confirmed for the Titan Tube ⚠️. There's no file to download: the AsteraApp fetches the firmware.
+- What you need: a phone or tablet with the latest **AsteraApp** (iOS / Android) and an **ART7 AsteraBox**, the app's Bluetooth bridge to the lights. Full details in [_misc-common.md](_misc-common.md#astera).
+- Update steps (Astera / dealer instructions via search summary):
+  1. Update the AsteraApp from the app store.
+  2. Connect the app to the ART7 over Bluetooth. Put the lights in BlueMode and press **Pair with Lights**. Wait until all of them are paired.
+  3. **App Settings → Lights Background Update**, then press the update button at the **top right**.
+  4. The lights update in the background and keep working while they do. Keep the app open and the phone awake ("Keep Screen On" in App Settings).
+- Updating a whole rig: background update goes to all paired lights. A per-batch limit wasn't found.
+- If it fails or bricks mid-update: no recovery mode found. Re-pair and run Lights Background Update again ⚠️ unverified.
+- Release notes worth knowing: **5.14.84** fixed reported wired-DMX problems and added support for PowerBox wired DMX protocol version 2. Astera's DMX mode numbers have to match your console profile. Check the mode list after a big update.
 
 ## Road notes (community)
 - Nothing confirmed found. Search budget ran out.
@@ -130,3 +151,6 @@ last_updated: "2026-10-03"
 ## Sources
 - [Open Fixture Library: astera/fp1-titan-tube.json](https://github.com/OpenLightingProject/open-fixture-library/blob/master/fixtures/astera/fp1-titan-tube.json): modes, 48 W, 1.35 kg, dimensions, lumens. OFL links the [Astera Titan Tube manual](https://astera-led.com/Downloads/manual/FP1_TitanTube_Manual.pdf) and [DMX profiles PDF](https://astera-led.com/Downloads/Profile/Titan%20Tube%20DMX%20Profiles.pdf) (astera-led.com blocked, not read).
 - [GDTF FP1 Titan Tube (Lampy-Paperwork mirror)](https://github.com/Ai-Lampy/Lampy-Paperwork/tree/main/gdtf/fixtures/astera): mode names, 1.35 kg, product description (battery/AC, wired/wireless, AsteraApp).
+- [Astera firmware release notes, "Firmware V5.16.24"](https://update.astera-led.com/firmwares/current/release_notes.html): latest version found (page title via search; site not readable here)
+- [Astera custom firmware update instructions (Wireless Film Lights)](https://wirelessfilmlights.com/wp-content/uploads/2024/07/Astera_Custom_Firmware_Update_Instructions_V1.pdf), [Astera FW 5.14 features and update instructions (Controllux)](https://controllux.com/downloads/2024050712758_5.14.61_Astera_Beta_Firmware_Features_and_update_instructions.pdf), [Ambersphere: Astera firmware update](https://www.ambersphere.com/astera-firmware-51484/): app update procedure, 5.14.84 notes (search summary)
+- [AsteraApp control manual](https://astera-led.com/Downloads/AsteraApp%20control.pdf), [ART7 AsteraBox manual](https://astera-led.com/wp-content/uploads/ART7_AsteraBox_Manual_EN_DE_IT_ES_FR_CN.pdf): ART7 as the app's Bluetooth bridge, firmware-version sorting (search summary)

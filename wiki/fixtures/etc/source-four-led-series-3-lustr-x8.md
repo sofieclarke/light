@@ -34,6 +34,15 @@ dmx:
     - { name: "3ch RGB", channels: 3 }
     - { name: "1ch (Intensity)", channels: 1 }
 menu_password: null
+firmware:
+  latest_known: "v1.3.0"
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["USB drive (Local Settings > USB > Update Firmware)", "UpdaterAtor + ETC USB/DMX Gadget or Net3 gateway"]
+  interface: null
+  software: "ETC UpdaterAtor (optional; Windows only)"
+  file_type: null
+  download: "etcconnect.com (Source Four LED Series 3 Fixture Software release notes) or UpdaterAtor"
 tools: []
 verification: "community"
 last_updated: "2026-10-03"
@@ -120,7 +129,20 @@ last_updated: "2026-10-03"
 | Fan noise | Fan channel at default | Use the Fan channel (last channel in most modes) to set a quiet fan mode ⚠️ check the values in the ETC manual |
 
 ## Maintenance
-- Firmware update method: not found. ETC typically uses UpdateBox or RDM ⚠️ unverified.
+
+## Firmware
+- Installed version — where to see it on the fixture: menu path not found in the sources read.
+- Latest known version (date checked) and where to download it: **v1.3.0** ("Source Four LED Series 3 Fixture Software v1.3.0 Release Note" on etcconnect.com, latest found, checked 2026-10-03). Get the file from etcconnect.com or through UpdaterAtor.
+- What you need: a **USB drive** with the firmware file on it. The USB port is on the rear of the fixture. Or use UpdaterAtor with a Gadget or Net3 gateway (ETC's general method) ⚠️ not confirmed in the Series 3 manual.
+- Update steps (USB, from the Series 3 user manual via search summary):
+  1. Download the firmware from etcconnect.com (or export it from UpdaterAtor) and save it to a USB drive.
+  2. Insert the drive in the **USB port on the rear** of the fixture.
+  3. Press **Menu** and turn the **Intensity encoder** to **Local Settings > USB > Update Firmware**.
+  4. Turn the encoder to the firmware file and **press the encoder** to start.
+  5. The fixture copies the files (progress meter), verifies them (ETC logo shown), then installs. Don't cut power during any of this.
+- Updating a whole rig: USB is one fixture at a time. For many fixtures, use UpdaterAtor over DMX or Net3 ⚠️ batch limit not found.
+- If it fails or bricks mid-update: no recovery mode found. Contact ETC.
+- Release notes worth knowing: not read. The official GDTF file is also v1.3.0. Check the release note for mode changes before updating a patched rig.
 
 ## Road notes (community)
 - Nothing confirmed found. Search budget ran out before forum queries could run.
@@ -129,3 +151,6 @@ last_updated: "2026-10-03"
 - [ETC official GDTF "S4 Series 3 Lustr X8 26Deg" v1.3.0 (mirror in Ai-Lampy/Lampy-Paperwork)](https://github.com/Ai-Lampy/Lampy-Paperwork/tree/main/gdtf/fixtures/etc): mode list and footprints, 8.87 kg weight.
 - [Open Fixture Library: source-four-led-series-3-lustr-x8.json](https://github.com/OpenLightingProject/open-fixture-library/blob/master/fixtures/etc/source-four-led-series-3-lustr-x8.json): 340 W, 8.9 kg, dimensions, LED count, lumens, RDM model ID. OFL links the ETC manuals at etcconnect.com DownloadAsset id=10737510600 and 10737506242, which couldn't be fetched.
 - [Source Four LED Series 3 User Manual v1.0.0 (Grand Stage mirror)](https://www.grandstage.com/assets/images/S4_LED_Series3_v100_UserManual_revB.pdf): found in search but not readable (egress blocked). Get the electrical table and menu paths from here.
+- [ETC Source Four LED Series 3 user manual, Update Firmware page (ManualsLib p.30)](https://www.manualslib.com/manual/2296552/Etc-Source-Four-Led-3-Series.html?page=30): USB update menu path and steps (search summary)
+- [Source Four LED Series 3 Fixture Software v1.3.0 Release Note](https://www.etcconnect.com/workarea/DownloadAsset.aspx?id=10737515440): latest version found (title only)
+- [ETC support: Updating ColorSource Par to v1.3.0](https://support.etcconnect.com/ETC/Fixtures/ColorSource/PAR/Updating_ColorSource_Par_to_v1.3.0): UpdaterAtor, interface list, opto-splitter warning, bootloader step (search summary)

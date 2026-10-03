@@ -29,6 +29,15 @@ dmx:
   modes:
     - { name: "Standard", channels: 5 }
 menu_password: null
+firmware:
+  latest_known: null
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["USB A-to-B to a Windows PC during the 4-second \"Testing BootLoad\" window at power-up"]
+  interface: "USB A-to-B cable"
+  software: "Package from MDG Service"
+  file_type: null
+  download: "MDG Service (not a public download)"
 tools: []
 verification: "manual-verified"
 last_updated: "2026-10-03"
@@ -152,7 +161,15 @@ STATUS → STATE = FAIL, then STATUS → ERROR. The last 5 errors are in STATUS 
 - Weekly: inspect the rack for bends or cracks.
 - Monthly: clean the exterior with a damp sponge and mild soap. Inspect all fluid and gas lines and fittings for leaks.
 - "Requires no preventive maintenance" beyond that, per the manual. APS (Automatic Purging System) cleans the heater after every fog-off.
-- Firmware: USB A-to-B cable to a Windows PC during the 4-second "Testing BootLoad" window at power-up. Get the package from MDG Service.
+
+## Firmware
+- Installed version — where to see it on the fixture: not found in the manual summary used here.
+- Latest known version (date checked) and where to download it: **not found** (checked 2026-10-03). It's service-only: the update package comes from **MDG Service**, not a public download.
+- What you need (manual): a **USB A-to-B cable** to the theONE's USB-B port, a **Windows PC**, and the package from MDG Service.
+- Update steps (manual): connect the PC by USB, then power up the theONE. The PC has to connect during the **4-second "Testing BootLoad" window** at power-up. Follow MDG Service's instructions for the package.
+- Updating a whole rig: one unit at a time (USB).
+- If it fails or bricks mid-update: the bootloader runs at every power-up ("Testing BootLoad"), so a retry from power-up should be possible ⚠️ unverified. Call MDG Service.
+- Release notes worth knowing: none found.
 
 ## Road notes (community)
 - No forum notes gathered (search budget ran out).

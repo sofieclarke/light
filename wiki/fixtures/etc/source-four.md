@@ -28,6 +28,15 @@ dmx:
   protocols: []
   modes: []
 menu_password: null
+firmware:
+  latest_known: null
+  checked: null
+  check_on_fixture: null
+  methods: []
+  interface: null
+  software: null
+  file_type: null
+  download: null
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -142,7 +151,9 @@ Tungsten lamps are resistive (PF = 1), so watts ÷ volts is a legitimate way to 
 ## Maintenance
 - Recalibrate / reset procedure: n/a. Re-peak the lamp after every lamp change (general knowledge).
 - Fan / filter cleaning: no fan. Clean the reflector and lens with the lamp cold (general knowledge).
-- Firmware update method: n/a.
+
+## Firmware
+- **None.** The tungsten Source Four is a lamp, a reflector and a lens with no electronics, so there's nothing to update. The dimmer or the console does the dimming. (Source Four LED models do have firmware. See their pages.)
 
 ## Road notes (community)
 - ControlBooth has a thread on 575 vs 750 W lamp choice. Only the title appeared in search, so read the thread: [HPL 575 or 750 in your Source4?](https://www.controlbooth.com/threads/hpl-575-or-750-in-your-source4.5345/).

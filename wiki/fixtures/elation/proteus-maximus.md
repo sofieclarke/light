@@ -30,6 +30,15 @@ dmx:
     - { name: "37ch", channels: 37 }
     - { name: "61ch", channels: 61 }
 menu_password: "050"
+firmware:
+  latest_known: "V1.8.1"
+  checked: "2026-10-03"
+  check_on_fixture: null
+  methods: ["E-LOADER III over 3-pin DMX"]
+  interface: "Elation E-LOADER III (ELO601)"
+  software: null
+  file_type: null
+  download: "https://forums.elationlighting.com/topic/proteus-maximus-firmware?nc=1"
 tools: []
 verification: "web-search"
 last_updated: "2026-10-03"
@@ -117,7 +126,19 @@ last_updated: "2026-10-03"
 ## Maintenance
 - Recalibrate / reset procedure: Calibration menu behind password 050 (Proteus series).
 - Fan / filter cleaning: Not found.
-- Firmware update method: Elation's forum has a "Proteus Maximus Firmware" thread. Elation's general methods are the **E-LOADER III** (battery-powered uploader over a 3-pin DMX cable) or a **FAT32 USB stick** on fixtures that have a USB port. ⚠️ Not confirmed whether the Maximus has USB. Write down your menu settings before updating. **Firmware cannot be downgraded.**
+
+## Firmware
+- Installed version — where to see it on the fixture: menu path not found in the sources read. Look for it before you update so you know where you're starting from.
+- Latest known version (date checked) and where to download it: **V1.8.1** (latest found, checked 2026-10-03) per Elation's forum thread ["Proteus Maximus Firmware"](https://forums.elationlighting.com/topic/proteus-maximus-firmware?nc=1) (seen as a search summary, not read in full). Files come from that thread or from Elation (firmware@elationlighting.com, per a search summary).
+- What you need: the forum thread names the **E-LOADER III** as the upload tool for this fixture. It's a battery handheld (part number ELO601 in dealer listings) with a micro SD card, connected with a **3-pin DMX cable**. A USB service port on the Maximus was not confirmed.
+- Update steps: see the E-LOADER III procedure in [_elation-common.md](_elation-common.md#firmware-updates). Short version: file on the micro SD → 3-pin DMX from the loader to the fixture → power the fixture → power the E-LOADER III **within 10 s** → pick the fixture folder and file → enter the loader password.
+- Updating a whole rig: one fixture at a time with the E-LOADER III. No batch or network method found.
+- If it fails or bricks mid-update: no recovery procedure found. Retry with a charged loader (at least two battery bars), then contact Elation service ⚠️ unverified.
+- Release notes worth knowing (forum thread, via search summary):
+  - V1.8.1: "Sun Protection updated" and "Hibernation updated".
+  - You can update within the V1.6.x, V1.7.x and V1.8.x lines, but **you cannot go back down to V1.6.x or V1.7.x**.
+  - The thread says a fixture on **V1.6.x** needs board **PCB1187-0-B** dealt with ("remove … first") before it can take V1.7.x or V1.8.x. ⚠️ Read the thread or ask Elation before touching a V1.6.x unit.
+  - Write down your menu settings first. Firmware cannot be downgraded.
 
 ## Road notes (community)
 - None found in this research pass. ⚠️ Add notes from techs.
@@ -130,5 +151,7 @@ last_updated: "2026-10-03"
 - [4Wall rental listing](https://www.4wall.com/rentals/9758866/elation-proteus-maximus-ip65), [GoKnight](https://goknight.com/elation-proteus-maximus-ip65-950w-led-profile/), [idjnow](https://www.idjnow.com/elation-professional-proteus-maximus-fixture.html): 37/61 ch, 117 lb / 53 kg, IP65, 50,000 lm, 5.5–55° zoom, protocols
 - Dealer spec listings ([kpodj](https://kpodj.com/elation-proteus-maximus-p-111223), [Illumination Dynamics](https://www.illuminationdynamics.com/automated-lighting1/scenius-profile-pnnd7), [elationlighting.com](https://www.elationlighting.com/products/proteus-maximus)): "Power Linking: No". The search summary didn't say which page.
 - [Proteus Odeon manual](https://goknight.com/content/documentation/ELATION%20PROTEUS%20ODEON%20-%20USER%20MANUAL.pdf), [Proteus Excalibur manual](https://d295jznhem2tn9.cloudfront.net/ItemRelatedFiles/12937/ELATION%20PROTEUS%20EXCALIBUR%20-%20USER%20MANUAL.pdf), [Proteus Hybrid Max manual](https://d295jznhem2tn9.cloudfront.net/ItemRelatedFiles/13622/ELATION%20PROTEUS%20HYBRID%20MAX%20-%20USER%20MANUAL.pdf), [Proteus Radius manual](https://d295jznhem2tn9.cloudfront.net/ItemRelatedFiles/13604/ELATION%20PROTEUS%20RADIUS%20-%20USER%20MANUAL.pdf): service password 050, reset password 011, battery display operation
-- [Elation forum: Proteus Maximus Firmware](https://forums.elationlighting.com/topic/proteus-maximus-firmware?nc=1) and [E-LOADER III](https://www.elationlighting.com/e-loader-iii-software-uploader): firmware method, no downgrade
 - [Elation Proteus Maximus WMG](https://www.elationlighting.com/proteus-maximus-wmg): WMG variant exists
+- [Elation forum: Proteus Maximus Firmware](https://forums.elationlighting.com/topic/proteus-maximus-firmware?nc=1): V1.8.1, release notes, version-line rules, E-LOADER III as the tool (search summary)
+- [E-LOADER III](https://www.elationlighting.com/e-loader-iii-software-uploader) and [E-LOADER III manual (manuals.plus)](https://manuals.plus/elation/professional-e-loader-iii-software-uploader-kit-manual): uploader procedure (search summary)
+- [Adorama: E-LOADER III ELO601](https://www.adorama.com/elelo601.html): part number
