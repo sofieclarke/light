@@ -30,6 +30,7 @@ The wiki is plain Markdown, so any Markdown app can search it with no signal.
 | `wiki/_templates/fixture-template.md` | Template for new fixture pages |
 | `data/fixtures.json` | All fixture data in machine-readable form, for the app (generated) |
 | `tools/build_index.py` | Regenerates the generated pages and JSON from fixture front matter |
+| `tools/x32-ma3-bridge/` | Use an X32's faders and buttons to control grandMA3 executors over OSC ([setup guide](tools/x32-ma3-bridge/README.md)) |
 
 ## How trustworthy is each page?
 Each fixture page's `verification` field says where its facts came from:

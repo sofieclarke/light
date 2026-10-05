@@ -1,0 +1,35 @@
+{
+  "_note": "Copy to config.json and edit. Keys starting with _ are ignored.",
+  "x32": {
+    "ip": "192.168.1.64",
+    "port": 10023
+  },
+  "ma3": {
+    "ip": "127.0.0.1",
+    "port": 8000,
+    "prefix": "",
+    "fader_range": 100,
+    "value_type": "float"
+  },
+  "sync_on_start": false,
+  "faders": [
+    {"x32": "/dca/1/fader", "ma3_page": 1, "ma3_exec": 201},
+    {"x32": "/dca/2/fader", "ma3_page": 1, "ma3_exec": 202},
+    {"x32": "/dca/3/fader", "ma3_page": 1, "ma3_exec": 203},
+    {"x32": "/dca/4/fader", "ma3_page": 1, "ma3_exec": 204},
+    {"x32": "/dca/5/fader", "ma3_page": 1, "ma3_exec": 205},
+    {"x32": "/dca/6/fader", "ma3_page": 1, "ma3_exec": 206},
+    {"x32": "/dca/7/fader", "ma3_page": 1, "ma3_exec": 207},
+    {"x32": "/dca/8/fader", "ma3_page": 1, "ma3_exec": 208}
+  ],
+  "buttons": [
+    {"x32": "/dca/1/on", "ma3_page": 1, "ma3_exec": 201},
+    {"x32": "/dca/2/on", "ma3_page": 1, "ma3_exec": 202},
+    {"x32": "/dca/3/on", "ma3_page": 1, "ma3_exec": 203},
+    {"x32": "/dca/4/on", "ma3_page": 1, "ma3_exec": 204},
+    {"x32": "/dca/5/on", "ma3_page": 1, "ma3_exec": 205},
+    {"x32": "/dca/6/on", "ma3_page": 1, "ma3_exec": 206},
+    {"x32": "/dca/7/on", "ma3_page": 1, "ma3_exec": 207},
+    {"x32": "/dca/8/on", "ma3_page": 1, "ma3_exec": 208}
+  ]
+}
