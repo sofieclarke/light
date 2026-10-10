@@ -30,6 +30,7 @@ The wiki is plain Markdown, so any Markdown app can search it with no signal.
 | `wiki/_templates/fixture-template.md` | Template for new fixture pages |
 | `data/fixtures.json` | All fixture data in machine-readable form, for the app (generated) |
 | `tools/build_index.py` | Regenerates the generated pages and JSON from fixture front matter |
+| `games/resistor-color-drill.html` | Resistor color code practice game. Open it in any browser; works offline (fonts fall back) |
 
 ## How trustworthy is each page?
 Each fixture page's `verification` field says where its facts came from:

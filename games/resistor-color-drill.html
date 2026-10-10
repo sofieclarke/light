@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Resistor Color Drill</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Martian+Mono:wght@400;600;700&display=swap">
+<style>
+/* Layout: one centered bench column. Toolbar, then the resistor on its mat as the hero card, then your color set. The cheat sheet slides in from the right. */
+:root {
+  --bg: #e6ebee;
+  --surface: #f8fafa;
+  --sunk: #dce3e7;
+  --ink: #16202a;
+  --muted: #55636d;
+  --line: #c3ced4;
+  --accent: #2445c4;
+  --accent-ink: #ffffff;
+  --accent-soft: #dde4fb;
+  --good: #1b7444;
+  --good-bg: #e0f1e7;
+  --bad: #b0281c;
+  --bad-bg: #f9e4df;
+  --tan: #dcc196;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "Martian Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1418; --surface: #161e23; --sunk: #10171b; --ink: #e2e8eb; --muted: #93a2ab; --line: #2b3740;
+    --accent: #93a8ff; --accent-ink: #0e1418; --accent-soft: #1f2a52;
+    --good: #66d197; --good-bg: #12291d; --bad: #ff9182; --bad-bg: #36180f; --tan: #d4b98c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1418; --surface: #161e23; --sunk: #10171b; --ink: #e2e8eb; --muted: #93a2ab; --line: #2b3740;
+  --accent: #93a8ff; --accent-ink: #0e1418; --accent-soft: #1f2a52;
+  --good: #66d197; --good-bg: #12291d; --bad: #ff9182; --bad-bg: #36180f; --tan: #d4b98c;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--f-body); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 48px; display: grid; gap: 16px; }
+
+h1, h2 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+kbd { font: 600 0.68rem/1 var(--f-mono); padding: 0.25em 0.4em; border-radius: 4px; border: 1px solid currentColor; opacity: 0.7; margin-left: 0.5em; }
+
+/* Header */
+.top { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
+.brand h1 { font: 700 clamp(1.1rem, 3.4vw, 1.4rem)/1.2 var(--f-mono); letter-spacing: -0.02em; }
+.brand p { color: var(--muted); font-size: 0.92rem; margin-top: 2px; }
+.top-actions { display: flex; gap: 10px; align-items: center; }
+.streak { display: grid; justify-items: center; line-height: 1; padding: 6px 12px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); min-width: 64px; }
+.streak b { font: 700 1.2rem/1 var(--f-mono); font-variant-numeric: tabular-nums; }
+.streak span { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin-top: 4px; }
+.streak.hot b { color: var(--accent); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4em; padding: 0.55em 0.95em; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-size: 0.92rem; font-weight: 500; }
+.btn:hover { border-color: var(--muted); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn:disabled { opacity: 0.45; cursor: default; filter: none; }
+.linkish { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; font-size: inherit; }
+:is(button, input, [tabindex]):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Toolbar */
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.seg { display: inline-flex; padding: 3px; border-radius: 10px; background: var(--sunk); border: 1px solid var(--line); flex-wrap: wrap; }
+.seg button { border: 0; background: transparent; padding: 0.42em 0.8em; border-radius: 7px; cursor: pointer; font-size: 0.88rem; color: var(--muted); }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgb(0 0 0 / 0.14); }
+.toggles { display: flex; gap: 16px; flex-wrap: wrap; }
+.switch { display: inline-flex; align-items: center; gap: 0.5em; cursor: pointer; font-size: 0.9rem; font-weight: 500; user-select: none; }
+.switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.switch .track { width: 34px; height: 20px; border-radius: 999px; background: var(--line); position: relative; transition: background 0.15s; flex: none; }
+.switch .track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); transition: transform 0.15s; box-shadow: 0 1px 2px rgb(0 0 0 / 0.3); }
+.switch input:checked + .track { background: var(--accent); }
+.switch input:checked + .track::after { transform: translateX(14px); }
+.switch input:focus-visible + .track { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Suggestion banner */
+.suggest { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; padding: 12px 14px; border-radius: 12px; background: var(--accent-soft); }
+.suggest p { flex: 1 1 220px; font-weight: 500; }
+.suggest .row { display: flex; gap: 8px; }
+
+/* Card */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: clamp(16px, 4vw, 26px); display: grid; gap: 14px; }
+.eyebrow { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.question { font-size: 1.12rem; font-weight: 600; margin-top: 2px; }
+.target { font: 700 clamp(1.7rem, 7vw, 2.4rem)/1.1 var(--f-mono); letter-spacing: -0.03em; margin-top: 4px; }
+.target small { font-size: 0.5em; font-weight: 600; color: var(--muted); letter-spacing: 0; margin-left: 0.4em; }
+.bench {
+  border-radius: 10px; padding: 14px 6px;
+  background-color: var(--sunk);
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: center;
+}
+.res { display: block; width: 100%; max-width: 540px; height: auto; margin: 0 auto; }
+.res .tan { fill: var(--tan); }
+.res .outline { stroke: rgb(0 0 0 / 0.28); stroke-width: 1; }
+.res .empty { fill: none; stroke: var(--ink); stroke-opacity: 0.55; stroke-width: 1.4; stroke-dasharray: 3 3; }
+.res .sel { fill: none; stroke: var(--accent); stroke-width: 2.5; }
+.res .miss { fill: none; stroke: var(--bad); stroke-width: 2.5; }
+.res .hit { fill: transparent; cursor: pointer; }
+.hint { color: var(--muted); font-size: 0.9rem; }
+
+/* Answers */
+.ans { display: grid; gap: 12px; }
+.field { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.field input { font: 600 1.2rem/1.2 var(--f-mono); padding: 0.5em 0.7em; width: 10ch; flex: 1 1 8ch; max-width: 13rem; min-width: 0; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.field input:disabled { opacity: 0.8; }
+.unit-static { font: 600 1.2rem/1 var(--f-mono); color: var(--muted); }
+.units button { font-family: var(--f-mono); font-size: 0.86rem; }
+.labeled { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; }
+.labeled > span { font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-right: 4px; }
+.tchip { font: 600 0.84rem/1 var(--f-mono); padding: 0.55em 0.75em; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; }
+.tchip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.opt { display: flex; justify-content: space-between; align-items: center; gap: 8px; text-align: left; padding: 0.8em 0.9em; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font: 600 1.02rem/1.2 var(--f-mono); }
+.opt:hover:not(:disabled) { border-color: var(--muted); }
+.opt .k { font-size: 0.7rem; color: var(--muted); font-weight: 400; }
+.opt[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.opt.right { border-color: var(--good); background: var(--good-bg); color: var(--good); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-bg); color: var(--bad); }
+.opt:disabled { cursor: default; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.msg { font-size: 0.88rem; color: var(--bad); min-height: 1.3em; }
+
+/* Build mode */
+.slots { display: flex; flex-wrap: wrap; gap: 6px; }
+.slot { display: inline-flex; align-items: center; gap: 6px; padding: 0.35em 0.7em 0.35em 0.4em; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-size: 0.82rem; }
+.slot[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.slot .sw.none { background: transparent; border: 1.5px dashed var(--muted); box-shadow: none; }
+.palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
+.pc { display: flex; align-items: center; gap: 8px; padding: 0.55em 0.7em; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-weight: 500; font-size: 0.9rem; }
+.pc:hover { border-color: var(--muted); }
+.pc .sw { width: 22px; height: 22px; }
+
+/* Swatch */
+.sw { display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: var(--sw); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.28); flex: none; }
+
+/* Feedback */
+.fb { display: grid; gap: 10px; padding: 14px 16px; border-radius: 12px; }
+.fb.good { background: var(--good-bg); }
+.fb.bad { background: var(--bad-bg); }
+.verdict { font: 700 1.05rem/1.2 var(--f-mono); }
+.fb.good .verdict { color: var(--good); }
+.fb.bad .verdict { color: var(--bad); }
+.breakdown { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.breakdown li { display: inline-flex; align-items: center; gap: 7px; padding: 0.3em 0.75em 0.3em 0.35em; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 0.84rem; }
+.breakdown b { font-weight: 600; }
+.breakdown em { font-style: normal; color: var(--muted); }
+.math { font: 500 0.92rem/1.5 var(--f-mono); overflow-wrap: anywhere; }
+.math strong { font-weight: 700; }
+.range { font-size: 0.86rem; color: var(--muted); }
+.mini { display: grid; gap: 2px; justify-items: start; }
+.mini .res { max-width: 300px; margin: 0; }
+.mini span { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+@keyframes pop { from { transform: scale(0.97); opacity: 0.4; } to { transform: none; opacity: 1; } }
+.fb { animation: pop 0.18s ease-out; }
+@media (prefers-reduced-motion: reduce) { .fb { animation: none; } .switch .track, .switch .track::after { transition: none; } }
+
+/* Colors */
+.colors { display: grid; gap: 10px; }
+.colors-head { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; }
+.colors-head h2 { font: 600 0.78rem/1.2 var(--f-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.note { font-size: 0.86rem; color: var(--muted); }
+.note.warn { color: var(--bad); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 7px; padding: 0.38em 0.75em 0.38em 0.42em; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-size: 0.88rem; font-weight: 500; }
+.chip[aria-pressed="false"] { background: transparent; color: var(--muted); border-style: dashed; }
+.chip[aria-pressed="false"] .sw { opacity: 0.3; }
+.chip .acc { font: 400 0.68rem/1 var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.chip .acc.low { color: var(--bad); }
+
+.stats { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
+.stats b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* Cheat sheet */
+dialog#cheat { margin: 0 0 0 auto; width: min(440px, 100%); max-width: 100%; height: 100%; max-height: none; border: 0; border-left: 1px solid var(--line); padding: 0; background: var(--surface); color: var(--ink); }
+dialog#cheat::backdrop { background: rgb(6 10 13 / 0.45); }
+.cheat-in { padding: calc(16px + env(safe-area-inset-top, 0px)) 20px calc(28px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 22px; }
+.cheat-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.cheat-head h2 { font: 700 1.15rem/1.2 var(--f-mono); }
+.cheat-in h3 { margin: 0 0 8px; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.cheat-in p, .cheat-in li { font-size: 0.9rem; }
+.cheat-in ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+.mnemonic { font-size: 0.95rem; }
+.mnemonic b { color: var(--accent); }
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { text-align: left; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; padding: 0 6px 6px; border-bottom: 1px solid var(--line); }
+td { padding: 5px 6px; border-bottom: 1px solid color-mix(in srgb, var(--line) 50%, transparent); vertical-align: middle; }
+td.num { font-family: var(--f-mono); font-size: 0.82rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.inplay td.cn { font-weight: 600; }
+tr:not(.inplay) td.cn { color: var(--muted); }
+.dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-left: 6px; vertical-align: middle; }
+.legend { font-size: 0.8rem; color: var(--muted); margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Resistor Color Drill</h1>
+      <p>Read the bands, write the value the way it goes on a schematic.</p>
+    </div>
+    <div class="top-actions">
+      <div class="streak" id="streak" aria-live="polite"><b id="streakN">0</b><span>streak</span></div>
+      <button id="cheatBtn" class="btn" type="button">Cheat sheet</button>
+    </div>
+  </header>
+
+  <section class="toolbar" aria-label="Practice settings">
+    <div class="seg" role="group" aria-label="Mode">
+      <button type="button" id="modeRead" data-mode="read">Read the bands</button>
+      <button type="button" id="modeBuild" data-mode="build">Build the value</button>
+    </div>
+    <div class="toggles">
+      <label class="switch"><input type="checkbox" id="multT"><span class="track"></span><span>Multiplier</span></label>
+      <label class="switch"><input type="checkbox" id="tolT"><span class="track"></span><span>Tolerance</span></label>
+    </div>
+    <div class="seg" role="group" aria-label="How to answer" id="ansSeg">
+      <button type="button" id="ansType" data-ans="type">Type it</button>
+      <button type="button" id="ansPick" data-ans="pick">Pick from 4</button>
+    </div>
+  </section>
+
+  <div class="suggest" id="suggest" hidden></div>
+
+  <main class="card" id="card"></main>
+
+  <section class="colors" aria-labelledby="colorsH">
+    <div class="colors-head">
+      <h2 id="colorsH">Colors in play</h2>
+      <button type="button" class="btn" id="addNext"></button>
+    </div>
+    <div class="chips" id="chips"></div>
+    <p class="note" id="colorNote">Tap a color to add or remove it. Questions only use colors that are on. The percentage is how often you get that color right.</p>
+  </section>
+
+  <footer class="stats" id="stats"></footer>
+</div>
+
+<dialog id="cheat" aria-labelledby="cheatH"><div class="cheat-in" id="cheatIn"></div></dialog>
+
+<script>
+(() => {
+  // ---------- Data ----------
+  const COLORS = [
+    { id: "black",  name: "Black",  hex: "#1d1b1a", d: 0,    m: 0,  t: null },
+    { id: "brown",  name: "Brown",  hex: "#7a4723", d: 1,    m: 1,  t: 1 },
+    { id: "red",    name: "Red",    hex: "#d1271d", d: 2,    m: 2,  t: 2 },
+    { id: "orange", name: "Orange", hex: "#f27a1a", d: 3,    m: 3,  t: null },
+    { id: "yellow", name: "Yellow", hex: "#f4d01c", d: 4,    m: 4,  t: null },
+    { id: "green",  name: "Green",  hex: "#2a9440", d: 5,    m: 5,  t: 0.5 },
+    { id: "blue",   name: "Blue",   hex: "#2759d6", d: 6,    m: 6,  t: 0.25 },
+    { id: "violet", name: "Violet", hex: "#8a3cc2", d: 7,    m: 7,  t: 0.1 },
+    { id: "grey",   name: "Grey",   hex: "#8d8f91", d: 8,    m: 8,  t: 0.05 },
+    { id: "white",  name: "White",  hex: "#f4f3ee", d: 9,    m: 9,  t: null },
+    { id: "gold",   name: "Gold",   hex: "#c9a43a", d: null, m: -1, t: 5 },
+    { id: "silver", name: "Silver", hex: "#b4b9be", d: null, m: -2, t: 10 },
+  ];
+  const BY = Object.fromEntries(COLORS.map(c => [c.id, c]));
+  const ORDER = COLORS.map(c => c.id);
+  const PREFIX = { "": 1, k: 1e3, M: 1e6, G: 1e9 };
+  const KEY = "resistor-color-drill-v1";
+
+  // ---------- Saved settings ----------
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  const S = Object.assign({ enabled: ["black", "brown", "red"], mult: false, tol: false, mode: "read", answer: "type", stats: {}, best: 0 }, load());
+  S.enabled = (Array.isArray(S.enabled) ? S.enabled : []).filter(id => BY[id]);
+  if (!S.enabled.some(id => BY[id].d > 0)) S.enabled = ["black", "brown", "red"];
+  if (!S.stats || typeof S.stats !== "object") S.stats = {};
+  if (!["read", "build"].includes(S.mode)) S.mode = "read";
+  if (!["type", "pick"].includes(S.answer)) S.answer = "type";
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify({ enabled: S.enabled, mult: S.mult, tol: S.tol, mode: S.mode, answer: S.answer, stats: S.stats, best: S.best })); } catch (e) {}
+  }
+
+  // ---------- Game state ----------
+  const G = { streak: 0, right: 0, total: 0, q: null, done: false, result: null,
+              typed: "", unit: "", tolPick: null, valPick: null, opts: [], picks: [], slot: 0, msg: "",
+              snooze: 0, resetArmed: false };
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+  const on = id => S.enabled.includes(id);
+  const digitPool = () => ORDER.filter(id => on(id) && BY[id].d !== null);
+  const firstPool = () => digitPool().filter(id => BY[id].d !== 0);
+  const multPool = () => ORDER.filter(id => on(id));
+  const tolPool = () => { const p = ORDER.filter(id => on(id) && BY[id].t !== null); return p.length ? p : ["gold"]; };
+  const nextLocked = () => ORDER.find(id => !on(id));
+  const rand = n => Math.floor(Math.random() * n);
+  const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = rand(i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+  // ---------- Values and how to write them ----------
+  const ohms = (d, e) => e >= 0 ? d * Math.pow(10, e) : d / Math.pow(10, -e);
+  function fmt(v) {
+    let div = 1, p = "";
+    for (const [dv, pp] of [[1e9, "G"], [1e6, "M"], [1e3, "k"]]) if (v >= dv) { div = dv; p = pp; break; }
+    const n = +(v / div).toPrecision(6);
+    return { n, prefix: p, text: `${n} ${p}Ω` };
+  }
+  const plain = v => v.toLocaleString("en-US", { maximumFractionDigits: 2 }) + " Ω";
+  const same = (a, b) => Math.abs(a - b) <= 1e-9 * Math.max(1, Math.abs(b));
+  const multLabel = m => m < 0 ? "×" + Math.pow(10, m).toFixed(-m) : "×" + ["1", "10", "100", "1k", "10k", "100k", "1M", "10M", "100M", "1G"][m];
+  const tolLabel = t => "±" + t + "%";
+  const qValue = q => ohms(q.d, q.e);
+
+  // Accepts 4.7, 4.7k, 4k7, 4700, 4.7 kohm, 2M2, 4R7, R47, 1meg
+  function parseVal(raw, segPrefix) {
+    let s = raw.trim();
+    if (!s) return null;
+    s = s.replace(/[Ωω]/g, "").replace(/ohms?/gi, "").replace(/[\s,]/g, "");
+    const m = s.match(/^(\d*)(?:\.(\d*))?(meg|[kKmMgGrR])?(\d*)$/);
+    if (!m) return false;
+    const [, i, f, u, t] = m;
+    if (!i && !f && !t) return false;
+    if (f && t) return false;
+    let prefix = segPrefix, typed = false;
+    if (u) {
+      typed = true;
+      const L = u.toLowerCase();
+      prefix = L === "k" ? "k" : (L === "m" || L === "meg") ? "M" : L === "g" ? "G" : "";
+    }
+    const num = parseFloat((i || "0") + "." + ((f || "") + (t || "") || "0"));
+    if (!isFinite(num)) return false;
+    return { value: num * PREFIX[prefix], prefix, typed, rkm: !!(u && t) };
+  }
+
+  // ---------- Picking questions ----------
+  // Colors you miss more often come up more often.
+  function weight(id) { const s = S.stats[id] || { seen: 0, miss: 0 }; return 1 + 4 * s.miss / (s.seen + 2); }
+  function pickW(pool) {
+    let r = Math.random() * pool.reduce((a, id) => a + weight(id), 0);
+    for (const id of pool) { r -= weight(id); if (r <= 0) return id; }
+    return pool[pool.length - 1];
+  }
+
+  function newQ() {
+    const fp = firstPool();
+    if (!fp.length) { G.q = null; return; }
+    let q, guard = 0;
+    do {
+      const a = pickW(fp), b = pickW(digitPool());
+      const m = S.mult ? pickW(multPool()) : null;
+      const t = S.tol ? pickW(tolPool()) : null;
+      q = { bands: m ? [a, b, m] : [a, b], tolBand: t, d: BY[a].d * 10 + BY[b].d, e: m ? BY[m].m : 0, tol: t ? BY[t].t : null };
+      q.key = q.bands.join() + "|" + t;
+    } while (G.q && q.key === G.q.key && ++guard < 12);
+    Object.assign(G, { q, done: false, result: null, typed: "", unit: "", tolPick: null, valPick: null, picks: [], slot: 0, msg: "" });
+    G.opts = S.mode === "read" && S.answer === "pick" ? makeOptions(q) : [];
+  }
+
+  // Wrong answers built from real mistakes: swapped digits, multiplier one step off, a digit off by one.
+  function makeOptions(q) {
+    const correct = qValue(q);
+    const digits = new Set(digitPool().map(id => BY[id].d));
+    const mults = new Set(multPool().map(id => BY[id].m));
+    const found = new Map();
+    const add = (d, e, strict) => {
+      if (d < 10 || d > 99 || e < -2 || e > 9) return;
+      if (strict && (!digits.has(Math.floor(d / 10)) || !digits.has(d % 10) || (S.mult && !mults.has(e)))) return;
+      const v = ohms(d, e);
+      if (same(v, correct)) return;
+      const k = fmt(v).text;
+      if (!found.has(k)) found.set(k, v);
+    };
+    const d1 = Math.floor(q.d / 10), d2 = q.d % 10;
+    const gen = strict => {
+      const first = [];
+      if (S.mult) first.push([q.d, q.e + 1], [q.d, q.e - 1]);
+      if (d2 !== 0 && d1 !== d2) first.push([d2 * 10 + d1, q.e]);
+      shuffle(first).forEach(([d, e]) => add(d, e, strict));
+      const rest = [[q.d + 1, q.e], [q.d - 1, q.e], [q.d + 10, q.e], [q.d - 10, q.e]];
+      if (S.mult) rest.push([d2 * 10 + d1, q.e + 1], [q.d, q.e + 2], [q.d, q.e - 2]);
+      shuffle(rest).forEach(([d, e]) => add(d, e, strict));
+    };
+    gen(true);
+    let tries = 0;
+    while (found.size < 3 && tries++ < 200) {
+      const dp = digitPool().map(id => BY[id].d), fpd = dp.filter(x => x > 0);
+      const d = fpd[rand(fpd.length)] * 10 + dp[rand(dp.length)];
+      const ms = [...mults];
+      add(d, S.mult ? ms[rand(ms.length)] : 0, true);
+    }
+    if (found.size < 3) gen(false);
+    while (found.size < 3) add(10 + rand(90), q.e, false);
+    const picks = [...found.values()].slice(0, 3);
+    return shuffle([correct, ...picks]);
+  }
+
+  function tolOptions() {
+    const set = new Set([1, 2, 5, 10, ...tolPool().map(id => BY[id].t)]);
+    return [...set].sort((a, b) => a - b);
+  }
+
+  // ---------- Drawing the resistor ----------
+  const BODY = "M96 23 L112 23 C122 23 124 30 132 30 L268 30 C276 30 278 23 288 23 L304 23 C322 23 328 38 328 55 C328 72 322 87 304 87 L288 87 C278 87 276 80 268 80 L132 80 C124 80 122 87 112 87 L96 87 C78 87 72 72 72 55 C72 38 78 23 96 23 Z";
+  const BAND_W = 15;
+  function bandX(i, kind) { return kind === "t" ? 288 : [90, 134, 162][i]; }
+  function slotKinds(q) { const k = ["d", "d"]; if (q.bands.length === 3) k.push("m"); if (q.tolBand) k.push("t"); return k; }
+  const fullBands = q => q.tolBand ? [...q.bands, q.tolBand] : [...q.bands];
+
+  function resistorSVG(ids, kinds, opt = {}) {
+    const p = opt.prefix || "r";
+    const paint = id => id === "gold" ? `url(#${p}-gold)` : id === "silver" ? `url(#${p}-silver)` : BY[id].hex;
+    let bands = "", marks = "", hits = "";
+    kinds.forEach((kind, i) => {
+      const x = bandX(i, kind), id = ids[i];
+      bands += id ? `<rect x="${x}" y="0" width="${BAND_W}" height="110" fill="${paint(id)}"/>`
+                  : `<rect class="empty" x="${x + 1}" y="24" width="${BAND_W - 2}" height="62" rx="2"/>`;
+      if (opt.selected === i) marks += `<rect class="sel" x="${x - 4}" y="13" width="${BAND_W + 8}" height="84" rx="5"/>`;
+      if (opt.missed && opt.missed.includes(i)) marks += `<rect class="miss" x="${x - 4}" y="13" width="${BAND_W + 8}" height="84" rx="5"/>`;
+      if (opt.interactive) hits += `<rect class="hit" data-slot="${i}" x="${x - 7}" y="0" width="${BAND_W + 14}" height="110"/>`;
+    });
+    const named = ids.filter(Boolean).map(id => BY[id].name).join(", ");
+    const label = opt.label || (named ? `Resistor with bands: ${named}` : "Resistor with empty bands");
+    return `<svg class="res" viewBox="0 0 400 110" role="img" aria-label="${esc(label)}">
+      <defs>
+        <clipPath id="${p}-clip"><path d="${BODY}"/></clipPath>
+        <linearGradient id="${p}-shade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".3" stop-color="#fff" stop-opacity="0"/>
+          <stop offset=".68" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".34"/>
+        </linearGradient>
+        <linearGradient id="${p}-gold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#7d5d14"/><stop offset=".38" stop-color="#f3d97c"/><stop offset=".62" stop-color="#c99b2c"/><stop offset="1" stop-color="#6b4f12"/>
+        </linearGradient>
+        <linearGradient id="${p}-silver" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#70767c"/><stop offset=".38" stop-color="#f1f3f5"/><stop offset=".62" stop-color="#a9afb5"/><stop offset="1" stop-color="#5f656b"/>
+        </linearGradient>
+        <linearGradient id="${p}-lead" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#d9dde0"/><stop offset=".5" stop-color="#9aa1a7"/><stop offset="1" stop-color="#6c7378"/>
+        </linearGradient>
+      </defs>
+      <rect x="4" y="52" width="392" height="6" rx="3" fill="url(#${p}-lead)"/>
+      <g clip-path="url(#${p}-clip)">
+        <rect class="tan" x="60" y="0" width="280" height="110"/>
+        ${bands}
+        <rect x="60" y="0" width="280" height="110" fill="url(#${p}-shade)"/>
+      </g>
+      <path class="outline" d="${BODY}" fill="none"/>
+      ${marks}${hits}
+    </svg>`;
+  }
+
+  const swBg = id => id === "gold" ? "linear-gradient(160deg,#7d5d14,#f3d97c 45%,#b98d22)"
+                   : id === "silver" ? "linear-gradient(160deg,#70767c,#f1f3f5 45%,#979da3)" : BY[id].hex;
+  const sw = id => `<i class="sw" style="--sw:${swBg(id)}"></i>`;
+  const kindName = (kind, i) => kind === "m" ? "Multiplier" : kind === "t" ? "Tolerance" : i === 0 ? "1st digit" : "2nd digit";
+
+  // ---------- Rendering ----------
+  function render() { renderTop(); renderSuggest(); renderCard(); renderChips(); renderStats(); }
+
+  function renderTop() {
+    $("streakN").textContent = G.streak;
+    $("streak").classList.toggle("hot", G.streak >= 5);
+    $("modeRead").setAttribute("aria-pressed", S.mode === "read");
+    $("modeBuild").setAttribute("aria-pressed", S.mode === "build");
+    $("ansType").setAttribute("aria-pressed", S.answer === "type");
+    $("ansPick").setAttribute("aria-pressed", S.answer === "pick");
+    $("ansSeg").hidden = S.mode !== "read";
+    $("multT").checked = S.mult;
+    $("tolT").checked = S.tol;
+  }
+
+  function renderSuggest() {
+    const nx = nextLocked();
+    const show = nx && G.streak >= 10 && G.streak >= G.snooze + 10;
+    $("suggest").hidden = !show;
+    if (show) $("suggest").innerHTML = `<p>${G.streak} in a row with ${S.enabled.length} colors. Ready to add ${BY[nx].name}?</p>
+      <div class="row"><button type="button" class="btn primary" data-act="add-next">${sw(nx)} Add ${BY[nx].name}</button>
+      <button type="button" class="btn" data-act="snooze">Not yet</button></div>`;
+  }
+
+  function hintText() {
+    const parts = [];
+    if (S.mode === "build") parts.push("Tap a band, then a color. Bands read from the left.");
+    if (!S.mult) parts.push("Multiplier is off, so the two bands are the value in ohms.");
+    if (S.tol) parts.push("The tolerance band sits on its own at the right end.");
+    if (S.tol && !on("gold")) parts.push("Gold (±5%) and Silver (±10%) are the most common tolerance bands; add them below when you're ready.");
+    return parts.join(" ");
+  }
+
+  function renderCard() {
+    const card = $("card"), q = G.q;
+    if (!q) {
+      card.innerHTML = `<p class="question">Turn on at least one color besides Black.</p><p class="hint">The first band is never black, so there's nothing to read yet.</p>`;
+      return;
+    }
+    const kinds = slotKinds(q);
+    let html = "";
+    if (S.mode === "read") {
+      html += `<div><p class="eyebrow">Read the bands</p><p class="question">What's this resistor's value?</p></div>`;
+      html += `<div class="bench">${resistorSVG(fullBands(q), kinds)}</div>`;
+    } else {
+      const t = fmt(qValue(q)).text;
+      html += `<div><p class="eyebrow">Build the value</p><p class="target">${t}${q.tol !== null ? `<small>${tolLabel(q.tol)}</small>` : ""}</p></div>`;
+      html += `<div class="bench">${resistorSVG(G.picks, kinds, { interactive: !G.done, selected: G.done ? null : G.slot, missed: G.result ? G.result.missed : null })}</div>`;
+    }
+    html += `<p class="hint">${hintText()}</p>`;
+    html += S.mode === "read" ? (S.answer === "pick" ? pickArea(q) : typeArea(q)) : buildArea(q, kinds);
+    if (G.done) html += feedback(q, kinds);
+    card.innerHTML = html;
+  }
+
+  function tolRow(q) {
+    if (!S.tol) return "";
+    return `<div class="labeled" role="group" aria-label="Tolerance"><span>Tolerance</span>${tolOptions().map(t =>
+      `<button type="button" class="tchip" data-tol="${t}" aria-pressed="${G.tolPick === t}" ${G.done ? "disabled" : ""}>${tolLabel(t)}</button>`).join("")}</div>`;
+  }
+
+  function typeArea(q) {
+    const showG = on("grey") || on("white");
+    const units = S.mult
+      ? `<div class="seg units" role="group" aria-label="Unit">${[["", "Ω"], ["k", "kΩ"], ["M", "MΩ"], ...(showG ? [["G", "GΩ"]] : [])].map(([p, l]) =>
+          `<button type="button" data-unit="${p}" aria-pressed="${G.unit === p}" ${G.done ? "disabled" : ""}>${l}</button>`).join("")}</div>`
+      : `<span class="unit-static">Ω</span>`;
+    return `<form class="ans" id="ansForm" autocomplete="off" novalidate>
+      <div class="field">
+        <input id="valIn" type="text" inputmode="decimal" aria-label="Value" placeholder="${S.mult ? "4.7" : "47"}" value="${esc(G.typed)}" ${G.done ? "disabled" : ""}>
+        ${units}
+      </div>
+      ${tolRow(q)}
+      ${G.done ? "" : `<div class="actions"><button class="btn primary" type="submit">Check <kbd>Enter</kbd></button></div>`}
+      <p class="msg" aria-live="polite">${esc(G.msg)}</p>
+    </form>`;
+  }
+
+  function pickArea(q) {
+    const correct = qValue(q);
+    const opts = G.opts.map((v, i) => {
+      let cls = "";
+      if (G.done) { if (same(v, correct)) cls = "right"; else if (G.valPick !== null && same(v, G.valPick)) cls = "wrong"; }
+      const pressed = !G.done && G.valPick !== null && same(v, G.valPick);
+      return `<button type="button" class="opt ${cls}" data-val="${v}" aria-pressed="${pressed}" ${G.done ? "disabled" : ""}><span>${fmt(v).text}</span><span class="k">${i + 1}</span></button>`;
+    }).join("");
+    return `<div class="ans"><div class="opts" role="group" aria-label="Choices">${opts}</div>${tolRow(q)}
+      <p class="msg" aria-live="polite">${esc(G.msg)}</p></div>`;
+  }
+
+  function buildArea(q, kinds) {
+    if (G.done) return "";
+    const kind = kinds[G.slot];
+    const pool = kind === "d" ? digitPool() : kind === "m" ? multPool() : tolPool();
+    const slots = kinds.map((k, i) => `<button type="button" class="slot" data-slot="${i}" aria-pressed="${G.slot === i}">
+        ${G.picks[i] ? sw(G.picks[i]) : `<i class="sw none"></i>`}${kindName(k, i)}</button>`).join("");
+    const filled = kinds.every((_, i) => G.picks[i]);
+    return `<div class="ans">
+      <div class="slots" role="group" aria-label="Bands">${slots}</div>
+      <div class="palette" role="group" aria-label="Colors for ${kindName(kind, G.slot)}">${pool.map(id =>
+        `<button type="button" class="pc" data-color="${id}">${sw(id)}${BY[id].name}</button>`).join("")}</div>
+      <div class="actions">
+        <button type="button" class="btn primary" data-act="check-build" ${filled ? "" : "disabled"}>Check</button>
+        <button type="button" class="btn" data-act="clear">Clear</button>
+      </div>
+      <p class="msg" aria-live="polite">${esc(G.msg)}</p>
+    </div>`;
+  }
+
+  function mathLine(q) {
+    const v = qValue(q), f = fmt(v);
+    const d1 = Math.floor(q.d / 10), d2 = q.d % 10;
+    let s;
+    if (q.bands.length === 3) {
+      const pl = plain(v);
+      s = `${d1} ${d2} ${multLabel(q.e)} = ` + (pl.replace(/,/g, "") === f.text ? `<strong>${f.text}</strong>` : `${pl} = <strong>${f.text}</strong>`);
+    } else {
+      s = `${d1} and ${d2} → <strong>${f.text}</strong>`;
+    }
+    if (q.tol !== null) s += ` ${tolLabel(q.tol)}`;
+    return s;
+  }
+
+  function feedback(q, kinds) {
+    const r = G.result, bands = fullBands(q);
+    const crumbs = bands.map((id, i) => {
+      const k = kinds[i];
+      const meaning = k === "d" ? BY[id].d : k === "m" ? multLabel(BY[id].m) : tolLabel(BY[id].t);
+      return `<li>${sw(id)}<b>${BY[id].name}</b><em>${kindName(k, i)} · ${meaning}</em></li>`;
+    }).join("");
+    let range = "";
+    if (q.tol !== null) {
+      const v = qValue(q), lo = v * (1 - q.tol / 100), hi = v * (1 + q.tol / 100);
+      const r3 = x => fmt(+x.toPrecision(4)).text;
+      range = `<p class="range">A good part measures between ${r3(lo)} and ${r3(hi)}.</p>`;
+    }
+    const correctBands = S.mode === "build" && !r.ok
+      ? `<div class="mini"><span>Correct bands</span>${resistorSVG(bands, kinds, { prefix: "c", label: "Correct bands: " + bands.map(id => BY[id].name).join(", ") })}</div>` : "";
+    return `<div class="fb ${r.ok ? "good" : "bad"}" role="status">
+      <p class="verdict">${r.ok ? "Correct" : "Not quite"}</p>
+      ${r.detail ? `<p>${r.detail}</p>` : ""}
+      ${correctBands}
+      <ol class="breakdown" aria-label="Bands from left to right">${crumbs}</ol>
+      <p class="math">${mathLine(q)}</p>
+      ${range}
+      <div class="actions"><button type="button" class="btn primary" id="nextBtn" data-act="next">Next resistor <kbd>Enter</kbd></button></div>
+    </div>`;
+  }
+
+  function renderChips() {
+    $("chips").innerHTML = COLORS.map(c => {
+      const s = S.stats[c.id];
+      let acc = "";
+      if (s && s.seen >= 3) {
+        const pct = Math.round(100 * (s.seen - s.miss) / s.seen);
+        acc = `<span class="acc ${pct < 70 ? "low" : ""}">${pct}%</span>`;
+      }
+      return `<button type="button" class="chip" data-chip="${c.id}" aria-pressed="${on(c.id)}">${sw(c.id)}${c.name}${acc}</button>`;
+    }).join("");
+    const nx = nextLocked();
+    $("addNext").hidden = !nx;
+    if (nx) $("addNext").innerHTML = `${sw(nx)} Add ${BY[nx].name}`;
+  }
+
+  function renderStats() {
+    $("stats").innerHTML = `<span>This session: <b>${G.right}</b> of <b>${G.total}</b> right</span>
+      <span>Best streak: <b>${S.best}</b></span>
+      <button type="button" class="linkish" data-act="reset">${G.resetArmed ? "Tap again to clear your color scores" : "Reset color scores"}</button>`;
+  }
+
+  // ---------- Answering ----------
+  function finish(ok, detail, missedSlots) {
+    const q = G.q, bands = fullBands(q);
+    G.done = true;
+    G.result = { ok, detail, missed: S.mode === "build" ? missedSlots : null };
+    G.total++;
+    if (ok) { G.right++; G.streak++; S.best = Math.max(S.best, G.streak); }
+    else { G.streak = 0; G.snooze = 0; }
+    bands.forEach((id, i) => {
+      const s = S.stats[id] || (S.stats[id] = { seen: 0, miss: 0 });
+      s.seen++;
+      if (missedSlots.includes(i)) s.miss++;
+    });
+    save();
+    render();
+    const nb = $("nextBtn");
+    if (nb) nb.focus({ preventScroll: true });
+    if (nb && nb.scrollIntoView) nb.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
+
+  function checkTyped() {
+    const q = G.q;
+    const r = parseVal(G.typed, S.mult ? G.unit : "");
+    if (r === null) { G.msg = "Type a value first."; return renderCard(); }
+    if (r === false) { G.msg = "Couldn't read that. Try something like 47, 4.7 or 4k7."; return renderCard(); }
+    if (S.tol && G.tolPick === null) { G.msg = "Pick a tolerance too."; return renderCard(); }
+    const want = qValue(q), canon = fmt(want);
+    const valOk = same(r.value, want);
+    const tolOk = !S.tol || G.tolPick === q.tol;
+    const notes = [];
+    if (!valOk) notes.push(`You answered ${fmt(r.value).text}.`);
+    else if (r.rkm) notes.push(`${esc(G.typed.trim())} is schematic shorthand for ${canon.text}.`);
+    else if (r.prefix !== canon.prefix) notes.push(`Right value. You'd usually write it ${canon.text}.`);
+    if (!tolOk) notes.push(`Tolerance is ${tolLabel(q.tol)}, not ${tolLabel(G.tolPick)}.`);
+    G.msg = "";
+    finish(valOk && tolOk, notes.join(" "), readMisses(valOk, tolOk));
+  }
+
+  // Which bands to count as missed: the value bands, the tolerance band, or both.
+  function readMisses(valOk, tolOk) {
+    const n = G.q.bands.length, out = [];
+    if (!valOk) for (let i = 0; i < n; i++) out.push(i);
+    if (!tolOk) out.push(n);
+    return out;
+  }
+
+  function checkPicked() {
+    const q = G.q, want = qValue(q);
+    const valOk = same(G.valPick, want);
+    const tolOk = !S.tol || G.tolPick === q.tol;
+    const notes = [];
+    if (!valOk) notes.push(`You picked ${fmt(G.valPick).text}.`);
+    if (!tolOk) notes.push(`Tolerance is ${tolLabel(q.tol)}, not ${tolLabel(G.tolPick)}.`);
+    finish(valOk && tolOk, notes.join(" "), readMisses(valOk, tolOk));
+  }
+
+  function checkBuild() {
+    const q = G.q, kinds = slotKinds(q), want = fullBands(q);
+    if (!kinds.every((_, i) => G.picks[i])) { G.msg = "Fill every band first."; return renderCard(); }
+    const missed = want.map((id, i) => G.picks[i] === id ? -1 : i).filter(i => i >= 0);
+    if (!missed.length) return finish(true, "", []);
+    const p = G.picks;
+    const d = BY[p[0]].d * 10 + BY[p[1]].d;
+    const e = kinds.includes("m") ? BY[p[2]].m : 0;
+    const v = ohms(d, e);
+    let detail;
+    if (same(v, qValue(q)) && BY[p[0]].d === 0) {
+      detail = "That works out to the same number, but the first band is never black. Move the digits left and drop the multiplier one step.";
+    } else {
+      const tIdx = kinds.indexOf("t");
+      detail = `Your bands read ${fmt(v).text}${tIdx >= 0 ? " " + tolLabel(BY[p[tIdx]].t) : ""}.`;
+      if (BY[p[0]].d === 0) detail += " The first band is never black.";
+    }
+    finish(false, detail, missed);
+  }
+
+  function next() {
+    newQ();
+    render();
+    focusAnswer();
+  }
+
+  function focusAnswer() {
+    if (!window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
+    const el = $("valIn") || document.querySelector(".opt, .pc");
+    if (el) el.focus({ preventScroll: true });
+  }
+
+  // ---------- Events ----------
+  function settingsChanged() { save(); newQ(); render(); }
+
+  document.querySelector(".toolbar").addEventListener("click", e => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    if (b.dataset.mode && b.dataset.mode !== S.mode) { S.mode = b.dataset.mode; settingsChanged(); }
+    if (b.dataset.ans && b.dataset.ans !== S.answer) { S.answer = b.dataset.ans; settingsChanged(); }
+  });
+  $("multT").addEventListener("change", e => { S.mult = e.target.checked; settingsChanged(); });
+  $("tolT").addEventListener("change", e => { S.tol = e.target.checked; settingsChanged(); });
+
+  function addColor(id) {
+    if (!id || on(id)) return;
+    S.enabled = ORDER.filter(x => x === id || on(x));
+    G.snooze = G.streak;
+    settingsChanged();
+  }
+  $("addNext").addEventListener("click", () => addColor(nextLocked()));
+
+  $("chips").addEventListener("click", e => {
+    const b = e.target.closest("[data-chip]");
+    if (!b) return;
+    const id = b.dataset.chip;
+    if (on(id)) {
+      const rest = S.enabled.filter(x => x !== id);
+      if (!rest.some(x => BY[x].d > 0)) {
+        $("colorNote").textContent = "Keep at least one color besides Black on. The first band is never black.";
+        $("colorNote").classList.add("warn");
+        return;
+      }
+      S.enabled = rest;
+    } else {
+      S.enabled = ORDER.filter(x => x === id || on(x));
+    }
+    $("colorNote").textContent = "Tap a color to add or remove it. Questions only use colors that are on. The percentage is how often you get that color right.";
+    $("colorNote").classList.remove("warn");
+    settingsChanged();
+  });
+
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-act]");
+    if (!b) return;
+    const act = b.dataset.act;
+    if (act === "next") next();
+    else if (act === "add-next") addColor(nextLocked());
+    else if (act === "snooze") { G.snooze = G.streak; renderSuggest(); }
+    else if (act === "clear") { G.picks = []; G.slot = 0; G.msg = ""; renderCard(); }
+    else if (act === "check-build") checkBuild();
+    else if (act === "reset") {
+      if (!G.resetArmed) {
+        G.resetArmed = true; renderStats();
+        setTimeout(() => { G.resetArmed = false; renderStats(); }, 4000);
+      } else {
+        S.stats = {}; G.resetArmed = false; save(); renderChips(); renderStats();
+      }
+    }
+  });
+
+  const card = $("card");
+  card.addEventListener("input", e => { if (e.target.id === "valIn") G.typed = e.target.value; });
+  card.addEventListener("submit", e => { e.preventDefault(); if (!G.done) checkTyped(); });
+  card.addEventListener("click", e => {
+    if (G.done || !G.q) return;
+    const unit = e.target.closest("[data-unit]");
+    if (unit) {
+      G.unit = unit.dataset.unit;
+      card.querySelectorAll("[data-unit]").forEach(x => x.setAttribute("aria-pressed", x === unit));
+      return;
+    }
+    const tol = e.target.closest("[data-tol]");
+    if (tol) {
+      G.tolPick = +tol.dataset.tol;
+      card.querySelectorAll("[data-tol]").forEach(x => x.setAttribute("aria-pressed", x === tol));
+      if (S.mode === "read" && S.answer === "pick" && G.valPick !== null) checkPicked();
+      return;
+    }
+    const opt = e.target.closest("[data-val]");
+    if (opt) { choose(+opt.dataset.val); return; }
+    const slot = e.target.closest("[data-slot]");
+    if (slot) { G.slot = +slot.dataset.slot; G.msg = ""; renderCard(); return; }
+    const color = e.target.closest("[data-color]");
+    if (color) {
+      const kinds = slotKinds(G.q);
+      G.picks[G.slot] = color.dataset.color;
+      G.msg = "";
+      const after = kinds.map((_, i) => i).filter(i => i > G.slot && !G.picks[i]);
+      const anyEmpty = kinds.map((_, i) => i).filter(i => !G.picks[i]);
+      if (after.length) G.slot = after[0]; else if (anyEmpty.length) G.slot = anyEmpty[0];
+      renderCard();
+      const again = card.querySelector(`[data-color="${color.dataset.color}"]`) || card.querySelector(".pc");
+      if (again && window.matchMedia && window.matchMedia("(pointer: fine)").matches) again.focus({ preventScroll: true });
+    }
+  });
+
+  function choose(v) {
+    G.valPick = v;
+    if (!S.tol || G.tolPick !== null) checkPicked();
+    else { G.msg = "Now pick the tolerance."; renderCard(); }
+  }
+
+  document.addEventListener("keydown", e => {
+    if ($("cheat").open || e.metaKey || e.ctrlKey || e.altKey) return;
+    const typing = document.activeElement && document.activeElement.tagName === "INPUT" && document.activeElement.type === "text";
+    if (G.done && e.key === "Enter" && !(document.activeElement && document.activeElement.tagName === "BUTTON")) { e.preventDefault(); next(); return; }
+    if (!G.done && e.key === "Enter" && $("ansForm") && document.activeElement && document.activeElement.closest("[data-tol], [data-unit]")) {
+      e.preventDefault(); checkTyped(); return;
+    }
+    if (!G.done && !typing && S.mode === "read" && S.answer === "pick" && /^[1-4]$/.test(e.key) && G.opts[+e.key - 1] !== undefined) {
+      choose(G.opts[+e.key - 1]);
+    }
+  });
+
+  // ---------- Cheat sheet ----------
+  function cheatHTML() {
+    const rows = COLORS.map(c => `<tr class="${on(c.id) ? "inplay" : ""}">
+        <td>${sw(c.id)}</td><td class="cn">${c.name}${on(c.id) ? `<i class="dot" title="In play"></i>` : ""}</td>
+        <td class="num">${c.d ?? "–"}</td><td class="num">${multLabel(c.m)}</td><td class="num">${c.t !== null ? tolLabel(c.t) : "–"}</td></tr>`).join("");
+    const ladder = ["silver", "gold", "black", "brown", "red", "orange", "yellow", "green", "blue", "violet"].map(id =>
+      `<tr><td>${sw(id)}</td><td class="cn">${BY[id].name}</td><td class="num">${multLabel(BY[id].m)}</td><td class="num"><b>${fmt(ohms(47, BY[id].m)).text}</b></td></tr>`).join("");
+    const word = "Better Be Right Or Your Great Big Venture Goes West".split(" ").map(w => `<b>${w[0]}</b>${w.slice(1)}`).join(" ");
+    return `<div class="cheat-head"><h2 id="cheatH">Cheat sheet</h2><button type="button" class="btn" id="cheatClose">Close <kbd>Esc</kbd></button></div>
+      <section><h3>Digits 0 to 9</h3><p class="mnemonic">${word}</p>
+        <p class="legend">Black Brown Red Orange Yellow Green Blue Violet Grey White = 0 to 9.</p></section>
+      <section><h3>Every band</h3><div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>Color</th><th>Digit</th><th>Multiplier</th><th>Tolerance</th></tr></thead>
+        <tbody>${rows}</tbody></table></div>
+        <p class="legend"><i class="dot"></i> in play right now. No tolerance band at all means ±20%.</p></section>
+      <section><h3>Writing the value</h3><ul>
+        <li>Under 1,000 → ohms: <b>470&nbsp;Ω</b></li>
+        <li>1,000 and up → kilohms, divide by 1,000: 4,700&nbsp;Ω = <b>4.7&nbsp;kΩ</b></li>
+        <li>1,000,000 and up → megohms: 2,200,000&nbsp;Ω = <b>2.2&nbsp;MΩ</b></li>
+        <li>Parts and schematics often put the letter where the decimal point goes: 4k7 = 4.7&nbsp;kΩ, 2M2 = 2.2&nbsp;MΩ, 4R7 = 4.7&nbsp;Ω. You can type it either way here.</li>
+      </ul></section>
+      <section><h3>The multiplier sets the unit</h3><p>Same two digits, Yellow Violet (4 7), with each multiplier:</p>
+        <div class="tbl-wrap"><table><thead><tr><th></th><th>3rd band</th><th>Multiplier</th><th>Written as</th></tr></thead><tbody>${ladder}</tbody></table></div>
+        <p class="legend">Red, Green and White put a decimal point between the digits (4.7). Orange and Blue give whole kΩ and MΩ.</p></section>
+      <section><h3>Which end to start from</h3><ul>
+        <li>Hold it so the gold or silver band is on the right, then read from the left.</li>
+        <li>The tolerance band usually has a bigger gap before it.</li>
+        <li>The first band is never black.</li>
+      </ul></section>`;
+  }
+  const cheat = $("cheat");
+  $("cheatBtn").addEventListener("click", () => {
+    $("cheatIn").innerHTML = cheatHTML();
+    if (cheat.showModal) cheat.showModal(); else cheat.setAttribute("open", "");
+  });
+  cheat.addEventListener("click", e => {
+    if (e.target === cheat || e.target.closest("#cheatClose")) cheat.close ? cheat.close() : cheat.removeAttribute("open");
+  });
+
+  // ---------- Start ----------
+  newQ();
+  render();
+  focusAnswer();
+})();
+</script>
+</body>
+</html>
